@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: M_Corundum
   m_EditorClassIdentifier: 
   mineralName: M_Corundum
+  description: Test Description
+  funFact: Test Fact
   mineralSprite: {fileID: 7033898093529213802, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
   mineralBigSprite: {fileID: -7020369629327794792, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
   defaultColor:

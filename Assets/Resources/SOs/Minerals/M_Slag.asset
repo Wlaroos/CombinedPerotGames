@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: M_Slag
   m_EditorClassIdentifier: 
   mineralName: M_Slag
-  description: 
+  description: Test Description
+  funFact: Test Fact
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
   mineralBigSprite: {fileID: 0}
   defaultColor:

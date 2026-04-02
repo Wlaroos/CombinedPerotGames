@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: M_Calcite
   m_EditorClassIdentifier: 
   mineralName: M_Calcite
-  description: 
+  description: Test Description
+  funFact: 'Like quartz, calcite is one of the most abundant minerals in the Earth''s
+    crust. '
   mineralSprite: {fileID: 1980142279973535832, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
   mineralBigSprite: {fileID: 7860488438020181885, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
   defaultColor:

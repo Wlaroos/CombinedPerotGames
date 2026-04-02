@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: M_Fluorite
   m_EditorClassIdentifier: 
   mineralName: M_Fluorite
-  description: 
+  description: Test Description
+  funFact: 'Fluorite will fluoresce, or glow, under ultraviolet light. '
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
   mineralBigSprite: {fileID: 0}
   defaultColor:

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: M_Topaz
   m_EditorClassIdentifier: 
   mineralName: M_Topaz
-  description: 
+  description: Test Description
+  funFact: The rarest colors of topaz are pink and reddish orange hues, known as
+    Imperial Topaz. / Blue topaz is the Texas state gemstone!
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
   mineralBigSprite: {fileID: 0}
   defaultColor:

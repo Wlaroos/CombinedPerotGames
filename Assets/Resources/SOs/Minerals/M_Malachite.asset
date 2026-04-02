@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: M_Malachite
   m_EditorClassIdentifier: 
   mineralName: M_Malachite
-  description: 
+  description: Test Description
+  funFact: The FIFA World Cup Trophy designed in 1974 has two bands of malachite
+    on its base.
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
   mineralBigSprite: {fileID: 0}
   defaultColor:

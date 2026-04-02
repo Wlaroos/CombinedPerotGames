@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: M_Siderite
   m_EditorClassIdentifier: 
   mineralName: M_Siderite
+  description: Test Description
+  funFact: Test Fact
   mineralSprite: {fileID: 3001957441537787673, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
   mineralBigSprite: {fileID: 3335794136032191816, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
   defaultColor:

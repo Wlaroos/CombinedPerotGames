@@ -30,7 +30,11 @@ public class NewRecipePanelScript : MonoBehaviour
     private UnityAction<CraftingRecipe, GameObject, bool> _onRecipeCraftedHandler;
     private bool[] _craftedStatus; // Tracks which recipes have been crafted at least once
     private int _craftedMineralCount = 0; // Track the number of crafted minerals
-    [SerializeField] private GameObject _winCanvasPrefab;
+
+    [Header("Win Screen References")]
+    [SerializeField] private GameObject _winCanvasPrefab; // Your existing ref
+    [SerializeField] private FinalMineralInfoCard _infoCardPrefab; 
+    [SerializeField] private Transform _infoCardContainer;
 
     // Mineral-choice internal state
     private readonly HashSet<CraftingRecipe> _chosenRecipes = new HashSet<CraftingRecipe>();
@@ -357,6 +361,19 @@ public class NewRecipePanelScript : MonoBehaviour
     private void EndGame()
     {
         _winCanvasPrefab.SetActive(true);
+
+        // Clear existing cards if the win screen is reused
+        foreach (Transform child in _infoCardContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Loop through the recipes the user actually picked and crafted
+        foreach (var recipe in _chosenRecipes)
+        {
+            FinalMineralInfoCard card = Instantiate(_infoCardPrefab, _infoCardContainer);
+            card.Setup(recipe);
+        }
 
         HideMineralChoice();
         this.enabled = false;
