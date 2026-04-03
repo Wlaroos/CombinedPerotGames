@@ -8825,7 +8825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1402002281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14826,6 +14826,18 @@ PrefabInstance:
       propertyPath: _maxDraggables
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3556615103969627723, guid: 51892143eff87b14bb62c5170b91b5a3, type: 3}
+      propertyPath: _craftingZoneRef
+      value: 
+      objectReference: {fileID: 1969862810}
+    - target: {fileID: 3556615103969627723, guid: 51892143eff87b14bb62c5170b91b5a3, type: 3}
+      propertyPath: _craftingZoneBoxRef
+      value: 
+      objectReference: {fileID: 1969862813}
+    - target: {fileID: 3556615103969627723, guid: 51892143eff87b14bb62c5170b91b5a3, type: 3}
+      propertyPath: _craftingZoneCollider
+      value: 
+      objectReference: {fileID: 1969862813}
     - target: {fileID: 5801481534325794612, guid: 51892143eff87b14bb62c5170b91b5a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

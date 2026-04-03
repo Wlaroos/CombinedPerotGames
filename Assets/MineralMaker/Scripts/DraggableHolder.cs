@@ -5,6 +5,7 @@ public class DraggableHolder : MonoBehaviour
     public static DraggableHolder Instance { get; private set; }
 
     [SerializeField] private int _maxDraggables = 10;
+    [SerializeField] BoxCollider2D _craftingZoneBoxRef;
     public int MaxDraggables => _maxDraggables;
     public bool IsFull => transform.childCount >= _maxDraggables;
 
@@ -36,9 +37,23 @@ public class DraggableHolder : MonoBehaviour
     private void RemoveOldestChild()
     {
         if (transform.childCount > 0)
-        {
-            var oldestChild = transform.GetChild(0).gameObject;
-            Destroy(oldestChild);
+            {;
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                var oldestChild = transform.GetChild(i).gameObject;
+
+                if (!_craftingZoneBoxRef.OverlapPoint(oldestChild.transform.position))
+                {
+                    oldestChild.transform.SetParent(null);
+                    Destroy(oldestChild);
+                    return;
+                }
+            }
+
+            // If everything is in the zone, delete the oldest anyway
+            GameObject fallback = transform.GetChild(0).gameObject;
+            fallback.transform.SetParent(null);
+            Destroy(fallback);
         }
     }
 
