@@ -11,6 +11,6 @@ public class MainMenuManager : MonoBehaviour
         public void PlayMineralOrganizer()
     {
         // Load the level selection scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("OrganizerGame");
     }
 }
