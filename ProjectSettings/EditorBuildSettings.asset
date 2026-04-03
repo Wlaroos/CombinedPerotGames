@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MineralMaker/v.05.unity
     guid: cf60b74e4504e8943bf327c90bdabc9b
+  - enabled: 1
+    path: Assets/Scenes/MineralOrganizer/OrganizerGame.unity
+    guid: 52f150a1177eec241b21fb72329a77f4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
