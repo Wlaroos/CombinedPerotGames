@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Dioptase
   m_EditorClassIdentifier: 
-  mineralName: M_Dioptase
+  mineralName: Dioptase
   description: Test Description
-  funFact: 'When heated, dioptase generates an electric charge. '
+  funFact: When heated, dioptase generates an electric charge
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
   mineralBigSprite: {fileID: 0}
   defaultColor:
     serializedVersion: 2
     rgba: 4294967295
+  hardness: 5
+  crystalStructure: 2
+  isVariant: 0

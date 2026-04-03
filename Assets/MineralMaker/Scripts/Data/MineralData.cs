@@ -8,17 +8,34 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "Chemistry/Mineral Data")]
 public class MineralData : ScriptableObject
 {
+    [Header("Mineral Info")]
     public string mineralName;         // Name of the mineral
     public string description;       // Description of the mineral
     public string funFact;       // Fun fact about the mineral
+    [Header("Mineral Appearance")]
     public Sprite mineralSprite;       // Main sprite for the mineral
     public Sprite mineralBigSprite;    // Big version of the mineral sprite
     public Color32 defaultColor = new Color32(255, 255, 255, 255); // Default color
+    [Header("Mineral Attributes")]
+    [Tooltip("Hardness of the mineral Moh's Scale (1-10)")]
+    [Range(1,10)]public int hardness;            // Hardness (1-10)
+
+    [Tooltip("1=Cubic\n" +
+             "2=Tetragonal\n" +
+             "3=Orthorhombic\n" +
+             "4=Hexagonal\n" +
+             "5=Trigonal\n" +
+             "6=Monoclinic\n" +
+             "7=Triclinic")]
+
+    [Range(1,7)]public int crystalStructure;       // Crystal structure type (1-7)
+    [Header("Misc")]
+    public bool isVariant = false;
 
     private void OnEnable()
     {
         // Set the mineral name to the asset's name
-        mineralName = this.name;
+        mineralName = SOHelpers.StripCommonPrefix(this.name);
     }
 }
 
