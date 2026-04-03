@@ -95,7 +95,7 @@ public class HardnessDial : MonoBehaviour
 
             SetDialFromStep();
             
-            yield return new WaitForSeconds(1f / speed);
+            yield return new WaitForSeconds(speed * Time.deltaTime);
         }
     }
 }
