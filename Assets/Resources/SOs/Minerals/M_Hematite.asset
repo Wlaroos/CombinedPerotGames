@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Hematite
   m_EditorClassIdentifier: 
-  mineralName: M_Hematite
+  mineralName: Hematite
   description: Test Description
   funFact: Test Fact
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 0}
+  mineralBigSprite: {fileID: 4169764932570551726, guid: 08d767805e6774d43aea0684ee6dfcea, type: 3}
   defaultColor:
     serializedVersion: 2
     rgba: 4294050047
+  hardness: 6
+  crystalStructure: 4
+  isVariant: 0

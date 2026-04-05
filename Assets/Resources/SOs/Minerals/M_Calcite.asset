@@ -22,5 +22,5 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4291100482
   hardness: 3
-  crystalStructure: 1
+  crystalStructure: 4
   isVariant: 0

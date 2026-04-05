@@ -17,10 +17,10 @@ MonoBehaviour:
   funFact: Because of its shiny, metallic yellow color, pyrite is often called "fool's
     gold"
   mineralSprite: {fileID: 1980142279973535832, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
-  mineralBigSprite: {fileID: 7860488438020181885, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
+  mineralBigSprite: {fileID: -4164306761505399400, guid: 706f370ae3ddfe042a708debe7d6880d, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4291100482
+    rgba: 4283028479
   hardness: 6
-  crystalStructure: 6
+  crystalStructure: 1
   isVariant: 0

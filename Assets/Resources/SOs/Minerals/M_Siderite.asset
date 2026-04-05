@@ -20,6 +20,6 @@ MonoBehaviour:
   defaultColor:
     serializedVersion: 2
     rgba: 4282054650
-  hardness: 1
-  crystalStructure: 1
+  hardness: 4
+  crystalStructure: 4
   isVariant: 0

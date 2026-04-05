@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Corundum
   m_EditorClassIdentifier: 
-  mineralName: M_Corundum
+  mineralName: Corundum
   description: Test Description
   funFact: Test Fact
   mineralSprite: {fileID: 7033898093529213802, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
@@ -20,3 +20,6 @@ MonoBehaviour:
   defaultColor:
     serializedVersion: 2
     rgba: 4280295645
+  hardness: 9
+  crystalStructure: 4
+  isVariant: 0

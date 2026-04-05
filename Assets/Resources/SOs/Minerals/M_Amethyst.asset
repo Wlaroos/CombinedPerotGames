@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Test Decription
   funFact: Purple quartz is called amethyst
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 0}
+  mineralBigSprite: {fileID: -7119355344155486247, guid: f636241efc51a4e4c8f40dd627c4c1c2, type: 3}
   defaultColor:
     serializedVersion: 2
     rgba: 4294967295

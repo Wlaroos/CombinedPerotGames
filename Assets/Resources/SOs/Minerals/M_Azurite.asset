@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Test Description
   funFact: The deep blue of azurite and the green of malachite both come from copper
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 0}
+  mineralBigSprite: {fileID: 4169764932570551726, guid: 08d767805e6774d43aea0684ee6dfcea, type: 3}
   defaultColor:
     serializedVersion: 2
     rgba: 4292486944

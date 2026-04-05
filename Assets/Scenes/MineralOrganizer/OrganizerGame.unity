@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineralValues: {fileID: 11400000, guid: f9b3f11cfe7807740819d7b27aec56ca, type: 2}
+  mineralValues: {fileID: 0}
   snapSpeed: 10
   clickIcon: {fileID: 0}
   structureIcon: {fileID: 0}
@@ -5362,7 +5362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineralValues: {fileID: 11400000, guid: 6b45b5694f2146144b67254a5f2be16c, type: 2}
+  mineralValues: {fileID: 0}
   snapSpeed: 10
   clickIcon: {fileID: 0}
   structureIcon: {fileID: 0}
@@ -8046,7 +8046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineralValues: {fileID: 11400000, guid: b01134c2a2778cb40b1fb9f0e6ca8e58, type: 2}
+  mineralValues: {fileID: 0}
   snapSpeed: 10
   clickIcon: {fileID: 595618214}
   structureIcon: {fileID: 0}
@@ -8539,7 +8539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineralValues: {fileID: 11400000, guid: 4e32d6bf6c2af1a44a437b4f127d4a61, type: 2}
+  mineralValues: {fileID: 0}
   snapSpeed: 10
   clickIcon: {fileID: 0}
   structureIcon: {fileID: 0}
@@ -9088,30 +9088,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: SubmitCheck
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 404478702}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 963486734}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10407,7 +10383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineralValues: {fileID: 11400000, guid: 891cf1224fc8bb24db86fc97e60bb672, type: 2}
+  mineralValues: {fileID: 0}
   snapSpeed: 10
   clickIcon: {fileID: 0}
   structureIcon: {fileID: 0}

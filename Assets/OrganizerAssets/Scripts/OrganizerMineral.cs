@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class OrganizerMineral : MonoBehaviour
 {
-    public MineralScriptableObject mineralValues;
+    public MineralData mineralValues;
     private Animator _animator;
     private SpriteRenderer _sr;
     
@@ -14,8 +14,7 @@ public class OrganizerMineral : MonoBehaviour
 
     public GameObject clickIcon;
     public GameObject structureIcon;
-    
-    private Vector3 _initialPosition;
+
     private RespawnZone _currentRespawnZone;
     
     private DropZone _currentDropZone;
@@ -33,20 +32,15 @@ public class OrganizerMineral : MonoBehaviour
         
         clickIcon.SetActive(false);
         structureIcon.SetActive(false);
-        
-        _initialPosition = transform.position;
     }
     
     private void Start()
     {
         if (mineralValues != null)
         {
-            GetComponent<SpriteRenderer>().sprite = mineralValues.mineralSprite;
+            GetComponent<SpriteRenderer>().sprite = mineralValues.mineralBigSprite;
             _animator = GetComponent<Animator>();
             gameObject.name = mineralValues.mineralName;
-            
-            if (mineralValues.animatorController != null)
-                _animator.runtimeAnimatorController = mineralValues.animatorController;
         }
         
         _animator = GetComponent<Animator>();
@@ -84,28 +78,20 @@ public class OrganizerMineral : MonoBehaviour
         _isSnapping = true;
     }
 
-    public void AssignMineral(MineralScriptableObject newValues)
+    public void AssignMineral(MineralData newValues)
     {
         mineralValues = newValues;
-        
-        //CurrentZone = null;
-        //transform.SetParent(null);
         
         // Update animator if needed
         if (_animator == null)
             _animator = GetComponent<Animator>();
         
-        if (mineralValues.animatorController)
-            _animator.runtimeAnimatorController = mineralValues.animatorController;
-        else if (!mineralValues.animatorController)
-            _animator.runtimeAnimatorController = null;
-        
         // Update sprite + name
         if (_sr == null)
             _sr = GetComponent<SpriteRenderer>();
 
-        _sr.sprite = mineralValues.mineralSprite;
-        _sr.color = mineralValues.spriteColor;
+        _sr.sprite = mineralValues.mineralBigSprite;
+        _sr.color = mineralValues.defaultColor;
         gameObject.name = mineralValues.mineralName;
     }
 
