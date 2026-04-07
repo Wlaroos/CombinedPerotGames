@@ -232,7 +232,7 @@ public static class SOHelpers
         return sb.ToString();
     }
 
-    // NEW: Format a formula string so any digits inside become subscripts.
+    // Format a formula string so any digits inside become subscripts.
     // If useUnicodeSubscripts is true, digits are converted to Unicode subscript glyphs.
     // Otherwise contiguous digit runs are wrapped in TMP <sub>...</sub> tags.
     public static string FormatFormulaForDisplay(string formula, bool useUnicodeSubscripts)

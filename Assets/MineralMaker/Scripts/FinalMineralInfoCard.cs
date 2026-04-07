@@ -65,6 +65,36 @@ public class FinalMineralInfoCard : MonoBehaviour
         }
     }
 
+    public void Setup(MineralData mineralData)
+    {
+        if (mineralData == null) return;
+
+        // Set Text
+        _mineralNameText.text = mineralData.mineralName;
+        _mineralNameSmallText.text = mineralData.mineralName;
+        _mineralDescriptionText.text = mineralData.description;
+        _mineralFunFactText.text = mineralData.funFact;
+
+        // Set Icon
+        _mineralIcon.sprite = mineralData.mineralBigSprite;
+        _mineralIcon.preserveAspect = true;
+        _mineralIconSmall.sprite = mineralData.mineralSprite;
+        _mineralIconSmall.preserveAspect = true;
+
+        // Set Colors (Following the logic in your SetupMineralUI)
+        Color baseColor = mineralData.defaultColor;
+
+        if (_backgroundPanel != null)
+        {
+            _backgroundPanel.color = baseColor;
+        }
+
+        if (_innerPanel != null)
+        {
+            _innerPanel.color = baseColor * new Color(0.5f, 0.5f, 0.5f, 1f);
+        }
+    }
+
     private IEnumerator FlipCard()
     {
         float elapsedTime = 0f;

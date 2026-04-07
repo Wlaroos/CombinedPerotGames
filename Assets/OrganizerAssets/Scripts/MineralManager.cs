@@ -6,7 +6,7 @@ public class MineralManager : MonoBehaviour
     public static MineralManager instance;
     
     [Header("All available minerals (Scriptable Objects)")]
-    public List<MineralScriptableObject>allMinerals;
+    public List<MineralData>allMinerals;
     
     [Header("Mineral slots in the scene")]
     public List<OrganizerMineral> minerals = new List<OrganizerMineral>();
@@ -31,8 +31,8 @@ public class MineralManager : MonoBehaviour
     
     private void LoadAllMinerals()
     {
-        allMinerals = new List<MineralScriptableObject>(
-            Resources.LoadAll<MineralScriptableObject>("Minerals"));
+        allMinerals = new List<MineralData>(
+            Resources.LoadAll<MineralData>("SOs/Minerals"));
     }
 
     public void RefreshMinerals()
@@ -43,7 +43,7 @@ public class MineralManager : MonoBehaviour
             return;
         }
         
-        List<MineralScriptableObject> pool = new(allMinerals);
+        List<MineralData> pool = new(allMinerals);
 
         HashSet<int> usedHardness = new();
         HashSet<int> usedStructures = new();
@@ -51,7 +51,7 @@ public class MineralManager : MonoBehaviour
         foreach (var slot in minerals)
         {
             // Filter valid minerals based on rules
-            List<MineralScriptableObject> validChoices = pool.FindAll(m =>
+            List<MineralData> validChoices = pool.FindAll(m =>
                 (!enforceUniqueHardness || !usedHardness.Contains(m.hardness)) &&
                 (!enforceUniqueStructure || !usedStructures.Contains(m.crystalStructure))
             );
@@ -60,14 +60,14 @@ public class MineralManager : MonoBehaviour
             
             // Pick a random valid mineral
             int index = Random.Range(0, validChoices.Count);
-            MineralScriptableObject chosen = validChoices[index];
+            MineralData chosen = validChoices[index];
             
             // Assign it
             slot.AssignMineral(chosen);
             
             // Mark values as used
             usedHardness.Add(chosen.hardness);
-            usedStructures.Add(chosen.crystalStructure);
+            //usedStructures.Add(chosen.crystalStructure);
 
             // Remove from master pool
             pool.Remove(chosen);

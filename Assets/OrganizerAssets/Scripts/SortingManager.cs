@@ -80,7 +80,6 @@ public class SortingManager : MonoBehaviour
             {
                 case SortingRule.AttributeType.Hardness: return m.mineralValues.hardness;
                 case SortingRule.AttributeType.crystalStructure: return m.mineralValues.crystalStructure;
-                case SortingRule.AttributeType.Color: return m.mineralValues.color;
                 default: return 0f;
             }
         }).ToList();
