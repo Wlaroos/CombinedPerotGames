@@ -9,11 +9,13 @@ public class OrganizerGameManager : MonoBehaviour
     [Header("HardnessReference")]
     [SerializeField] private GameObject hardnessTutorial;
     [SerializeField] private GameObject hardnessTool;
+    [SerializeField] private GameObject hardnessSorting;
     [SerializeField, TextArea(3, 10)] private string hardnessToolText;
 
     [Header("StructureReference")]
     [SerializeField] private GameObject structureTutorial;
     [SerializeField] private GameObject structureTool;
+    [SerializeField] private GameObject structureSorting;
     [SerializeField, TextArea(3, 10)] private string structureToolText;
 
     [Header("GeneralUI")]
@@ -29,13 +31,14 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private DisplayOrderType displayOrder;
     [SerializeField] private SortingManager sortingManager;
     [SerializeField] private TooltipManager tooltipManager;
+    [SerializeField] private MineralManager mineralManager;
 
     [Header("Misc")]
     [SerializeField] private GameObject lever;
     [SerializeField] private ToolWire wire;
 
-    private bool hardnessChosen;
-    private bool structureChosen;
+    public bool hardnessChosen;
+    public bool structureChosen;
 
     private void Awake()
     {
@@ -71,6 +74,7 @@ public class OrganizerGameManager : MonoBehaviour
 
     public void ChooseHardness()
     {
+        hardnessChosen = true;
         hardnessTutorial.SetActive(true);
         hardnessTool.SetActive(true);
         sortingManager.HardnessArrangement();
@@ -79,11 +83,12 @@ public class OrganizerGameManager : MonoBehaviour
         toolInfo.text = hardnessToolText;
         startScreen.SetActive(false);
         lever.SetActive(true);
-        hardnessChosen = true;
+        hardnessSorting.SetActive(true);
     }
 
     public void ChooseStructure()
     {
+        structureChosen = true;
         structureTutorial.SetActive(true);
         structureTool.SetActive(true);
         sortingManager.StructureArrangement();
@@ -91,7 +96,7 @@ public class OrganizerGameManager : MonoBehaviour
         infoPanel.SetActive(true);
         toolInfo.text = structureToolText;
         startScreen.SetActive(false);
-        structureChosen = true;
+        structureSorting.SetActive(true);
     }
 
     public void StartGame()
@@ -107,5 +112,6 @@ public class OrganizerGameManager : MonoBehaviour
         hardFlavorPanel.SetActive(false);
         structFlavorPanel.SetActive(false);
         toolFlavorPanel.SetActive(false);
+        mineralManager.RespawnMinerals();
     }
 }

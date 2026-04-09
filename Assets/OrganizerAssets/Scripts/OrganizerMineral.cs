@@ -18,6 +18,7 @@ public class OrganizerMineral : MonoBehaviour
     private RespawnZone _currentRespawnZone;
     
     private DropZone _currentDropZone;
+    private Bucket _currentBucket;
     public bool CanBeDragged { get; private set; } = true;
     public bool IsUnderScanner { get; private set; }
     
@@ -127,5 +128,16 @@ public class OrganizerMineral : MonoBehaviour
     {
         if (_currentDropZone == zone)
             _currentDropZone = null;
+    }
+    
+    public void SetBucket(Bucket bucket)
+    {
+        _currentBucket = bucket;
+    }
+
+    public void ClearBucket(Bucket bucket)
+    {
+        if (_currentBucket == bucket)
+            _currentBucket = null;
     }
 }

@@ -7,10 +7,10 @@ public class SortingManager : MonoBehaviour
 {
     [SerializeField] private SortingRule hardnessRules;
     [SerializeField] private SortingRule structureRules;
-    [SerializeField] private SortingRule colorRules;
     [SerializeField] private TextMeshProUGUI organizeText;
-    
+
     public List<SortingRule> rules = new List<SortingRule>();
+    public List<Bucket> buckets = new List<Bucket>();
     public Transform[] slots;
 
     public void HardnessArrangement()
@@ -27,23 +27,6 @@ public class SortingManager : MonoBehaviour
             rules.Clear();
         rules.Add(structureRules);
         organizeText.text = "Organize by Crystal Structure";
-    }
-    public void ColorArrangement()
-    {
-        if (rules.Count > 0)
-            rules.Clear();
-        rules.Add(colorRules);
-        organizeText.text = "Organize by Color";
-    }
-
-    public void AllArrangement()
-    {
-        if (rules.Count > 0)
-            rules.Clear();
-        HardnessArrangement();
-        StructureArrangement();
-        ColorArrangement();
-        organizeText.text = "Organize by Any";
     }
     
     public void CheckArrangement()
@@ -84,13 +67,34 @@ public class SortingManager : MonoBehaviour
             }
         }).ToList();
         
-        // Check order
-        for (int i = 0; i < values.Count - 1; i++)
+        if(rule.attribute == SortingRule.AttributeType.Hardness)
         {
-            if (rule.ascending && values[i] > values[i + 1]) return false;
-            if (!rule.ascending && values[i] < values[i + 1]) return false;
+            // Check order
+            for (int i = 0; i < values.Count - 1; i++)
+            {
+                if (rule.ascending && values[i] > values[i + 1]) return false;
+                if (!rule.ascending && values[i] < values[i + 1]) return false;
+            }
+
+            return true;
         }
 
-        return true;
+        if (rule.attribute == SortingRule.AttributeType.crystalStructure)
+        {
+            foreach (var bucket in buckets)
+            {
+                foreach (var mineral in bucket.GetMinerals())
+                {
+                    if (mineral.mineralValues.crystalStructure != bucket.crystalStructureValue)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+        
+        return false;
     }
 }
