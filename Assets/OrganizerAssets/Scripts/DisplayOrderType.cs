@@ -7,18 +7,23 @@ public class DisplayOrderType : MonoBehaviour
 {
     public SortingManager sortingManager; // assign in inspector
     public DropZone[] slots;              // assign all drop zones in order
-    public TextMeshProUGUI orderText;                // assign your UI text here
+    public Bucket[] buckets;              // assign all buckets
+    public TextMeshProUGUI orderText;     // assign your UI text here
     public bool win;
 
     private void Update()
     {
-        if (AllSlotsFilled())
+        if (!sortingManager) return;
+        
+        if (sortingManager.rules.Count == 0) return;
+
+        if (sortingManager.rules[0].attribute == SortingRule.AttributeType.Hardness)
         {
-            ShowCurrentOrderTypes();
+            HandleHardnessCheck();
         }
-        else
+        else if (sortingManager.rules[0].attribute == SortingRule.AttributeType.crystalStructure)
         {
-            orderText.text = ""; //clear text if not all slots are filled
+            HandleStructureCheck();
         }
     }
 
@@ -56,5 +61,62 @@ public class DisplayOrderType : MonoBehaviour
             display = "No ascending order matched.";
         
         orderText.text = display;
+    }
+
+    private void HandleHardnessCheck()
+    {
+        if (AllSlotsFilled())
+        {
+            ShowCurrentOrderTypes();
+        }
+        else
+        {
+            orderText.text = ""; //clear text if not all slots are filled
+            win = false;
+        }
+    }
+
+    private bool AllBucketsFilled()
+    {
+        foreach (var bucket in buckets)
+        {
+            if (bucket.GetMinerals().Count == 0)
+                return false;
+        }
+        return true;
+    }
+
+    private bool AllBucketsCorrect()
+    {
+        foreach (var bucket in buckets)
+        {
+            foreach (var mineral in bucket.GetMinerals())
+            {
+                if (mineral.mineralValues.crystalStructure != bucket.crystalStructureValue)
+                    return false;
+            }
+        }
+        return true;
+    }
+    
+    private void HandleStructureCheck()
+    {
+        if (!AllBucketsFilled())
+        {
+            orderText.text = "";
+            win = false;
+            return;
+        }
+
+        if (AllBucketsCorrect())
+        {
+            orderText.text = "All minerals are in the right buckets.";
+            win = true;
+        }
+        else
+        {
+            orderText.text = "Some minerals are in the wrong buckets.";
+            win = false;
+        }
     }
 }

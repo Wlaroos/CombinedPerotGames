@@ -91,10 +91,8 @@ public class SortingManager : MonoBehaviour
                     }
                 }
             }
-
             return true;
         }
-        
         return false;
     }
 }

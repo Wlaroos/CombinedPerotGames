@@ -5,8 +5,19 @@ public class Bucket : MonoBehaviour
 {
     public int crystalStructureValue; // the structure this bucket accepts
 
-    private int spacing;
     private List<OrganizerMineral> containedMinerals = new List<OrganizerMineral>();
+
+    public SpriteRenderer structureIcon;
+    
+    [System.Serializable]
+    public struct  StructureIcon
+    {
+        
+        public int structureValue;
+        public Sprite sprite;
+    }
+
+    public List<StructureIcon> icons;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,8 +48,14 @@ public class Bucket : MonoBehaviour
         return containedMinerals;
     }
 
-    public void AssignRandomStructure(int min = 1, int max = 7)
+    public void UpdateIcon()
     {
-        crystalStructureValue = Random.Range(min, max);
+        foreach (var icon in icons)
+        {
+            if (icon.structureValue == crystalStructureValue)
+            {
+                structureIcon.sprite = icon.sprite;
+            }
+        }
     }
 }

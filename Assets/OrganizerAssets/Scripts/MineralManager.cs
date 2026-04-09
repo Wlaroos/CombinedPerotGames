@@ -94,6 +94,8 @@ public class MineralManager : MonoBehaviour
             
             int index = Random.Range(0, available.Count);
             bucket.crystalStructureValue = available[index];
+
+            bucket.UpdateIcon();
             
             available.RemoveAt(index);
         }
@@ -137,7 +139,7 @@ public class MineralManager : MonoBehaviour
         Bucket[] buckets = FindObjectsOfType<Bucket>();
         SetAllowedStructureFromBuckets();
 
-        if (gameManager.structureChosen && allowedStructures.Count > 0)
+        if (allowedStructures.Count > 0)
         {
             pool.Where(m => allowedStructures.Contains(m.crystalStructure)).ToList();
 
@@ -150,6 +152,19 @@ public class MineralManager : MonoBehaviour
 
                 MineralData chosen = valid[Random.Range(0, valid.Count)];
                 minerals[mineralIndex].AssignMineral(chosen);
+                
+                pool.Remove(chosen);
+                mineralIndex++;
+            }
+
+            for (int i = mineralIndex; i < minerals.Count; i++)
+            {
+                if (pool.Count == 0) break;
+
+                MineralData chosen = pool[Random.Range(0, pool.Count)];
+                minerals[i].AssignMineral(chosen);
+
+                pool.Remove(chosen);
             }
         }
     }
