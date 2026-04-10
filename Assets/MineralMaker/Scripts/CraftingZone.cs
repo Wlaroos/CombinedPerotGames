@@ -38,7 +38,7 @@ public class CraftingZone : MonoBehaviour
     // Called when an object enters the zone
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_objectsInZone.Contains(collision.gameObject))
+        if (!_objectsInZone.Contains(collision.gameObject) && collision.CompareTag("Draggable"))
         {
             _objectsInZone.Add(collision.gameObject);
             ResetCraftingState();
@@ -48,7 +48,7 @@ public class CraftingZone : MonoBehaviour
     // Called when an object exits the zone
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (_objectsInZone.Contains(collision.gameObject))
+        if (_objectsInZone.Contains(collision.gameObject) && collision.CompareTag("Draggable"))
         {
             _objectsInZone.Remove(collision.gameObject);
             ResetCraftingState();
@@ -136,7 +136,7 @@ public class CraftingZone : MonoBehaviour
         if (count == 0) return;
         center /= count;
 
-        // move each object a fraction toward the center; fraction chosen so they converge after required presses
+        // Move each object a fraction toward the center; fraction chosen so they converge after required presses
         float t = _requiredPresses > 0 ? 1f / _requiredPresses : 0.25f;
         foreach (var obj in objects)
         {
@@ -147,11 +147,11 @@ public class CraftingZone : MonoBehaviour
 
     private void FinalizeCraft(List<ScriptableObject> ingredients, List<GameObject> objectsToConsume)
     {
-        // CENTER OF ALL OBJECTS IN ZONE
-        //Vector3 spawnPosition = ComputeCenterOf(objectsToConsume) ?? transform.position;
+        // Center of all objects in a zone [ONE OR THE OTHER]
+        Vector3 spawnPosition = ComputeCenterOf(objectsToConsume) ?? transform.position;
 
-        // RANDOM POSITION IN DEAD ZONE
-        Vector3 spawnPosition = GetRandomSpawnPosition();
+        // Random position in dead zone [ONE OR THE OTHER]
+        //Vector3 spawnPosition = GetRandomSpawnPosition();
 
         // Unparent the objects first so they no longer count toward the DraggableHolder child count.
         // Preserve original parents so we can restore them if crafting fails.
@@ -165,12 +165,12 @@ public class CraftingZone : MonoBehaviour
             }
         }
 
-        // Now attempt to craft the result. DraggableHolder will receive the instantiated object if available.
+        // Attempt to craft the result. DraggableHolder will receive the instantiated object if available.
         GameObject craftedObj = CraftingManager.Instance != null ? CraftingManager.Instance.TryCraft(ingredients, spawnPosition) : null;
 
         if (craftedObj != null)
         {
-            // Successful craft -> remove the consumed objects
+            // Successful craft, remove the consumed objects
             foreach (var obj in objectsToConsume)
             {
                 if (obj != null)
@@ -184,7 +184,7 @@ public class CraftingZone : MonoBehaviour
         }
         else
         {
-            // Craft failed -> restore original parenting so objects remain in the same logical place
+            // Craft failed, restore original parenting
             foreach (var obj in objectsToConsume)
             {
                 if (obj != null)

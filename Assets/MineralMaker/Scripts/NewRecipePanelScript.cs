@@ -4,6 +4,7 @@ using TMPro;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Events;
+using System.Collections;
 
 public class NewRecipePanelScript : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class NewRecipePanelScript : MonoBehaviour
     [SerializeField] private Button _previousButton;
     [SerializeField] private Image[] _selectedCraftPips;
     [SerializeField] private Image[] _successfulCraftPips;
+    [SerializeField] private GameObject[] _mineralSlots;
     private List<CraftingRecipe> _recipes = new List<CraftingRecipe>();
     private List<CraftingRecipe> _filteredRecipes = new List<CraftingRecipe>();
     private int _currentRecipeIndex = 0;
@@ -328,10 +330,14 @@ public class NewRecipePanelScript : MonoBehaviour
 
     private void OnRecipeCrafted(CraftingRecipe recipe, GameObject craftedObj, bool isFirstTime)
     {
-        if (_filteredRecipes.Contains(recipe) && isFirstTime)
+        if (_filteredRecipes.Contains(recipe) && _filteredRecipes[_currentRecipeIndex] == recipe)
         {
             UpdateSuccessfulCraftPips();
             _craftedStatus[_currentRecipeIndex] = true;
+
+            UpdateUI();
+
+            StartCoroutine(MoveMineralToSlot(craftedObj, _currentRecipeIndex));
 
             // Increment crafted mineral count and check if the loop should continue
             _craftedMineralCount++;
@@ -343,19 +349,12 @@ public class NewRecipePanelScript : MonoBehaviour
                 {
                     _currentRecipeIndex = Mathf.Clamp(_filteredRecipes.Count - 1, 0, _filteredRecipes.Count - 1);
                 }
-
-                if (_useMineralChoice)
-                {
-                    ShowMineralChoice();
-                }
             }
             else
             {
                 EndGame();
             }
         }
-
-        UpdateUI();
     }
 
     private void EndGame()
@@ -393,5 +392,36 @@ public class NewRecipePanelScript : MonoBehaviour
 
         _currentRecipeIndex = (_currentRecipeIndex - 1 + _filteredRecipes.Count) % _filteredRecipes.Count;
         UpdateUI();
+    }
+
+    private IEnumerator MoveMineralToSlot(GameObject craftedObj, int index)
+    {
+        Destroy(craftedObj.GetComponent<DragAndDrop>());
+        
+        float elapsedTime = 0f;
+        float lerpDuration = 1f;
+
+        Vector3 startPosition = craftedObj.transform.position;
+        Vector3 targetPosition = _mineralSlots[index].transform.position + new Vector3(0f, 0.5f, 0f);
+
+        yield return new WaitForSeconds(1f);
+
+        while (elapsedTime < lerpDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            craftedObj.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / lerpDuration);
+
+            yield return null;
+        }
+
+        craftedObj.transform.position = targetPosition;
+
+        yield return new WaitForSeconds(1f);
+
+        if (_useMineralChoice)
+        {
+            ShowMineralChoice();
+        }
     }
 }

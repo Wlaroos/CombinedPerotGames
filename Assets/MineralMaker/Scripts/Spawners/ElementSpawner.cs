@@ -16,6 +16,7 @@ public class ElementSpawner : MonoBehaviour
     [SerializeField] private Vector2 _spawnAreaSize = new Vector2(100, 100);
     [SerializeField] private Vector2 _spawnAreaCenter = Vector2.zero;
     [SerializeField] private bool _unlockAllElements = false;
+    [SerializeField] private bool _canFlipTile = true;
 
     private List<ElementData> _elementDataList = new List<ElementData>();
     private Sprite[] _spawnButtonSprites;
@@ -101,9 +102,19 @@ public class ElementSpawner : MonoBehaviour
 
     private void OnSpawnButtonClicked(Button button, ElementData data)
     {
-        //if (!_isDragging) SpawnElementAtRandomPosition(data);
-        button.transform.localScale = new Vector3(1f, 1f, 1f);
-        if (!_isDragging) StartCoroutine(FlipTile(button, data));
+        if (!_isDragging) 
+        {
+            if(_canFlipTile)
+            {
+                button.transform.localScale = new Vector3(1f, 1f, 1f);
+
+                StartCoroutine(FlipTile(button, data));
+            }
+            else
+            {
+                SpawnElementAtRandomPosition(data);
+            }
+        }
     }
 
     private IEnumerator FlipTile(Button button, ElementData data)

@@ -50,6 +50,7 @@ public class DragAndDrop : MonoBehaviour
     private void OnDisable()
     {
         _inputActions.Disable();
+        _collider = null;
     }
 
     // Gets the mouse position in world space
@@ -178,16 +179,16 @@ public class DragAndDrop : MonoBehaviour
             if (otherObj != null) otherObj.transform.SetParent(null);
 
             // Attempt to craft
-            GameObject craftedObj = manager != null ? manager.TryCraft(ingredients, spawnPosition) : null;
+            // GameObject craftedObj = manager != null ? manager.TryCraft(ingredients, spawnPosition) : null;
 
-            if (craftedObj != null)
-            {
-                // Successful craft -- remove the consumed objects
-                if (otherObj != null) Destroy(otherObj);
-                Destroy(gameObject);
-            }
-            else
-            {
+            // if (craftedObj != null)
+            // {
+            //     // Successful craft -- remove the consumed objects
+            //     if (otherObj != null) Destroy(otherObj);
+            //     Destroy(gameObject);
+            // }
+            // else
+            // {
                 // Craft failed -- restore original parents and run original failure behavior
                 transform.SetParent(originalParentA);
                 if (otherObj != null) otherObj.transform.SetParent(originalParentB);
@@ -223,7 +224,7 @@ public class DragAndDrop : MonoBehaviour
                     Vector3 failPosition = (transform.position + otherObj.transform.position) / 2f;
                     EffectManager.Instance.PlayFailEffect(failPosition);
                 }
-            }
+            //}
         }
     }
 

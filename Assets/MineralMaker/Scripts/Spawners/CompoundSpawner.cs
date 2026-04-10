@@ -19,6 +19,7 @@ public class CompoundSpawner : MonoBehaviour
     [SerializeField] private Vector2 _spawnAreaCenter = new Vector2(0, -350);
     [SerializeField] private bool _unlockAllCompounds = false;
     [SerializeField] private GameObject _silicateDropDown;
+    [SerializeField] private bool _canClick = true;
 
     private CompoundData[] _compoundDataList;
     private Sprite[] _spawnButtonSprites;
@@ -169,6 +170,7 @@ public class CompoundSpawner : MonoBehaviour
     private void OnSpawnButtonClicked(CompoundData data)
     {
         if (_isDragging) return;
+        if (!_canClick) return;
         SpawnCompoundAtRandomPosition(data);
     }
 

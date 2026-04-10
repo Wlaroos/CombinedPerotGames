@@ -75,28 +75,28 @@ public class CraftingManager : MonoBehaviour
         {
             Vector3 pos = crafted.transform != null ? crafted.transform.position : spawnPosition;
 
-            // Minerals -> normal big/transient popups (existing behavior)
+            // Minerals
             if (recipe.output is MineralData mineralData)
             {
-                if (isFirstTime)
-                    CraftedPopupManager.Instance.ShowPersistentCraftedPopup(mineralData, recipe);
-                else
+                // if (isFirstTime)
+                //     CraftedPopupManager.Instance.ShowPersistentCraftedPopup(mineralData, recipe);
+                // else
                     CraftedPopupManager.Instance.ShowCraftedPopup(mineralData, pos, recipe);
             }
-            // Elements -> use small popups (persistent on first time, transient otherwise)
+            // Elements
             else if (recipe.output is ElementData elementData)
             {
-                if (isFirstTime)
-                    CraftedPopupManager.Instance.ShowPersistentCraftedPopup(elementData, recipe);
-                else
+                // if (isFirstTime)
+                //     CraftedPopupManager.Instance.ShowPersistentCraftedPopup(elementData, recipe);
+                // else
                     CraftedPopupManager.Instance.ShowCraftedPopup(elementData, pos, recipe);
             }
-            // Compounds -> use small popups (persistent on first time, transient otherwise)
+            // Compounds
             else if (recipe.output is CompoundData compoundData)
             {
-                if (isFirstTime)
-                    CraftedPopupManager.Instance.ShowPersistentCraftedPopup(compoundData, recipe);
-                else
+                // if (isFirstTime)
+                //     CraftedPopupManager.Instance.ShowPersistentCraftedPopup(compoundData, recipe);
+                // else
                     CraftedPopupManager.Instance.ShowCraftedPopup(compoundData, pos, recipe);
             }
         }

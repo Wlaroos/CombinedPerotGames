@@ -14,6 +14,15 @@ TextureImporter:
   - first:
       213: -5602834784527169061
     second: CraftButtons_3
+  - first:
+      213: -2513031137665037969
+    second: CraftButtons_4
+  - first:
+      213: -7864895973006676300
+    second: CraftButtons_5
+  - first:
+      213: -489728302047418081
+    second: CraftButtons_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,19 +114,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -125,8 +121,8 @@ TextureImporter:
       name: CraftButtons_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 77
+        x: 7
+        y: 107
         width: 42
         height: 14
       alignment: 0
@@ -147,8 +143,8 @@ TextureImporter:
       name: CraftButtons_1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 39
+        x: 7
+        y: 69
         width: 77
         height: 36
       alignment: 0
@@ -169,8 +165,8 @@ TextureImporter:
       name: CraftButtons_2
       rect:
         serializedVersion: 2
-        x: 9
-        y: 20
+        x: 7
+        y: 50
         width: 77
         height: 16
       alignment: 0
@@ -191,8 +187,8 @@ TextureImporter:
       name: CraftButtons_3
       rect:
         serializedVersion: 2
-        x: 89
-        y: 24
+        x: 87
+        y: 54
         width: 7
         height: 7
       alignment: 0
@@ -213,8 +209,8 @@ TextureImporter:
       name: CraftButtons_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
+        x: 0
+        y: 32
         width: 102
         height: 16
       alignment: 0
@@ -223,10 +219,54 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1d9b23c3650cd4c4981594c317b185dd
-      internalID: -2010255233
+      spriteID: f69caf1be7bef1dd0800000000000000
+      internalID: -2513031137665037969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CraftButtons_5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 15
+        width: 90
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be698558c64ad290800000000000000
+      internalID: -7864895973006676300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CraftButtons_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 90
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19220834b22439f0800000000000000
+      internalID: -489728302047418081
       vertices: []
       indices: 
       edges: []
@@ -235,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bd734ce1c88d0f445a00b3f15b3c9b69
+    spriteID: ee1f34cad3a04e44eb03939dfd1828dc
     internalID: 0
     vertices: []
     indices: 
@@ -243,13 +283,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       CraftButtons_0: 2338921163845302201
       CraftButtons_1: -5566011203298903035
       CraftButtons_2: 1012844926208783241
       CraftButtons_3: -5602834784527169061
-      CraftButtons_4: -2010255233
+      CraftButtons_4: -2513031137665037969
+      CraftButtons_5: -7864895973006676300
+      CraftButtons_6: -489728302047418081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
