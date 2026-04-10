@@ -75,7 +75,7 @@ public class MineralManager : MonoBehaviour
     {
         allowedStructures.Clear();
 
-        foreach (var bucket in FindObjectsOfType<Bucket>())
+        foreach (var bucket in FindObjectsByType<Bucket>((FindObjectsSortMode)FindObjectsInactive.Include))
         {
             if (!allowedStructures.Contains(bucket.crystalStructureValue))
                 allowedStructures.Add(bucket.crystalStructureValue);
@@ -84,7 +84,7 @@ public class MineralManager : MonoBehaviour
 
     private void AssignBucketStructures()
     {
-        Bucket[] buckets = FindObjectsOfType<Bucket>();
+        Bucket[] buckets = FindObjectsByType<Bucket>((FindObjectsSortMode)FindObjectsInactive.Include);
 
         List<int> available = Enumerable.Range(1, 7).ToList();
 
@@ -135,37 +135,37 @@ public class MineralManager : MonoBehaviour
         List<MineralData> pool = new(allMinerals);
         
         AssignBucketStructures();
-
-        Bucket[] buckets = FindObjectsOfType<Bucket>();
         SetAllowedStructureFromBuckets();
+        
+        Bucket[] buckets = FindObjectsByType<Bucket>((FindObjectsSortMode)FindObjectsInactive.Include);
 
-        if (allowedStructures.Count > 0)
+        if (allowedStructures.Count == 0) return;
+        
+        pool = pool.Where(m => allowedStructures.Contains(m.crystalStructure)).ToList();
+
+        int mineralIndex = 0;
+
+        foreach (var bucket in buckets)
         {
-            pool.Where(m => allowedStructures.Contains(m.crystalStructure)).ToList();
+            List<MineralData> valid = pool.FindAll(m =>
+                m.crystalStructure == bucket.crystalStructureValue);
 
-            int mineralIndex = 0;
-
-            foreach (var bucket in buckets)
-            {
-                List<MineralData> valid = pool.FindAll(m =>
-                    m.crystalStructure == bucket.crystalStructureValue);
-
-                MineralData chosen = valid[Random.Range(0, valid.Count)];
-                minerals[mineralIndex].AssignMineral(chosen);
+            MineralData chosen = valid[Random.Range(0, valid.Count)];
+            minerals[mineralIndex].AssignMineral(chosen);
                 
-                pool.Remove(chosen);
-                mineralIndex++;
-            }
-
-            for (int i = mineralIndex; i < minerals.Count; i++)
-            {
-                if (pool.Count == 0) break;
-
-                MineralData chosen = pool[Random.Range(0, pool.Count)];
-                minerals[i].AssignMineral(chosen);
-
-                pool.Remove(chosen);
-            }
+            pool.Remove(chosen);
+            mineralIndex++;
         }
+
+        for (int i = mineralIndex; i < minerals.Count; i++)
+        {
+            if (pool.Count == 0) break;
+
+            MineralData chosen = pool[Random.Range(0, pool.Count)];
+            minerals[i].AssignMineral(chosen);
+
+            pool.Remove(chosen);
+        }
+        
     }
 }

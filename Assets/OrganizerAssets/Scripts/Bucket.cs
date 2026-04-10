@@ -8,6 +8,10 @@ public class Bucket : MonoBehaviour
     private List<OrganizerMineral> containedMinerals = new List<OrganizerMineral>();
 
     public SpriteRenderer structureIcon;
+
+    public SpriteRenderer bucketSprite;
+    public Sprite bucketNormal;
+    public Sprite bucketWrong;
     
     [System.Serializable]
     public struct  StructureIcon
@@ -28,6 +32,8 @@ public class Bucket : MonoBehaviour
         {
             containedMinerals.Add(mineral);
             mineral.SetBucket(this);
+            
+            UpdateBucketVisual();
         }
     }
 
@@ -40,6 +46,8 @@ public class Bucket : MonoBehaviour
         {
             containedMinerals.Remove(mineral);
             mineral.ClearBucket(this);
+            
+            UpdateBucketVisual();
         }
     }
 
@@ -57,5 +65,34 @@ public class Bucket : MonoBehaviour
                 structureIcon.sprite = icon.sprite;
             }
         }
+    }
+
+    public bool IsCorrect()
+    {
+        if (containedMinerals.Count == 0)
+            return true;
+
+        foreach (var mineral in containedMinerals)
+        {
+            if (mineral.mineralValues.crystalStructure != crystalStructureValue)
+                return false;
+        }
+
+        return true;
+    }
+
+    public void UpdateBucketVisual()
+    {
+        if (containedMinerals.Count == 0)
+        {
+            bucketSprite.sprite = bucketNormal;
+            return;
+        }
+
+        if (IsCorrect())
+            bucketSprite.sprite = bucketNormal;
+        else
+            bucketSprite.sprite = bucketWrong;
+        
     }
 }

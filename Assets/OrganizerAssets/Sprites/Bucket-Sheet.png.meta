@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 5236907921603267487
     second: Bucket-Sheet_1
+  - first:
+      213: -1613541889040725218
+    second: Bucket-Sheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -159,11 +162,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Bucket-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1bc389633c8b99e0800000000000000
+      internalID: -1613541889040725218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9714b664e1f089548889af1567ebaf83
+    spriteID: d4883840fdfb38c47be6beea58617796
     internalID: 0
     vertices: []
     indices: 
@@ -177,6 +202,7 @@ TextureImporter:
     nameFileIdTable:
       Bucket-Sheet_0: 5683518935209270596
       Bucket-Sheet_1: 5236907921603267487
+      Bucket-Sheet_2: -1613541889040725218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -98,10 +98,22 @@ public class DisplayOrderType : MonoBehaviour
         }
         return true;
     }
+
+    private bool AllMineralsUsed()
+    {
+        int totalInBuckets = 0;
+
+        foreach (var bucket in buckets)
+            totalInBuckets += bucket.GetMinerals().Count;
+        
+        int totalMinerals = FindObjectsOfType<OrganizerMineral>().Length;
+
+        return totalInBuckets == totalMinerals;
+    }
     
     private void HandleStructureCheck()
     {
-        if (!AllBucketsFilled())
+        if (!AllBucketsFilled() || !AllMineralsUsed())
         {
             orderText.text = "";
             win = false;
