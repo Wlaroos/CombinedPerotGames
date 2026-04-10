@@ -20,7 +20,7 @@ MonoBehaviour:
   mineralBigSprite: {fileID: -4164306761505399400, guid: 706f370ae3ddfe042a708debe7d6880d, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4283028479
+    rgba: 4294967295
   hardness: 6
   crystalStructure: 1
   isVariant: 0

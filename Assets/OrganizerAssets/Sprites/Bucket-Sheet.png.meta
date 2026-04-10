@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 706f370ae3ddfe042a708debe7d6880d
+guid: 8ee749d6fb9477b4693b3bffb742079e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4164306761505399400
-    second: Pyrite_0
+      213: 5683518935209270596
+    second: Bucket-Sheet_0
+  - first:
+      213: 5236907921603267487
+    second: Bucket-Sheet_1
+  - first:
+      213: -1613541889040725218
+    second: Bucket-Sheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,40 +115,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pyrite_0
+      name: Bucket-Sheet_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 14
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89d96b850196536c0800000000000000
-      internalID: -4164306761505399400
+      spriteID: 44dda57eb5aefde40800000000000000
+      internalID: 5683518935209270596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bucket-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b8794220c3da840800000000000000
+      internalID: 5236907921603267487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bucket-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1bc389633c8b99e0800000000000000
+      internalID: -1613541889040725218
       vertices: []
       indices: 
       edges: []
@@ -151,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d4883840fdfb38c47be6beea58617796
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +196,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Pyrite_0: -4164306761505399400
+      Bucket-Sheet_0: 5683518935209270596
+      Bucket-Sheet_1: 5236907921603267487
+      Bucket-Sheet_2: -1613541889040725218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
