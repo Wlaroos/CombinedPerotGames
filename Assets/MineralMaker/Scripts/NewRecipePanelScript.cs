@@ -338,22 +338,6 @@ public class NewRecipePanelScript : MonoBehaviour
             UpdateUI();
 
             StartCoroutine(MoveMineralToSlot(craftedObj, _currentRecipeIndex));
-
-            // Increment crafted mineral count and check if the loop should continue
-            _craftedMineralCount++;
-            if (_craftedMineralCount < 3)
-            {
-                _currentRecipeIndex += 1;
-
-                if (_currentRecipeIndex >= _filteredRecipes.Count)
-                {
-                    _currentRecipeIndex = Mathf.Clamp(_filteredRecipes.Count - 1, 0, _filteredRecipes.Count - 1);
-                }
-            }
-            else
-            {
-                EndGame();
-            }
         }
     }
 
@@ -422,6 +406,22 @@ public class NewRecipePanelScript : MonoBehaviour
         if (_useMineralChoice)
         {
             ShowMineralChoice();
+        }
+
+        // Increment crafted mineral count and check if the loop should continue
+        _craftedMineralCount++;
+        if (_craftedMineralCount < 3)
+        {
+            _currentRecipeIndex += 1;
+
+            if (_currentRecipeIndex >= _filteredRecipes.Count)
+            {
+                _currentRecipeIndex = Mathf.Clamp(_filteredRecipes.Count - 1, 0, _filteredRecipes.Count - 1);
+            }
+        }
+        else
+        {
+            EndGame();
         }
     }
 }
