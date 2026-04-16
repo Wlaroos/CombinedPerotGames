@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8957768a3b0dc29408328652609a4081, type: 3}
-  m_Name: R_Tourmaline
+  m_Name: R_Tanzanite
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
   inputA: {fileID: 0}
   inputB: {fileID: 0}
@@ -20,5 +20,5 @@ MonoBehaviour:
   inputF: {fileID: 0}
   inputG: {fileID: 0}
   inputH: {fileID: 0}
-  output: {fileID: 11400000, guid: 9c52881a1139e7c4cbace8f085d7d128, type: 2}
+  output: {fileID: 11400000, guid: c97d4531336196b4191316aab6f72a0f, type: 2}
   productType: 0

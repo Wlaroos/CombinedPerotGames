@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private GameObject hardnessTutorial;
     [SerializeField] private GameObject hardnessTool;
     [SerializeField] private GameObject hardnessSorting;
+    [SerializeField] private GameObject arrangementText;
     [SerializeField, TextArea(3, 10)] private string hardnessToolText;
 
     [Header("StructureReference")]
@@ -36,14 +38,28 @@ public class OrganizerGameManager : MonoBehaviour
     [Header("Misc")]
     [SerializeField] private GameObject lever;
     [SerializeField] private ToolWire wire;
+    [SerializeField] private FinalMineralInfoCard _infoCardPrefab; 
+    [SerializeField] private Transform _infoCardContainer;
 
     public bool hardnessChosen;
     public bool structureChosen;
+    
+    private readonly HashSet<OrganizerMineral> _mineralData = new HashSet<OrganizerMineral>();
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        OrganizerMineral[] minerals = FindObjectsByType<OrganizerMineral>((FindObjectsSortMode)FindObjectsInactive.Include);
+
+        foreach (var mineral in minerals)
+        {
+            _mineralData.Add(mineral);
+        }
     }
     
     // Update is called once per frame
@@ -56,7 +72,24 @@ public class OrganizerGameManager : MonoBehaviour
     public void ShowWin()
     {
         winPanel.SetActive(true);
-        //Time.timeScale = 0f; // pause game
+        
+        if(hardnessChosen)
+            hardnessTool.SetActive(false);
+        if(structureChosen)
+            structureTool.SetActive(false);
+        
+        // Clear existing cards if the win screen is reused
+        foreach (Transform child in _infoCardContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Loop through the minerals in the game
+        foreach (var mineral in _mineralData)
+        {
+            FinalMineralInfoCard card = Instantiate(_infoCardPrefab, _infoCardContainer);
+            card.Setup(mineral.mineralValues);
+        }
     }
     
     public void SubmitCheck()
@@ -84,6 +117,7 @@ public class OrganizerGameManager : MonoBehaviour
         startScreen.SetActive(false);
         lever.SetActive(true);
         hardnessSorting.SetActive(true);
+        arrangementText.SetActive(true);
     }
 
     public void ChooseStructure()

@@ -28,10 +28,10 @@ public class OrganizerMineral : MonoBehaviour
     {
         _omniTool = FindAnyObjectByType<OmniTool>();
         _structureTool = FindAnyObjectByType<StructureTool>();
-        clickIcon = GetComponentInChildren<ClickIcon>().gameObject;
+        //clickIcon = GetComponentInChildren<ClickIcon>().gameObject;
         structureIcon = GetComponentInChildren<StructureIcon>().gameObject;
         
-        clickIcon.SetActive(false);
+        //clickIcon.SetActive(false);
         structureIcon.SetActive(false);
     }
     

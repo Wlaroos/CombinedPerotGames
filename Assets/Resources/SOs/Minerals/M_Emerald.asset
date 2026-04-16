@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
-  m_Name: M_Corundum
+  m_Name: M_Emerald
   m_EditorClassIdentifier: 
-  mineralName: Corundum
+  mineralName: Beryl
   description: Test Description
-  funFact: Test Fact
-  mineralSprite: {fileID: 7033898093529213802, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
-  mineralBigSprite: {fileID: -7020369629327794792, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
+  funFact: Test Fun Fact
+  mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
+  mineralBigSprite: {fileID: 5793817877788391948, guid: b8be71472bee15b4ca287997eb624f96, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4280295645
-  hardness: 9
-  crystalStructure: 4
+    rgba: 4281634595
+  hardness: 8
+  crystalStructure: 3
   isVariant: 0
