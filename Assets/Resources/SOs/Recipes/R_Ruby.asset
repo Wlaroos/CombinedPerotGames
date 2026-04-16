@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8957768a3b0dc29408328652609a4081, type: 3}
-  m_Name: R_Corundum
+  m_Name: R_Ruby
   m_EditorClassIdentifier: 
   inputA: {fileID: 11400000, guid: 034e7aa0753695e42be508aa5bc6a528, type: 2}
   inputB: {fileID: 11400000, guid: 034e7aa0753695e42be508aa5bc6a528, type: 2}

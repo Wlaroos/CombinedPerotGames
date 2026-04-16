@@ -58,7 +58,7 @@ public class DisplayOrderType : MonoBehaviour
         }
 
         if (string.IsNullOrEmpty(display))
-            display = "No ascending order matched.";
+            display = "No order matched.";
         
         orderText.text = display;
     }
@@ -106,7 +106,7 @@ public class DisplayOrderType : MonoBehaviour
         foreach (var bucket in buckets)
             totalInBuckets += bucket.GetMinerals().Count;
         
-        int totalMinerals = FindObjectsOfType<OrganizerMineral>().Length;
+        int totalMinerals = FindObjectsByType<OrganizerMineral>((FindObjectsSortMode)FindObjectsInactive.Include).Length;
 
         return totalInBuckets == totalMinerals;
     }

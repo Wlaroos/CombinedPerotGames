@@ -8,6 +8,8 @@ public class SortingManager : MonoBehaviour
     [SerializeField] private SortingRule hardnessRules;
     [SerializeField] private SortingRule structureRules;
     [SerializeField] private TextMeshProUGUI organizeText;
+    [SerializeField] private string hardnessText;
+    [SerializeField] private string structureText;
 
     public List<SortingRule> rules = new List<SortingRule>();
     public List<Bucket> buckets = new List<Bucket>();
