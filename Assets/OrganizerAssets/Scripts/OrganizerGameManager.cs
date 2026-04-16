@@ -13,6 +13,7 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private GameObject hardnessSorting;
     [SerializeField] private GameObject arrangementText;
     [SerializeField] private GameObject whatIsHardness;
+    [SerializeField] private GameObject hardToolFText;
     public bool hardnessChosen;
     [SerializeField, TextArea(3, 10)] private string hardnessToolText;
 
@@ -21,6 +22,7 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private GameObject structureTool;
     [SerializeField] private GameObject structureSorting;
     [SerializeField] private GameObject whatIsStructure;
+    [SerializeField] private GameObject structToolFText;
     public bool structureChosen;
     [SerializeField, TextArea(3, 10)] private string structureToolText;
 
@@ -174,12 +176,20 @@ public class OrganizerGameManager : MonoBehaviour
 
     public void ToolFlavor()
     {
-        if(hardnessChosen)
-            hardnessTutorial.SetActive(false);
-        if(structureChosen)
-            structureTutorial.SetActive(false);
-        
         toolFlavorPanel.SetActive(true);
+        
+        if(hardnessChosen)
+        {
+            hardnessTutorial.SetActive(false);
+            hardFlavorPanel.SetActive(false);
+            hardToolFText.SetActive(true);
+        }
+        if(structureChosen)
+        {
+            structureTutorial.SetActive(false);
+            structFlavorPanel.SetActive(false);
+            structToolFText.SetActive(true);
+        }
     }
     
     public void Back()
