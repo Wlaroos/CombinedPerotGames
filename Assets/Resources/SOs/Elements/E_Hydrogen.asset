@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: -519400735672398794, guid: a27ca2d8ce47593458829e88a996a57d, type: 3}
   - {fileID: -1344653293438560547, guid: a27ca2d8ce47593458829e88a996a57d, type: 3}
   - {fileID: 849386610096671516, guid: a27ca2d8ce47593458829e88a996a57d, type: 3}
-  defaultIsotopeNumber: 2
+  defaultIsotopeNumber: -1
   defaultColor:
     serializedVersion: 2
     rgba: 4294959465

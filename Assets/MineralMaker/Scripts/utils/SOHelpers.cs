@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public static class SOHelpers
 {
@@ -43,8 +43,8 @@ public static class SOHelpers
 
         var variantMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
-            { "Silicate_0", "SiO4" },
-            { "Silicate_1", "SiO3" },
+            { "Silicate_0", "SiO3" },
+            { "Silicate_1", "SiO4" },
             { "Silicate_2", "Si3O9" },
             { "Silicate_3", "Si4O12" },
             { "Silicate_4", "Si6O18" }
@@ -64,8 +64,8 @@ public static class SOHelpers
                 {
                     switch (n)
                     {
-                        case 0: return "SiO4";
-                        case 1: return "SiO3";
+                        case 0: return "SiO3";
+                        case 1: return "SiO4";
                         case 2: return "Si3O9";
                         case 3: return "Si4O12";
                         case 4: return "Si6O18";
@@ -235,7 +235,7 @@ public static class SOHelpers
     // Format a formula string so any digits inside become subscripts.
     // If useUnicodeSubscripts is true, digits are converted to Unicode subscript glyphs.
     // Otherwise contiguous digit runs are wrapped in TMP <sub>...</sub> tags.
-    public static string FormatFormulaForDisplay(string formula, bool useUnicodeSubscripts)
+    public static string FormatFormulaForDisplay(string formula, bool useUnicodeSubscripts = false)
     {
         if (string.IsNullOrEmpty(formula)) return formula;
 
@@ -279,7 +279,178 @@ public static class SOHelpers
         }
     }
 
-    // Utility: find child component by name (case-insensitive substring)
+    
+    // Returns a string based on the hardness value from a ScriptableObject
+    public static string GetHardnessFromData(ScriptableObject dataObject)
+    {
+        if (dataObject == null) return string.Empty;
+
+        object hardnessValue = GetFieldOrPropertyValue(dataObject, "hardness");
+        if (hardnessValue is int hardnessInt)
+        {
+            return "Mohs = " + hardnessInt.ToString();
+        }
+
+        return string.Empty;
+    }
+
+    // Returns a human-readable crystal structure name from a ScriptableObject
+    public static string GetCrystalStructureFromData(ScriptableObject dataObject)
+    {
+        if (dataObject == null) return "Unknown";
+
+        object structureValue = GetFieldOrPropertyValue(dataObject, "crystalStructure");
+        int structureIndex = -1;
+
+        if (structureValue is int intVal)
+        {
+            structureIndex = intVal;
+        }
+
+        string structureName = structureIndex switch
+        {
+            1 => "Cubic",
+            2 => "Tetragonal",
+            3 => "Hexagonal",
+            4 => "Trigonal",
+            5 => "Orthorhombic",
+            6 => "Monoclinic",
+            7 => "Triclinic",
+            _ => "Unknown"
+        };
+
+        string text = "Crystal Structure: " + structureName;
+        return text;
+    }
+
+    // Build a simple chemical formula string from a CraftingRecipe's inputs.
+    // The order preserves the first-seen order of symbols; counts are added as digits and
+    // then converted to either unicode subscripts or TMP <sub> tags via FormatFormulaForDisplay.
+    public static string GetChemicalFormulaFromRecipe(CraftingRecipe recipe, bool useUnicodeSubscripts = false)
+    {
+        if (recipe == null) return string.Empty;
+
+        // Collect non-null ingredient ScriptableObjects in order
+        var ingredientList = new List<ScriptableObject>();
+        if (recipe.inputA != null) ingredientList.Add(recipe.inputA);
+        if (recipe.inputB != null) ingredientList.Add(recipe.inputB);
+        if (recipe.inputC != null) ingredientList.Add(recipe.inputC);
+        if (recipe.inputD != null) ingredientList.Add(recipe.inputD);
+        if (recipe.inputE != null) ingredientList.Add(recipe.inputE);
+        if (recipe.inputF != null) ingredientList.Add(recipe.inputF);
+        if (recipe.inputG != null) ingredientList.Add(recipe.inputG);
+        if (recipe.inputH != null) ingredientList.Add(recipe.inputH);
+
+        if (ingredientList.Count == 0) return string.Empty;
+
+        // Map each ingredient to its symbol and preserve ordering
+        var symbolList = new List<string>();
+        foreach (var ingredient in ingredientList)
+        {
+            string symbol = GetSymbolForScriptableObject(ingredient);
+            symbolList.Add(symbol);
+        }
+
+        // Build ordered unique list of symbols
+        var orderedSymbols = new List<string>();
+        var counts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var symbol in symbolList)
+        {
+            if (!counts.ContainsKey(symbol))
+            {
+                orderedSymbols.Add(symbol);
+                counts[symbol] = 1;
+            }
+            else
+            {
+                counts[symbol]++;
+            }
+        }
+
+        // Build formula string with counts appended and proper parentheses
+        var formulaBuilder = new StringBuilder();
+        foreach (var symbol in orderedSymbols)
+        {
+            int count = counts[symbol];
+
+            // Correct Parentheses Logic: 
+            // Wrap in parentheses if count > 1 AND (symbol has digits OR symbol has multiple elements/caps)
+            // Examples: (CO3)2, (OH)2, but not (Mg)2
+            bool isComplex = symbol.Length > 1 && (symbol.Any(char.IsDigit) || symbol.Count(char.IsUpper) > 1);
+
+            if (isComplex && count > 1)
+            {
+                formulaBuilder.Append("(").Append(symbol).Append(")");
+            }
+            else
+            {
+                formulaBuilder.Append(symbol);
+            }
+
+            if (count > 1)
+            {
+                formulaBuilder.Append(count);
+            }
+        }
+
+        string rawFormula = formulaBuilder.ToString();
+        return FormatFormulaForDisplay(rawFormula, useUnicodeSubscripts);
+    }
+
+    // Try to obtain a chemical formula for an arbitrary ScriptableObject.
+    // If a CraftingRecipe is passed, it's used directly. Otherwise the method will look
+    // for a "chemicalFormula" field/property or try to load a recipe from Resources/SOs/Recipes.
+    public static string GetChemicalFormulaFromData(ScriptableObject dataObject)
+    {
+        if (dataObject == null) return string.Empty;
+
+        if (dataObject is CraftingRecipe recipeObject)
+        {
+            return GetChemicalFormulaFromRecipe(recipeObject, false);
+        }
+
+        var formulaField = GetFieldOrPropertyValue(dataObject, "chemicalFormula");
+        if (formulaField is string formulaString && !string.IsNullOrEmpty(formulaString))
+        {
+            // Even if it's a raw string, we format it to ensure subscripts work
+            return FormatFormulaForDisplay(formulaString, false);
+        }
+
+        // Try to find a generated recipe in Resources/SOs/Recipes matching the asset name.
+        string objectName = dataObject.name ?? string.Empty;
+        string recipeName = objectName.StartsWith("M_") ? "R_" + objectName.Substring(2) : "R_" + objectName;
+        var recipeAsset = Resources.Load<CraftingRecipe>("SOs/Recipes/" + recipeName);
+        if (recipeAsset != null)
+        {
+            return GetChemicalFormulaFromRecipe(recipeAsset, false);
+        }
+
+        return string.Empty;
+    }
+
+    public static string BuildFormulaForTitle(TextMeshProUGUI titleField, CraftingRecipe recipe)
+    {
+        if (recipe == null) return string.Empty;
+
+        bool useUnicodeSubscripts = false; // Defaulting to false for maximum compatibility
+        if (titleField != null && titleField.font != null)
+        {
+            try
+            {
+                // Check whether the font asset contains a subscript digit (e.g. U+2081)
+                useUnicodeSubscripts = titleField.font.HasCharacter('\u2081');
+            }
+            catch
+            {
+                useUnicodeSubscripts = false;
+            }
+        }
+
+        return SOHelpers.GetChemicalFormulaFromRecipe(recipe, useUnicodeSubscripts);
+    }
+
+    // Find child component by name (case-insensitive substring)
     public static T FindChildComponentByName<T>(GameObject root, string childName) where T : Component
     {
         if (root == null) return null;

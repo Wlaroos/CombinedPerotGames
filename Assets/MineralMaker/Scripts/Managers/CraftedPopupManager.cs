@@ -117,7 +117,7 @@ public class CraftedPopupManager : MonoBehaviour
             }
             else if (recipe != null)
             {
-                string formula = BuildFormulaForTitle(title, recipe);
+                string formula = SOHelpers.BuildFormulaForTitle(title, recipe);
                 if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
             }
 
@@ -191,7 +191,7 @@ public class CraftedPopupManager : MonoBehaviour
             }
             else if (recipe != null)
             {
-                string formula = BuildFormulaForTitle(title, recipe);
+                string formula = SOHelpers.BuildFormulaForTitle(title, recipe);
                 if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
             }
 
@@ -302,76 +302,6 @@ public class CraftedPopupManager : MonoBehaviour
         }
 
         Destroy(go);
-    }
-
-    // Build a formula string appropriate for the provided TextMeshProUGUI title.
-    // If the title's font asset contains Unicode subscript digits, use them; otherwise produce TMP rich-text subscripts.
-    private string BuildFormulaForTitle(TextMeshProUGUI title, CraftingRecipe recipe)
-    {
-        if (recipe == null) return string.Empty;
-
-        bool useUnicodeSubscripts = false;
-        if (title != null && title.font != null)
-        {
-            try
-            {
-                var fontAsset = title.font;
-                useUnicodeSubscripts = fontAsset.HasCharacter('\u2081');
-            }
-            catch
-            {
-                useUnicodeSubscripts = false;
-            }
-        }
-
-        // Collect all possible inputs (A..H)
-        var ingredients = new List<ScriptableObject>
-        {
-            recipe.inputA, recipe.inputB, recipe.inputC, recipe.inputD,
-            recipe.inputE, recipe.inputF, recipe.inputG, recipe.inputH
-        }.Where(x => x != null).ToList();
-        if (ingredients.Count == 0) return string.Empty;
-
-        var symbols = ingredients.Select(i => SOHelpers.GetSymbolForScriptableObject(i)).ToList();
-        var ordered = new List<string>();
-        foreach (var s in symbols) if (!ordered.Contains(s)) ordered.Add(s);
-        var counts = symbols.GroupBy(s => s).ToDictionary(g => g.Key, g => g.Count());
-
-        var sb = new StringBuilder();
-        foreach (var s in ordered)
-        {
-            int c = counts.TryGetValue(s, out var v) ? v : 0;
-            bool hasDigit = s.Any(ch => char.IsDigit(ch));
-            // format symbol digits appropriately
-            string formattedSymbol = SOHelpers.FormatFormulaForDisplay(s, useUnicodeSubscripts);
-
-            if (c <= 1)
-            {
-                if (hasDigit)
-                    sb.Append('(').Append(formattedSymbol).Append(')');
-                else
-                    sb.Append(formattedSymbol);
-            }
-            else
-            {
-                if (hasDigit)
-                    sb.Append('(').Append(formattedSymbol).Append(')');
-                else
-                    sb.Append(formattedSymbol);
-
-                if (useUnicodeSubscripts)
-                    sb.Append(SOHelpers.ToSubscript(c));
-                else
-                    sb.Append(SOHelpers.MakeSubscriptTMP(c.ToString()));
-            }
-        }
-
-        if (!useUnicodeSubscripts && title != null)
-        {
-            title.richText = true;
-        }
-
-        return sb.ToString();
     }
 
     // Use SOHelpers-based helpers for choosing the prefab/type detection

@@ -9,6 +9,7 @@ public class BackAndForthAnim : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private float _duration = 1.5f;
     [SerializeField] private bool _bounce = false;
+    [SerializeField] private bool _coroutineOnEnable = true;
     [SerializeField] private bool _useAnimCurve = false;
     [SerializeField] private AnimationCurve _animCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
@@ -20,7 +21,10 @@ public class BackAndForthAnim : MonoBehaviour
     
     private void OnEnable()
     {
-        StartCoroutine(BackAndForth());
+        if(_coroutineOnEnable)
+        {
+            StartCoroutine(BackAndForth());
+        }
     }
 
     private IEnumerator BackAndForth()

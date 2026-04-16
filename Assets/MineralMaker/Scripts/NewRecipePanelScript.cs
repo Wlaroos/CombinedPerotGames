@@ -15,7 +15,7 @@ public class NewRecipePanelScript : MonoBehaviour
     [SerializeField] private GameObject _recipeSelectorRef;
     [Space(10)]
     [SerializeField] private TextMeshProUGUI _titleText;
-    [SerializeField] private TextMeshProUGUI _detailsText;
+    //[SerializeField] private TextMeshProUGUI _detailsText;
     [SerializeField] private Image[] _ingredientImages; 
     [SerializeField] private Image _productImage;
     [SerializeField] private Image _productBigImage;
@@ -282,11 +282,12 @@ public class NewRecipePanelScript : MonoBehaviour
 
         // Update title and details
         _titleText.text = SOHelpers.GetFullStrippedName(recipe.output);
-        _detailsText.text = SOHelpers.GetDescriptionFromData(recipe.output);
-        if (string.IsNullOrEmpty(_detailsText.text))
-        {
-            _detailsText.text = "No description available.";
-        }
+
+        // _detailsText.text = SOHelpers.GetDescriptionFromData(recipe.output);
+        // if (string.IsNullOrEmpty(_detailsText.text))
+        // {
+        //     _detailsText.text = "No description available.";
+        // }
 
         // Update ingredient images
         ScriptableObject[] inputs = { recipe.inputA, recipe.inputB, recipe.inputC, recipe.inputD, recipe.inputE, recipe.inputF, recipe.inputG, recipe.inputH };

@@ -16,7 +16,9 @@ public class FinalMineralInfoCard : MonoBehaviour
     [Space(10)]
     [SerializeField] private Image _mineralIconSmall;
     [SerializeField] private TextMeshProUGUI _mineralNameSmallText;
-    [SerializeField] private TextMeshProUGUI _mineralDescriptionText;
+    [SerializeField] private TextMeshProUGUI _mineralChemicalFormulaText;
+    [SerializeField] private TextMeshProUGUI _mineralHardnessText;
+    [SerializeField] private TextMeshProUGUI _mineralCrystalStructureText;
     [SerializeField] private TextMeshProUGUI _mineralFunFactText;
     [Space(10)]
     [SerializeField] private GameObject _front;
@@ -42,7 +44,12 @@ public class FinalMineralInfoCard : MonoBehaviour
         // Set Text
         _mineralNameText.text = SOHelpers.GetFullStrippedName(recipe.output);
         _mineralNameSmallText.text = SOHelpers.GetFullStrippedName(recipe.output);
-        _mineralDescriptionText.text = SOHelpers.GetDescriptionFromData(recipe.output);
+        
+        // Explicitly requesting non-unicode subscripts for TMP compatibility
+        _mineralChemicalFormulaText.text = SOHelpers.GetChemicalFormulaFromRecipe(recipe, false);
+        
+        _mineralHardnessText.text = SOHelpers.GetHardnessFromData(recipe.output);
+        _mineralCrystalStructureText.text = SOHelpers.GetCrystalStructureFromData(recipe.output);
         _mineralFunFactText.text = SOHelpers.GetFunFactFromData(recipe.output);
 
         // Set Icon
@@ -72,7 +79,10 @@ public class FinalMineralInfoCard : MonoBehaviour
         // Set Text
         _mineralNameText.text = mineralData.mineralName;
         _mineralNameSmallText.text = mineralData.mineralName;
-        _mineralDescriptionText.text = mineralData.description;
+        _mineralChemicalFormulaText.text = SOHelpers.GetChemicalFormulaFromData(mineralData);
+        _mineralHardnessText.text = SOHelpers.GetHardnessFromData(mineralData);
+        _mineralCrystalStructureText.text = SOHelpers.GetCrystalStructureFromData(mineralData);
+
         _mineralFunFactText.text = mineralData.funFact;
 
         // Set Icon

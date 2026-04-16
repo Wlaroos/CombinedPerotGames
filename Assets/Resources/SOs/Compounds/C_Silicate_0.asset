@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80979eae9e30b4d4ea075d565c20a3e4, type: 3}
   m_Name: C_Silicate_0
   m_EditorClassIdentifier: 
-  compoundName: C_Silicate_0
-  compoundSprite: {fileID: 3661986174613673984, guid: ff42a6cbaa625d0428ac7b94399e9c69, type: 3}
+  compoundName: C_Silicate 1
+  compoundSprite: {fileID: -5251323006414098139, guid: ff42a6cbaa625d0428ac7b94399e9c69, type: 3}
   defaultColor:
     serializedVersion: 2
     rgba: 4284308991
