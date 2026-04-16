@@ -17,6 +17,11 @@ public class BackAndForthAnim : MonoBehaviour
         _startPos = transform.localPosition;
         StartCoroutine(BackAndForth());
     }
+    
+    private void OnEnable()
+    {
+        StartCoroutine(BackAndForth());
+    }
 
     private IEnumerator BackAndForth()
     {
