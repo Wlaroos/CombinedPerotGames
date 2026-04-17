@@ -5003,7 +5003,7 @@ MonoBehaviour:
   currentMineral: {fileID: 0}
   revealDelay: 1
   difficulty: {fileID: 1306248048}
-  spinSpeed: 10
+  spinDuration: 0.25
 --- !u!212 &633898030
 SpriteRenderer:
   serializedVersion: 2
@@ -16729,6 +16729,7 @@ MonoBehaviour:
   maxAngle: 120
   steps: 10
   dragSensitivity: 1
+  coroutineStarted: 0
 --- !u!212 &2104865893
 SpriteRenderer:
   serializedVersion: 2

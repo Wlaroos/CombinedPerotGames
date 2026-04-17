@@ -12,7 +12,6 @@ public class OrganizerMineral : MonoBehaviour
     private OmniTool _omniTool;
     private StructureTool _structureTool;
 
-    public GameObject clickIcon;
     public GameObject structureIcon;
 
     private RespawnZone _currentRespawnZone;
@@ -28,10 +27,8 @@ public class OrganizerMineral : MonoBehaviour
     {
         _omniTool = FindAnyObjectByType<OmniTool>();
         _structureTool = FindAnyObjectByType<StructureTool>();
-        //clickIcon = GetComponentInChildren<ClickIcon>().gameObject;
         structureIcon = GetComponentInChildren<StructureIcon>().gameObject;
         
-        //clickIcon.SetActive(false);
         structureIcon.SetActive(false);
     }
     
@@ -99,10 +96,7 @@ public class OrganizerMineral : MonoBehaviour
     public void SetUnderScanner(bool value)
     {
         IsUnderScanner = value;
-        CanBeDragged = !value; // Scanner overrides dragging
-
-        if (clickIcon && _omniTool)
-            clickIcon.SetActive(value);
+        //CanBeDragged = !value; // Scanner overrides dragging
         
         if (structureIcon && _structureTool)
             structureIcon.SetActive(value);
