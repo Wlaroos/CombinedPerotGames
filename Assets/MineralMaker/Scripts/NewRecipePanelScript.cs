@@ -38,6 +38,9 @@ public class NewRecipePanelScript : MonoBehaviour
     [SerializeField] private FinalMineralInfoCard _infoCardPrefab; 
     [SerializeField] private Transform _infoCardContainer;
 
+    [Header("AddPressureButton")]
+    [SerializeField] private Button _addPressureButton;
+
     // Mineral-choice internal state
     private readonly HashSet<CraftingRecipe> _chosenRecipes = new HashSet<CraftingRecipe>();
     private List<CraftingRecipe> _choiceRecipes = new List<CraftingRecipe>();
@@ -364,6 +367,8 @@ public class NewRecipePanelScript : MonoBehaviour
 
     private IEnumerator MoveMineralToSlot(GameObject craftedObj, int index)
     {
+        _addPressureButton.interactable = false; // Disable the button during the animation
+
         Destroy(craftedObj.GetComponent<DragAndDrop>());
         
         float elapsedTime = 0f;
@@ -407,5 +412,7 @@ public class NewRecipePanelScript : MonoBehaviour
         {
             EndGame();
         }
+
+        _addPressureButton.interactable = true; // Re-enable the button after the animation
     }
 }

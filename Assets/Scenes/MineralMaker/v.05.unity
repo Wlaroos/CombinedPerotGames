@@ -1048,6 +1048,7 @@ MonoBehaviour:
   _winCanvasPrefab: {fileID: 2118462347}
   _infoCardPrefab: {fileID: -4772759788800545857, guid: efd1b9c7daa63864da6aea72899529b1, type: 3}
   _infoCardContainer: {fileID: 1142039678}
+  _addPressureButton: {fileID: 886853823}
 --- !u!1 &146114329
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,7 +7817,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 960, y: -600.5}
-  m_SizeDelta: {x: 1200, y: 600}
+  m_SizeDelta: {x: 1600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142039679
 MonoBehaviour:
@@ -7836,8 +7837,8 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 50
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
