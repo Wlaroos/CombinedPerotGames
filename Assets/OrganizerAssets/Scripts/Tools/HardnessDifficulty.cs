@@ -12,8 +12,8 @@ public class HardnessDifficulty : MonoBehaviour
     {
         _sp = GetComponent<SpriteRenderer>();
 
-        isHard = true;
-        _sp.sprite = levers[0];
+        isHard = false;
+        _sp.sprite = levers[1];
         
         if (isHard)
             text.text = "Hard";
