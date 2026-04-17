@@ -105,9 +105,12 @@ public static class SOHelpers
             {"Nitrate", "NO3"},
             {"Phosphate", "PO4"},
             {"Silicate", "SiO4"},
-            {"Oxide", "O2-"},
+            {"Oxide", "O"},
             {"Heat", "Heat"},
             {"Slag", "Waste"},
+            {"Lead", "Pb"},
+            {"Manganese", "Mn"},
+            {"Tungsten", "W"},
         };
 
         if (!string.IsNullOrEmpty(baseName) && map.TryGetValue(baseName, out var sym)) return sym;
@@ -288,7 +291,7 @@ public static class SOHelpers
         object hardnessValue = GetFieldOrPropertyValue(dataObject, "hardness");
         if (hardnessValue is int hardnessInt)
         {
-            return "Mohs = " + hardnessInt.ToString();
+            return hardnessInt.ToString();
         }
 
         return string.Empty;
@@ -312,14 +315,14 @@ public static class SOHelpers
             1 => "Cubic",
             2 => "Tetragonal",
             3 => "Hexagonal",
-            4 => "Trigonal",
+            4 => "Rhombohedral",
             5 => "Orthorhombic",
             6 => "Monoclinic",
             7 => "Triclinic",
             _ => "Unknown"
         };
 
-        string text = "Crystal Structure: " + structureName;
+        string text = structureName;
         return text;
     }
 

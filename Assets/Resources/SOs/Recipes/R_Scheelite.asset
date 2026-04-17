@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957768a3b0dc29408328652609a4081, type: 3}
   m_Name: R_Scheelite
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
-  inputA: {fileID: 0}
-  inputB: {fileID: 0}
-  inputC: {fileID: 0}
-  inputD: {fileID: 0}
-  inputE: {fileID: 0}
-  inputF: {fileID: 0}
+  inputA: {fileID: 11400000, guid: 33b09646649d0894a9d1c0d23a211377, type: 2}
+  inputB: {fileID: 11400000, guid: da5a80353736d8a48a26f32691306683, type: 2}
+  inputC: {fileID: 11400000, guid: e2ee35b40ba668c4e88cc71089a2d6d3, type: 2}
+  inputD: {fileID: 11400000, guid: e2ee35b40ba668c4e88cc71089a2d6d3, type: 2}
+  inputE: {fileID: 11400000, guid: e2ee35b40ba668c4e88cc71089a2d6d3, type: 2}
+  inputF: {fileID: 11400000, guid: e2ee35b40ba668c4e88cc71089a2d6d3, type: 2}
   inputG: {fileID: 0}
   inputH: {fileID: 0}
+  inputI: {fileID: 0}
   output: {fileID: 11400000, guid: d0a6058c136a5cb4caf319b82aed5b28, type: 2}
   productType: 0

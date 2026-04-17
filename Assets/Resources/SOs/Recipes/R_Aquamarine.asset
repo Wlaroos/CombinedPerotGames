@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957768a3b0dc29408328652609a4081, type: 3}
   m_Name: R_Aquamarine
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
-  inputA: {fileID: 0}
-  inputB: {fileID: 0}
-  inputC: {fileID: 0}
-  inputD: {fileID: 0}
-  inputE: {fileID: 0}
-  inputF: {fileID: 0}
+  inputA: {fileID: 11400000, guid: 30682a9d8167de9419593553c08fc5db, type: 2}
+  inputB: {fileID: 11400000, guid: 30682a9d8167de9419593553c08fc5db, type: 2}
+  inputC: {fileID: 11400000, guid: 30682a9d8167de9419593553c08fc5db, type: 2}
+  inputD: {fileID: 11400000, guid: 034e7aa0753695e42be508aa5bc6a528, type: 2}
+  inputE: {fileID: 11400000, guid: 034e7aa0753695e42be508aa5bc6a528, type: 2}
+  inputF: {fileID: 11400000, guid: 73517770c78a5d041b906cf94d5a5bad, type: 2}
   inputG: {fileID: 0}
   inputH: {fileID: 0}
   output: {fileID: 11400000, guid: 666aae25e6523664ca3b1366d7f738f0, type: 2}

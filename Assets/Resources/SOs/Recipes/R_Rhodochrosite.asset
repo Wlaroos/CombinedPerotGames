@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957768a3b0dc29408328652609a4081, type: 3}
   m_Name: R_Rhodochrosite
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
-  inputA: {fileID: 0}
-  inputB: {fileID: 0}
+  inputA: {fileID: 11400000, guid: 6d339f919a452324f816a8751928a0ff, type: 2}
+  inputB: {fileID: 11400000, guid: b93d19d564d428743bb2dd9d701928e2, type: 2}
   inputC: {fileID: 0}
   inputD: {fileID: 0}
   inputE: {fileID: 0}
   inputF: {fileID: 0}
   inputG: {fileID: 0}
   inputH: {fileID: 0}
+  inputI: {fileID: 0}
   output: {fileID: 11400000, guid: c10f50572266c8b48899177947d3a464, type: 2}
   productType: 0
