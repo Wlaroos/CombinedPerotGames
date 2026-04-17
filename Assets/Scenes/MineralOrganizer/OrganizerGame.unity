@@ -15802,8 +15802,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipPanel: {fileID: 407800372}
   objectToFollow: {fileID: 289750190}
-  structureTool: {fileID: 0}
-  hardnessTool: {fileID: 0}
+  structureTool: {fileID: 579218543}
+  hardnessTool: {fileID: 633898029}
   tooltipText: {fileID: 2097710479}
   offset: {x: -1.65, y: 1.65}
 --- !u!4 &2075735188

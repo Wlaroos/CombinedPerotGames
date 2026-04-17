@@ -1,6 +1,5 @@
-using TMPro;
-using UnityEditor.TerrainTools;
-using UnityEngine;
+    using TMPro;
+    using UnityEngine;
 
 public class TooltipManager : MonoBehaviour
 {
