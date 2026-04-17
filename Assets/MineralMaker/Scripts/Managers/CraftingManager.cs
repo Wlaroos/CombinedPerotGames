@@ -13,6 +13,9 @@ public class CraftingManager : MonoBehaviour
     // Keeps track of recipes crafted at least once
     private HashSet<CraftingRecipe> _craftedRecipes = new HashSet<CraftingRecipe>();
 
+    // The specific recipe the player is currently focused on in the UI
+    private CraftingRecipe _activeTargetRecipe;
+
     // Event fired on every successful craft.
     // Args: (CraftingRecipe recipe, GameObject craftedObject, bool isFirstTime)
     [System.Serializable]
@@ -42,12 +45,28 @@ public class CraftingManager : MonoBehaviour
         _recipes.AddRange(loadedRecipes);
     }
 
-    // Find a matching recipe for given ingredients without creating/ registering the craft
+    // Set which recipe the player is currently trying to make to avoid ingredient ambiguity
+    public void SetActiveTargetRecipe(CraftingRecipe recipe)
+    {
+        _activeTargetRecipe = recipe;
+    }
+
+    // Find a matching recipe, prioritizing the active target to solve duplicate ingredient issues
     public CraftingRecipe FindMatchingRecipe(List<ScriptableObject> ingredients)
     {
         if (ingredients == null) return null;
+
+        // Check the active target recipe first
+        if (_activeTargetRecipe != null && MatchIngredients(_activeTargetRecipe, ingredients))
+        {
+            return _activeTargetRecipe;
+        }
+
+        // Fallback: search all recipes if it's not the active target
         foreach (var recipe in _recipes)
         {
+            if (recipe == _activeTargetRecipe) continue;
+
             if (MatchIngredients(recipe, ingredients))
                 return recipe;
         }
@@ -78,26 +97,17 @@ public class CraftingManager : MonoBehaviour
             // Minerals
             if (recipe.output is MineralData mineralData)
             {
-                // if (isFirstTime)
-                //     CraftedPopupManager.Instance.ShowPersistentCraftedPopup(mineralData, recipe);
-                // else
-                    CraftedPopupManager.Instance.ShowCraftedPopup(mineralData, pos, recipe);
+                CraftedPopupManager.Instance.ShowCraftedPopup(mineralData, pos, recipe);
             }
             // Elements
             else if (recipe.output is ElementData elementData)
             {
-                // if (isFirstTime)
-                //     CraftedPopupManager.Instance.ShowPersistentCraftedPopup(elementData, recipe);
-                // else
-                    CraftedPopupManager.Instance.ShowCraftedPopup(elementData, pos, recipe);
+                CraftedPopupManager.Instance.ShowCraftedPopup(elementData, pos, recipe);
             }
             // Compounds
             else if (recipe.output is CompoundData compoundData)
             {
-                // if (isFirstTime)
-                //     CraftedPopupManager.Instance.ShowPersistentCraftedPopup(compoundData, recipe);
-                // else
-                    CraftedPopupManager.Instance.ShowCraftedPopup(compoundData, pos, recipe);
+                CraftedPopupManager.Instance.ShowCraftedPopup(compoundData, pos, recipe);
             }
         }
 
@@ -114,7 +124,8 @@ public class CraftingManager : MonoBehaviour
     private bool MatchIngredients(CraftingRecipe recipe, List<ScriptableObject> ingredients)
     {
         // Filter out null values from the recipe's ingredients
-        var recipeIngredients = new List<ScriptableObject> { recipe.inputA, recipe.inputB, recipe.inputC, recipe.inputD, recipe.inputE, recipe.inputF, recipe.inputG, recipe.inputH }
+        var recipeIngredients = new List<ScriptableObject> { recipe.inputA, recipe.inputB, recipe.inputC, 
+        recipe.inputD, recipe.inputE, recipe.inputF, recipe.inputG, recipe.inputH, recipe.inputI }
             .Where(ingredient => ingredient != null)
             .ToList();
 

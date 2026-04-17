@@ -24,3 +24,4 @@ MonoBehaviour:
   hardness: 1
   crystalStructure: 7
   isVariant: 0
+  isTest: 1

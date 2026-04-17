@@ -103,7 +103,7 @@ public class MineralManager : MonoBehaviour
 
     private void AssignHardnessMinerals()
     {
-        List<MineralData> pool = new(allMinerals);
+        List<MineralData> pool = new(allMinerals.Where(m => !m.isTest));
         HashSet<int> usedHardness = new();
 
         foreach (var slot in minerals)
@@ -132,7 +132,7 @@ public class MineralManager : MonoBehaviour
 
     private void AssignStructureMinerals()
     {
-        List<MineralData> pool = new(allMinerals);
+        List<MineralData> pool = new(allMinerals.Where(m => !m.isTest));
         
         AssignBucketStructures();
         SetAllowedStructureFromBuckets();

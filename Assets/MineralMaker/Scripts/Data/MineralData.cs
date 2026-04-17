@@ -31,6 +31,7 @@ public class MineralData : ScriptableObject
     [Range(1,7)]public int crystalStructure;       // Crystal structure type (1-7)
     [Header("Misc")]
     public bool isVariant = false;
+    public bool isTest = false;
 
     private void OnEnable()
     {

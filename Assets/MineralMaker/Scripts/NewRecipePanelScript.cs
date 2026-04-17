@@ -272,42 +272,25 @@ public class NewRecipePanelScript : MonoBehaviour
 
     private void UpdateUI()
     {
-        if (_filteredRecipes.Count == 0)
-        {
-            Debug.LogWarning("No recipes available to display.");
-            return;
-        }
+        if (_filteredRecipes.Count == 0) return;
 
         var recipe = _filteredRecipes[_currentRecipeIndex];
 
-        // Update title and details
+        // NEW: Tell the CraftingManager exactly which recipe we are looking at to prioritize it
+        CraftingManager.Instance.SetActiveTargetRecipe(recipe);
+
         _titleText.text = SOHelpers.GetFullStrippedName(recipe.output);
 
-        // _detailsText.text = SOHelpers.GetDescriptionFromData(recipe.output);
-        // if (string.IsNullOrEmpty(_detailsText.text))
-        // {
-        //     _detailsText.text = "No description available.";
-        // }
-
-        // Update ingredient images
         ScriptableObject[] inputs = { recipe.inputA, recipe.inputB, recipe.inputC, recipe.inputD, recipe.inputE, recipe.inputF, recipe.inputG, recipe.inputH };
         UpdateIngredientImages(inputs);
 
-        // Update product image
         _productImage.sprite = SOHelpers.GetPrimarySpriteFromData(recipe.output);
         _productImage.color = SOHelpers.GetColorFromData(recipe.output);
         _productBigImage.sprite = SOHelpers.GetBigSpriteFromData(recipe.output);
 
-        if(_craftedStatus[_currentRecipeIndex])
-        {
-            _productImage.enabled = true;
-            _productBigImage.enabled = true;
-        }
-        else
-        {
-            _productImage.enabled = false;
-            _productBigImage.enabled = false;
-        }
+        bool crafted = _craftedStatus[_currentRecipeIndex];
+        _productImage.enabled = crafted;
+        _productBigImage.enabled = crafted;
 
         UpdateCraftPips();
     }
