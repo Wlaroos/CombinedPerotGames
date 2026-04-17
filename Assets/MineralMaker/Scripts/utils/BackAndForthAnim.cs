@@ -23,6 +23,7 @@ public class BackAndForthAnim : MonoBehaviour
     {
         if(_coroutineOnEnable)
         {
+            _startPos = new Vector3(-300, 0, -9720);
             StartCoroutine(BackAndForth());
         }
     }
