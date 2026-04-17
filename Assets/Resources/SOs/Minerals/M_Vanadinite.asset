@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
-  m_Name: M_Stibinite
+  m_Name: M_Vanadinite
   m_EditorClassIdentifier: Assembly-CSharp::MineralData
-  mineralName: Stibinite
+  mineralName: Vandanite
   description: Test Decription
-  funFact: Stibnite is heavy for its size, but also very soft, making it challenging
-    to move without damaging it
+  funFact: Vanadinite contains toxic elements vanadium and lead
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
   mineralBigSprite: {fileID: 5793817877788391948, guid: b8be71472bee15b4ca287997eb624f96, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4288313686
-  hardness: 2
-  crystalStructure: 5
+    rgba: 4279909069
+  hardness: 3
+  crystalStructure: 3
   isVariant: 0

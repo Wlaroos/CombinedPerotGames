@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8957768a3b0dc29408328652609a4081, type: 3}
-  m_Name: R_Stibinite
+  m_Name: R_Vanadinite
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
   inputA: {fileID: 0}
   inputB: {fileID: 0}
@@ -20,5 +20,6 @@ MonoBehaviour:
   inputF: {fileID: 0}
   inputG: {fileID: 0}
   inputH: {fileID: 0}
-  output: {fileID: 11400000, guid: 72daf859dcb38684e90c6db497958b26, type: 2}
+  inputI: {fileID: 0}
+  output: {fileID: 11400000, guid: 3bb28ef0f445c0b4c9437ab92094a91f, type: 2}
   productType: 0

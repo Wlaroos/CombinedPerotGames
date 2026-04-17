@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957768a3b0dc29408328652609a4081, type: 3}
   m_Name: R_Aragonite
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
-  inputA: {fileID: 0}
-  inputB: {fileID: 0}
+  inputA: {fileID: 11400000, guid: 33b09646649d0894a9d1c0d23a211377, type: 2}
+  inputB: {fileID: 11400000, guid: b93d19d564d428743bb2dd9d701928e2, type: 2}
   inputC: {fileID: 0}
   inputD: {fileID: 0}
   inputE: {fileID: 0}

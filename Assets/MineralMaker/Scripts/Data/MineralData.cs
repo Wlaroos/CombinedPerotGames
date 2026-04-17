@@ -23,7 +23,7 @@ public class MineralData : ScriptableObject
     [Tooltip("1=Cubic\n" +
              "2=Tetragonal\n" +
              "3=Hexagonal\n" +
-             "4=Trigonal\n" +
+             "4=Rhombohedral\n" +
              "5=Orthorhombic\n" +
              "6=Monoclinic\n" +
              "7=Triclinic")]

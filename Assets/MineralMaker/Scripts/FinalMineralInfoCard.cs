@@ -46,10 +46,10 @@ public class FinalMineralInfoCard : MonoBehaviour
         _mineralNameSmallText.text = SOHelpers.GetFullStrippedName(recipe.output);
         
         // Explicitly requesting non-unicode subscripts for TMP compatibility
-        _mineralChemicalFormulaText.text = SOHelpers.GetChemicalFormulaFromRecipe(recipe, false);
+        _mineralChemicalFormulaText.text = "Formula = " + SOHelpers.GetChemicalFormulaFromRecipe(recipe, false);
         
-        _mineralHardnessText.text = SOHelpers.GetHardnessFromData(recipe.output);
-        _mineralCrystalStructureText.text = SOHelpers.GetCrystalStructureFromData(recipe.output);
+        _mineralHardnessText.text = "Mohs = " + SOHelpers.GetHardnessFromData(recipe.output);
+        _mineralCrystalStructureText.text = "Crystal Structure = " + SOHelpers.GetCrystalStructureFromData(recipe.output);
         _mineralFunFactText.text = SOHelpers.GetFunFactFromData(recipe.output);
 
         // Set Icon
@@ -79,9 +79,9 @@ public class FinalMineralInfoCard : MonoBehaviour
         // Set Text
         _mineralNameText.text = mineralData.mineralName;
         _mineralNameSmallText.text = mineralData.mineralName;
-        _mineralChemicalFormulaText.text = SOHelpers.GetChemicalFormulaFromData(mineralData);
-        _mineralHardnessText.text = SOHelpers.GetHardnessFromData(mineralData);
-        _mineralCrystalStructureText.text = SOHelpers.GetCrystalStructureFromData(mineralData);
+        _mineralChemicalFormulaText.text = "Formula = " + SOHelpers.GetChemicalFormulaFromData(mineralData);
+        _mineralHardnessText.text = "Mohs = " + SOHelpers.GetHardnessFromData(mineralData);
+        _mineralCrystalStructureText.text = "Crystal Structure = " + SOHelpers.GetCrystalStructureFromData(mineralData);
 
         _mineralFunFactText.text = mineralData.funFact;
 
