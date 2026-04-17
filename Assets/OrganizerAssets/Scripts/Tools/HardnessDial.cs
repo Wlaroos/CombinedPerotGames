@@ -17,6 +17,7 @@ public class HardnessDial : MonoBehaviour
     
     private bool dragging;
     private Vector3 lastMousePosition;
+    public bool coroutineStarted;
 
     void Start()
     {
@@ -78,15 +79,16 @@ public class HardnessDial : MonoBehaviour
 
     public void SetStepSmooth(int targetStep, float speed)
     {
-        StopAllCoroutines();
         StartCoroutine(RotateToStep(targetStep, speed));
     }
 
     private IEnumerator RotateToStep(int targetStep, float speed)
     {
+        coroutineStarted = true;
+
         targetStep = Mathf.Clamp(targetStep, 1, steps);
 
-        while (currentStep != targetStep)
+        if (currentStep != targetStep)
         {
             if (currentStep < targetStep)
                 currentStep++;
@@ -95,7 +97,9 @@ public class HardnessDial : MonoBehaviour
 
             SetDialFromStep();
             
-            yield return new WaitForSeconds(speed * Time.deltaTime);
         }
+
+        yield return new WaitForSeconds(speed);
+        coroutineStarted = false;
     }
 }

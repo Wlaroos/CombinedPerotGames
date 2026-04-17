@@ -22,7 +22,7 @@ public class HardnessTool : MonoBehaviour
     [Header("Lever")]
     [SerializeField] private HardnessDifficulty difficulty;
 
-    [SerializeField] private float spinSpeed;
+    [SerializeField] private float spinDuration;
 
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -84,7 +84,11 @@ public class HardnessTool : MonoBehaviour
         {
             int mineralHardnessInt = Mathf.RoundToInt(mineralHardness);
             
-            hardnessDial.SetStepSmooth(mineralHardnessInt, spinSpeed);
+            if(!hardnessDial.coroutineStarted)
+            {
+                hardnessDial.SetStepSmooth(mineralHardnessInt, spinDuration);
+            }
+
             currentMineral.hardnessDiscovered = true;
             indicator.color = scratchColor;
         }
