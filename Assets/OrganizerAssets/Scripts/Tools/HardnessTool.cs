@@ -53,7 +53,6 @@ public class HardnessTool : MonoBehaviour
     private void Evaluate()
     {
         if (!currentMineral) return;
-        if (!difficulty.isHard && currentMineral.hardnessDiscovered) return;
         
         float mineralHardness = currentMineral.mineralValues.hardness;
         

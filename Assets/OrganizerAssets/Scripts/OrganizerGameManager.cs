@@ -115,7 +115,6 @@ public class OrganizerGameManager : MonoBehaviour
         hardnessChosen = true;
         hardnessTutorial.SetActive(true);
         sortingManager.HardnessArrangement();
-        tooltipManager.HardnessActive();
         infoPanel.SetActive(true);
         whatIsHardness.SetActive(true);
         toolInfo.text = hardnessToolText;
@@ -130,7 +129,6 @@ public class OrganizerGameManager : MonoBehaviour
         structureChosen = true;
         structureTutorial.SetActive(true);
         sortingManager.StructureArrangement();
-        tooltipManager.ScannerActive();
         infoPanel.SetActive(true);
         whatIsStructure.SetActive(true);
         toolInfo.text = structureToolText;
@@ -144,12 +142,14 @@ public class OrganizerGameManager : MonoBehaviour
         {
             hardnessTutorial.SetActive(false);
             hardnessTool.SetActive(true);
+            tooltipManager.HardnessActive();
         }
         
         if(structureChosen)
         {
             structureTutorial.SetActive(false);
             structureTool.SetActive(true);
+            tooltipManager.ScannerActive();
         }
         
         wire.Activate();
