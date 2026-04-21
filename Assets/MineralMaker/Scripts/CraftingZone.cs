@@ -196,15 +196,17 @@ public class CraftingZone : MonoBehaviour
 
             Instantiate(_slagPrefab, spawnPosition, Quaternion.identity, DraggableHolder.Instance.transform);
 
-            if (!_slagFirstTimeShown)
-            {
-                _slagFirstTimeShown = true;
-                CraftedPopupManager.Instance?.ShowPersistentCraftedPopup(_slagPrefab.GetComponent<Mineral>().data);
-            }
-            else
-            {
-                CraftedPopupManager.Instance?.ShowCraftedPopup(_slagPrefab.GetComponent<Mineral>().data, spawnPosition);
-            }
+            // if (!_slagFirstTimeShown)
+            // {
+            //     _slagFirstTimeShown = true;
+            //     CraftedPopupManager.Instance?.ShowPersistentCraftedPopup(_slagPrefab.GetComponent<Mineral>().data);
+            // }
+            // else
+            // {
+            //     CraftedPopupManager.Instance?.ShowCraftedPopup(_slagPrefab.GetComponent<Mineral>().data, spawnPosition);
+            // }
+
+            CraftedPopupManager.Instance?.ShowSlagPopup();
 
             Debug.Log("Crafting failed at finalization: No matching recipe -- Created Slag as byproduct.");
             ResetCraftingState();

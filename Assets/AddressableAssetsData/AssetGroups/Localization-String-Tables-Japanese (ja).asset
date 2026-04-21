@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 325f915ea41786b4bbd0e299522e0905
   m_SerializeEntries:
   - m_GUID: 6092ebba94a500241b18a2c4e2b698cf
-    m_Address: TranslationTable_ja
+    m_Address: MineralMaker_TranslationTable_ja
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja

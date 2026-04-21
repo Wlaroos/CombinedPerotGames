@@ -14,13 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Localization-Asset-Tables-Japanese (ja)
   m_GUID: 435ed73a4204190439c751b98a7125fc
-  m_SerializeEntries:
-  - m_GUID: f279032fc7a832c4eb0d16b5fb5f83ce
-    m_Address: FontAssetTable_ja
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ja
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9586f57c19fec7f44b6ab3413c23ecdb, type: 2}
   m_SchemaSet:
