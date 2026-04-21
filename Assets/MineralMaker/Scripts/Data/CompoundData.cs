@@ -11,6 +11,6 @@ public class CompoundData : ScriptableObject
     private void OnEnable()
     {
         // Set the compound name to the asset's name
-        compoundName = this.name;
+        compoundName =  SOHelpers.StripCommonPrefix(this.name);
     }
 }

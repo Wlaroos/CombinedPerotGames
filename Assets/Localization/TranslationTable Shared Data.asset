@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: TranslationTable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: TranslationTable
+  m_TableCollectionNameGuidString: f4d6d141b92bdee43a9d23a9c4b33f3f
+  m_Entries:
+  - m_Id: 3919710728192
+    m_Key: MM_Tutorial_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728193
+    m_Key: MM_Tutorial_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728194
+    m_Key: MM_Tutorial_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728195
+    m_Key: MM_ChooseMineral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728196
+    m_Key: MM_RecipeSideBar_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728197
+    m_Key: MM_RecipeSideBar_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728198
+    m_Key: MM_RecipeSideBar_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728199
+    m_Key: MM_RecipeSideBar_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728200
+    m_Key: MM_PressureButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728201
+    m_Key: MM_Slag_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728202
+    m_Key: MM_Slag_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728203
+    m_Key: MM_TapAnywhere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728204
+    m_Key: MM_Win_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728205
+    m_Key: MM_Win_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728206
+    m_Key: MM_Win_03
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2422312554936664274
+  references:
+    version: 2
+    RefIds:
+    - rid: 2422312554936664274
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1776739726970

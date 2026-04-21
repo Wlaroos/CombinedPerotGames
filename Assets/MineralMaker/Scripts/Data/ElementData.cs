@@ -15,7 +15,7 @@ public class ElementData : ScriptableObject
 
     private void OnEnable()
     {
-        elementName = this.name;
+        elementName =  SOHelpers.StripCommonPrefix(this.name);
     }
 
     public void EnsureNumberSpritesLoaded()

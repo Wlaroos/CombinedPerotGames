@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: TranslationTable_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: f4d6d141b92bdee43a9d23a9c4b33f3f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3919710728193
+    m_Localized: Arrastrar los ingredientes del elemento y el compuesto a la cueva.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728194
+    m_Localized: Toca PRESIONA para crear el mineral.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728195
+    m_Localized: Elige tu mineral.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728196
+    m_Localized: 'Creaciones existosas. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728197
+    m_Localized: 'Crear este mineral:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728198
+    m_Localized: 'Ingredientes:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728199
+    m_Localized: 'Producto:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728200
+    m_Localized: Presiona!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728201
+    m_Localized: Uy, creiste escoria! Una vez mas!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728202
+    m_Localized: Escoria es hecho cuando los elementos o compuestos se funden juntos
+      que no forman un mineral. De naturaleza, esta seria como lava de enfriamiento.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728203
+    m_Localized: 'Toca la pantalla para continuar. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728204
+    m_Localized: Felicidades!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728192
+    m_Localized: Usa la receta del mineral que esta en la izquierda.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728205
+    m_Localized: 'Creiste este minerales satisfactoriamente:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3919710728206
+    m_Localized: 'Toca aqui para reiniciar. '
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

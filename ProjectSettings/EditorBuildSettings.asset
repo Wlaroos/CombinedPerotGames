@@ -15,5 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MineralOrganizer/OrganizerGame.unity
     guid: 52f150a1177eec241b21fb72329a77f4
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f71ed38ed3aa86044a1c0bd011412178, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: 022d157c611d0ba46813fc73c2a40fdc, type: 2}
   m_UseUCBPForAssetBundles: 0
