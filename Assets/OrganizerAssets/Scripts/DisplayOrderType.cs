@@ -11,19 +11,17 @@ public class DisplayOrderType : MonoBehaviour
     public TextMeshProUGUI orderText;     // assign your UI text here
     public bool win;
 
+    private bool showingResults = false;
+
     private void Update()
     {
         if (!sortingManager) return;
         
-        if (sortingManager.rules.Count == 0) return;
+        if (!sortingManager.currentRule) return;
 
-        if (sortingManager.rules[0].attribute == SortingRule.AttributeType.Hardness)
+        if (showingResults && Input.GetMouseButtonDown(0))
         {
-            HandleHardnessCheck();
-        }
-        else if (sortingManager.rules[0].attribute == SortingRule.AttributeType.crystalStructure)
-        {
-            HandleStructureCheck();
+            ResetAllBucketVisuals();
         }
     }
 
@@ -40,21 +38,13 @@ public class DisplayOrderType : MonoBehaviour
     private void ShowCurrentOrderTypes()
     {
         List<OrganizerMineral> arranged = slots.Select(slot => slot.currentMineral).ToList();
-
+        
         string display = "";
         
-        foreach (var rule in sortingManager.rules)
+        if (sortingManager.MatchesRule(arranged, sortingManager.currentRule))
         {
-            // Only consider ascending rules
-            if (!rule.ascending) continue;
-            
-            if (sortingManager.MatchesRule(arranged, rule))
-            {
-                display = ($"Current arrangement matches: {rule.name}");
-                win = true;
-                break; // stop at first match
-                // TODO: You can replace this with UI text display instead of Debug.Log
-            }
+            display = ($"Current arrangement matches: {sortingManager.currentRule.name}");
+            win = true;
         }
 
         if (string.IsNullOrEmpty(display))
@@ -63,7 +53,7 @@ public class DisplayOrderType : MonoBehaviour
         orderText.text = display;
     }
 
-    private void HandleHardnessCheck()
+    public void HandleHardnessCheck()
     {
         if (AllSlotsFilled())
         {
@@ -110,8 +100,8 @@ public class DisplayOrderType : MonoBehaviour
 
         return totalInBuckets == totalMinerals;
     }
-    
-    private void HandleStructureCheck()
+
+    public void HandleStructureCheck()
     {
         if (!AllBucketsFilled() || !AllMineralsUsed())
         {
@@ -122,7 +112,6 @@ public class DisplayOrderType : MonoBehaviour
 
         if (AllBucketsCorrect())
         {
-            orderText.text = "All minerals are in the right buckets.";
             win = true;
         }
         else
@@ -130,5 +119,17 @@ public class DisplayOrderType : MonoBehaviour
             orderText.text = "Some minerals are in the wrong buckets.";
             win = false;
         }
+    }
+
+    public void ResetAllBucketVisuals()
+    {
+        orderText.text = "";
+        foreach (var bucket in buckets)
+            bucket.ResetVisual();
+    }
+
+    public void SetShowingResults(bool value)
+    {
+        showingResults = value;
     }
 }

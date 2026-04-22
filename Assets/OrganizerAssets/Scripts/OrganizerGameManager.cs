@@ -98,6 +98,22 @@ public class OrganizerGameManager : MonoBehaviour
     
     public void SubmitCheck()
     {
+        if (sortingManager.currentRule.attribute == SortingRule.AttributeType.Hardness)
+        {
+            displayOrder.HandleHardnessCheck();
+        }
+        else if (sortingManager.currentRule.attribute == SortingRule.AttributeType.crystalStructure)
+        {
+            displayOrder.HandleStructureCheck();
+
+            foreach (var bucket in displayOrder.buckets)
+            {
+                bucket.UpdateBucketVisual();
+            }
+            
+            displayOrder.SetShowingResults(true);
+        }
+        
         if (displayOrder.win)
             ShowWin();
         else

@@ -32,8 +32,6 @@ public class Bucket : MonoBehaviour
         {
             containedMinerals.Add(mineral);
             mineral.SetBucket(this);
-            
-            UpdateBucketVisual();
         }
     }
 
@@ -46,8 +44,6 @@ public class Bucket : MonoBehaviour
         {
             containedMinerals.Remove(mineral);
             mineral.ClearBucket(this);
-            
-            UpdateBucketVisual();
         }
     }
 
@@ -93,6 +89,10 @@ public class Bucket : MonoBehaviour
             bucketSprite.sprite = bucketNormal;
         else
             bucketSprite.sprite = bucketWrong;
-        
+    }
+
+    public void ResetVisual()
+    {
+        bucketSprite.sprite = bucketNormal;
     }
 }

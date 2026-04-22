@@ -11,23 +11,19 @@ public class SortingManager : MonoBehaviour
     [SerializeField] private string hardnessText;
     [SerializeField] private string structureText;
 
-    public List<SortingRule> rules = new List<SortingRule>();
+    public SortingRule currentRule;
     public List<Bucket> buckets = new List<Bucket>();
     public Transform[] slots;
 
     public void HardnessArrangement()
     {
-        if (rules.Count > 0)
-            rules.Clear();
-        rules.Add(hardnessRules);
+        currentRule = hardnessRules;
         organizeText.text = "Organize by Hardness";
     }
     
     public void StructureArrangement()
     {
-        if (rules.Count > 0)
-            rules.Clear();
-        rules.Add(structureRules);
+        currentRule = structureRules;
         organizeText.text = "Organize by Crystal Structure";
     }
     
@@ -41,15 +37,6 @@ public class SortingManager : MonoBehaviour
             {
                 OrganizerMineral m = slot.GetChild(0).GetComponent<OrganizerMineral>();
                 if (m) arranged.Add(m);
-            }
-        }
-        
-        // Now test against each rule
-        foreach (var rule in rules)
-        {
-            if (MatchesRule(arranged, rule))
-            {
-                //Debug.Log($"Player discovered {rule.name}");
             }
         }
     }
@@ -71,14 +58,20 @@ public class SortingManager : MonoBehaviour
         
         if(rule.attribute == SortingRule.AttributeType.Hardness)
         {
+            bool ascending = true;
+            bool descending = true;
+            
             // Check order
             for (int i = 0; i < values.Count - 1; i++)
             {
-                if (rule.ascending && values[i] > values[i + 1]) return false;
-                if (!rule.ascending && values[i] < values[i + 1]) return false;
+                if (values[i] > values[i + 1])
+                    ascending = false;
+                
+                if (values[i] < values[i + 1])
+                    descending = false;
             }
 
-            return true;
+            return ascending || descending;
         }
 
         if (rule.attribute == SortingRule.AttributeType.crystalStructure)
