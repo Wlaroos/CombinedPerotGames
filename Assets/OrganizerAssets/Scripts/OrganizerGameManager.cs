@@ -11,7 +11,6 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private GameObject hardnessTutorial;
     [SerializeField] private GameObject hardnessTool;
     [SerializeField] private GameObject hardnessSorting;
-    [SerializeField] private GameObject arrangementText;
     [SerializeField] private GameObject whatIsHardness;
     [SerializeField] private GameObject hardToolFText;
     public bool hardnessChosen;
@@ -107,7 +106,7 @@ public class OrganizerGameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public void ChooseHardness()
@@ -121,7 +120,6 @@ public class OrganizerGameManager : MonoBehaviour
         startScreen.SetActive(false);
         lever.SetActive(true);
         hardnessSorting.SetActive(true);
-        arrangementText.SetActive(true);
     }
 
     public void ChooseStructure()
@@ -184,23 +182,54 @@ public class OrganizerGameManager : MonoBehaviour
             hardFlavorPanel.SetActive(false);
             hardToolFText.SetActive(true);
         }
+        else
+        {
+            hardToolFText.SetActive(false);
+        }
+        
         if(structureChosen)
         {
             structureTutorial.SetActive(false);
             structFlavorPanel.SetActive(false);
             structToolFText.SetActive(true);
         }
+        else
+        {
+            structToolFText.SetActive(false);
+        }
     }
     
     public void Back()
     {
-        if(hardnessChosen)
-            hardnessTutorial.SetActive(true);
-        if(structureChosen)
-            structureTutorial.SetActive(true);
+        if (hardnessTutorial.activeSelf || structureTutorial.activeSelf)
+        {
+            if(hardnessChosen)
+            {
+                hardnessTutorial.SetActive(false);
+                hardnessChosen = false;
+            }
+            if(structureChosen)
+            {
+                structureTutorial.SetActive(false);
+                structureChosen = false;
+            }
+            
+            hardFlavorPanel.SetActive(false);
+            structFlavorPanel.SetActive(false);
+            startScreen.SetActive(true);
+            infoPanel.SetActive(false);
+        }
         
-        hardFlavorPanel.SetActive(false);
-        structFlavorPanel.SetActive(false);
-        toolFlavorPanel.SetActive(false);
+        if (hardFlavorPanel.activeSelf || toolFlavorPanel.activeSelf || structFlavorPanel.activeSelf)
+        {
+            if(hardnessChosen)
+                hardnessTutorial.SetActive(true);
+            if(structureChosen)
+                structureTutorial.SetActive(true);
+            
+            hardFlavorPanel.SetActive(false);
+            structFlavorPanel.SetActive(false);
+            toolFlavorPanel.SetActive(false);
+        }
     }
 }
