@@ -3837,7 +3837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use the tool to reveal the mineral's hidden pattern. Then sort the minerals
+  m_text: Use the tool to reveal each mineral's hidden pattern. Then sort the minerals
     by pattern.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5156,7 +5156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Scientist's use the Mohs Scale (1 to 10) to measure the hardness of minerals.
+  m_text: Scientists use the Mohs Scale (1 to 10) to measure the hardness of minerals.
     Hardness is determined by what can scratch a mineral. Is the mineral soft enough
     to be scratched by a fingernail, or is it so hard that only a diamond can scratch
     it? The higher the number is, the harder the mineral.
