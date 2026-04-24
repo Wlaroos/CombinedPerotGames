@@ -14,6 +14,7 @@ public class DropZone : MonoBehaviour
         
         currentMineral = mineral;
         mineral.SetDropZone(this);
+        mineral.transform.SetParent(transform);
         mineral.LerpTo(transform.position);
     }
 
@@ -25,5 +26,10 @@ public class DropZone : MonoBehaviour
 
         mineral.ClearDropZone(this);
         currentMineral = null;
+        
+        if(mineral.gameObject.activeInHierarchy)
+        {
+            mineral.transform.SetParent(null);
+        }
     }
 }

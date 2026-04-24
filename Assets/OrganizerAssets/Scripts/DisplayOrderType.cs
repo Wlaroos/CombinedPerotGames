@@ -22,6 +22,7 @@ public class DisplayOrderType : MonoBehaviour
         if (showingResults && Input.GetMouseButtonDown(0))
         {
             ResetAllBucketVisuals();
+            ResetText();
         }
     }
 
@@ -121,6 +122,11 @@ public class DisplayOrderType : MonoBehaviour
         }
     }
 
+    private void ResetText()
+    {
+        orderText.text = "";
+    }
+    
     public void ResetAllBucketVisuals()
     {
         orderText.text = "";

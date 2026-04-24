@@ -22,6 +22,7 @@ public class OrganizerMineral : MonoBehaviour
     public bool IsUnderScanner { get; private set; }
     
     public bool hardnessDiscovered;
+    public Tray tray;
 
     public void Awake()
     {
@@ -58,6 +59,7 @@ public class OrganizerMineral : MonoBehaviour
 
     private void HandleSnapMovement()
     {
+        if (tray.isMoving) return;
         if (!_isSnapping) return;
 
         // Stop snapping when close enough

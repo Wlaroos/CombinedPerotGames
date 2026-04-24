@@ -16,7 +16,6 @@ public class Bucket : MonoBehaviour
     [System.Serializable]
     public struct  StructureIcon
     {
-        
         public int structureValue;
         public Sprite sprite;
     }
@@ -32,6 +31,7 @@ public class Bucket : MonoBehaviour
         {
             containedMinerals.Add(mineral);
             mineral.SetBucket(this);
+            mineral.transform.SetParent(transform);
         }
     }
 
@@ -44,6 +44,10 @@ public class Bucket : MonoBehaviour
         {
             containedMinerals.Remove(mineral);
             mineral.ClearBucket(this);
+            if(mineral.gameObject.activeInHierarchy)
+            {
+                mineral.transform.SetParent(null);
+            }
         }
     }
 

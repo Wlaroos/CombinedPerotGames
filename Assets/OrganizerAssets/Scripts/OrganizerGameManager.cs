@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -47,8 +48,12 @@ public class OrganizerGameManager : MonoBehaviour
     [Header("Misc")]
     [SerializeField] private GameObject lever;
     [SerializeField] private ToolWire wire;
-    
+    [SerializeField] private Tray tray;
+    [SerializeField] private GameObject panelIndicator;
+
+    private SpriteRenderer psr;
     private readonly HashSet<OrganizerMineral> _mineralData = new HashSet<OrganizerMineral>();
+    private float timer = 0;
 
     private void Awake()
     {
@@ -59,7 +64,7 @@ public class OrganizerGameManager : MonoBehaviour
     private void Start()
     {
         OrganizerMineral[] minerals = FindObjectsByType<OrganizerMineral>((FindObjectsSortMode)FindObjectsInactive.Include);
-
+        psr = panelIndicator.GetComponent<SpriteRenderer>();
         foreach (var mineral in minerals)
         {
             _mineralData.Add(mineral);
@@ -71,6 +76,16 @@ public class OrganizerGameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
+        
+        if (psr.color != Color.white)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 5f)
+            {
+                psr.color = Color.white;
+                timer = 0;
+            }
+        }
     }
     
     public void ShowWin()
@@ -95,12 +110,21 @@ public class OrganizerGameManager : MonoBehaviour
             card.Setup(mineral.mineralValues);
         }
     }
-    
-    public void SubmitCheck()
+
+    public void SubmitCheckButton()
     {
+        StartCoroutine(SubmitCheck());
+    }
+    
+    public IEnumerator SubmitCheck()
+    {
+        yield return tray.StartCoroutine(tray.SubmitSolution());
+        yield return new WaitForSeconds(1f);
+        
         if (sortingManager.currentRule.attribute == SortingRule.AttributeType.Hardness)
         {
             displayOrder.HandleHardnessCheck();
+            displayOrder.SetShowingResults(true);
         }
         else if (sortingManager.currentRule.attribute == SortingRule.AttributeType.crystalStructure)
         {
@@ -113,11 +137,20 @@ public class OrganizerGameManager : MonoBehaviour
             
             displayOrder.SetShowingResults(true);
         }
+
+        
         
         if (displayOrder.win)
+        {
+            psr.color = Color.green;
+            yield return new WaitForSeconds(0.2f);
             ShowWin();
+        }
         else
-            Debug.Log("Not organized correctly yet.");
+        {
+            psr.color = Color.red;
+            yield return tray.StartCoroutine(tray.ResetPosition());
+        }
     }
 
     public void RestartLevel()
