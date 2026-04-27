@@ -117,6 +117,7 @@ public class CompoundSpawner : MonoBehaviour
     {
         if (_isDragging) return;
         if (!_canClick) return;
+
         SpawnCompoundAtRandomPosition(data);
     }
 
@@ -238,5 +239,19 @@ public class CompoundSpawner : MonoBehaviour
         Gizmos.DrawLine(new Vector3(max.x, min.y, 0), new Vector3(max.x, max.y, 0));
         Gizmos.DrawLine(new Vector3(max.x, max.y, 0), new Vector3(min.x, max.y, 0));
         Gizmos.DrawLine(new Vector3(min.x, max.y, 0), new Vector3(min.x, min.y, 0));
+    }
+
+    public void EnableDragHandler(bool enable)
+    {
+        foreach (var button in _spawnButtons)
+        {
+            if (button == null) continue;
+            var dragHandler = button.gameObject.GetComponent<SpawnDragHandler>();
+            if (dragHandler != null) 
+            {
+                button.interactable = enable;
+                dragHandler.enabled = enable;
+            }
+        }
     }
 }

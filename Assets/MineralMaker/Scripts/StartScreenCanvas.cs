@@ -6,8 +6,9 @@ public class StartScreenCanvas : MonoBehaviour//, IPointerClickHandler
 {
     [SerializeField] private float _fadeDuration = 1.0f;
     [SerializeField] private GameObject _chooseMineralCanvas;
+    [SerializeField] private ElementSpawner _elementSpawner;
+    [SerializeField] private CompoundSpawner _compoundSpawner;
     private CanvasGroup _canvasGroup;
-    private CanvasGroup _childCanvasGroup;
     private GameObject _panel01;
     private GameObject _panel02;
     private GameObject _panel03;
@@ -28,28 +29,11 @@ public class StartScreenCanvas : MonoBehaviour//, IPointerClickHandler
 
     void Start()
     {
+        _elementSpawner.EnableDragHandler(false);
+        _compoundSpawner.EnableDragHandler(false);
+
         _chooseMineralCanvas.SetActive(false);
     }
-    // public void OnPointerClick(PointerEventData eventData)
-    // {
-    //     // StartCoroutine(FadeCoroutine());
-    //     if (_currentPanelIndex == 0)
-    //     {
-    //         _panel01.SetActive(false);
-    //         _panel02.SetActive(true);
-    //         _currentPanelIndex++;
-    //     }
-    //     else if (_currentPanelIndex == 1)
-    //     {
-    //         _panel02.SetActive(false);
-    //         _panel03.SetActive(true);
-    //         _currentPanelIndex++;
-    //     }
-    //     else
-    //     {
-    //         StartCoroutine(FadeCoroutine());
-    //     }
-    // }
 
     private void Update()
     {
@@ -69,6 +53,9 @@ public class StartScreenCanvas : MonoBehaviour//, IPointerClickHandler
             }
             else
             {
+                _elementSpawner.EnableDragHandler(true);
+                _compoundSpawner.EnableDragHandler(true);
+
                 StartCoroutine(FadeCoroutine());
             }
         }

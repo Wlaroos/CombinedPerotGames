@@ -21,9 +21,6 @@ public class CraftingZone : MonoBehaviour
     [SerializeField] private int _pressesForCrafting = 5; // Number of presses required to craft an item
 
     [SerializeField] private GameObject _slagPrefab; // Prefab for slag byproduct
-
-    private bool _slagFirstTimeShown = false;
-
     [SerializeField] private Image _spawnArea; // UI element defining the area where crafted items can spawn
     [SerializeField] private Vector2 _spawnAreaSize = new Vector2(850, 350);
     [SerializeField] private Vector2 _spawnAreaCenter = new Vector2(0, -350);

@@ -25,7 +25,6 @@ public class ElementSpawner : MonoBehaviour
 
     public bool IsDragging => _isDragging;
     public void SetDragging(bool value) => _isDragging = value;
-
     private void Awake()
     {
         SetupSingleton();
@@ -102,18 +101,17 @@ public class ElementSpawner : MonoBehaviour
 
     private void OnSpawnButtonClicked(Button button, ElementData data)
     {
-        if (!_isDragging) 
-        {
-            if(_canFlipTile)
-            {
-                button.transform.localScale = new Vector3(1f, 1f, 1f);
+        if (_isDragging) return;
 
-                StartCoroutine(FlipTile(button, data));
-            }
-            else
-            {
-                SpawnElementAtRandomPosition(data);
-            }
+        if(_canFlipTile)
+        {
+            button.transform.localScale = new Vector3(1f, 1f, 1f);
+
+            StartCoroutine(FlipTile(button, data));
+        }
+        else
+        {
+            SpawnElementAtRandomPosition(data);
         }
     }
 
@@ -271,6 +269,20 @@ public class ElementSpawner : MonoBehaviour
             Gizmos.DrawLine(new Vector3(max.x, min.y, 0), new Vector3(max.x, max.y, 0));
             Gizmos.DrawLine(new Vector3(max.x, max.y, 0), new Vector3(min.x, max.y, 0));
             Gizmos.DrawLine(new Vector3(min.x, max.y, 0), new Vector3(min.x, min.y, 0));
+        }
+    }
+
+    public void EnableDragHandler(bool enable)
+    {
+        foreach (var button in _spawnButtons)
+        {
+            if (button == null) continue;
+            var dragHandler = button.gameObject.GetComponent<SpawnDragHandler>();
+            if (dragHandler != null) 
+            {
+                button.interactable = enable;
+                dragHandler.enabled = enable;
+            }
         }
     }
 }

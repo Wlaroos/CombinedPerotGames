@@ -153,9 +153,13 @@ public class OrganizerGameManager : MonoBehaviour
         }
     }
 
-    public void RestartLevel()
+    public void MainMenu()
     {
         SceneManager.LoadScene("LevelSelect");
+    }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChooseHardness()
