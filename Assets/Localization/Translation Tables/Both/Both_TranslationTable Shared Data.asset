@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Both_TranslationTable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Both_TranslationTable
+  m_TableCollectionNameGuidString: ec47e5559910eb44cbcd8cde19ea2202
+  m_Entries:
+  - m_Id: 254706921472
+    m_Key: B_MineralMaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504384
+    m_Key: B_Mixed-upMinerals
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504385
+    m_Key: B_Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504386
+    m_Key: B_Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504387
+    m_Key: B_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504388
+    m_Key: B_EN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504389
+    m_Key: B_ES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504390
+    m_Key: B_JP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504391
+    m_Key: B_Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504392
+    m_Key: B_NarrativeLab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504393
+    m_Key: B_ProjectLead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504394
+    m_Key: B_Designers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504395
+    m_Key: B_TranslationLocalization
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504396
+    m_Key: B_TapAnywhere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504397
+    m_Key: B_GreatWork
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504398
+    m_Key: B_MineralCard_Formula
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504399
+    m_Key: B_MineralCard_Hardness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504400
+    m_Key: B_MineralCard_Structure
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2422312708132307057
+  references:
+    version: 2
+    RefIds:
+    - rid: 2422312708132307057
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1777331760511

@@ -1,0 +1,39 @@
+Key,English(en),Spanish(es),Japanese(js)
+MuM_TitleScreen_01,Mixed-up Minerals,,
+MuM_TitleScreen_02,Help organize these minerals,Ayuda a organizar estes minerales!,ミネラルを並べてください!
+MuM_TitleScreen_03,Organize by Hardness,Organizar por Dureza,硬さに並ぶ
+MuM_TitleScreen_04,Organize by Crystal Structure,Organizar por Estructura Cristalina,結晶構造に並ぶ
+MuM_HardnessTutorial_01,Use the tool to test the hardness of the minerals. Sort the minerals from softest to hardest,Usa este herramienta para cheqar la dureza de los minerales. Organiza los del mas mullido al mas duro. ,ツールでミネラルの硬さを調べてみよう! 最もやわらかいものから最も硬いものに並べ替えてください
+MuM_HardnessTutorial_02,Place this tool on the mineral to read its hardness value. ,Pone esta herramienta en el mineral y mueve la esfera. ,ツールをミネラルにおいて、ダイヤルを回してください
+MuM_WhatIsHardness_01,"Scientist's use the Mohs Scale (1 to 10) to measure the hardness of minerals. Hardness is determined by what can scratch a mineral. Is the mineral soft enough to be scratched by a fingernail, or is it so hard that only a diamond can scratch it? The higher the number is, the harder the mineral.","Los científicos usan la Escala de Mohs (1 á 10) para medir la dureza de minerales. Dureza es decidido de que puede rasguñar una mineral. El mineral es suficientemente mullido para rasguñarlo con una uña, o es tan duro que solo una diamante puede rasguñarlo? Lo mas alto el número, lo mas duro el mineral. ",モース硬さスケール(1から10まで)で、科学者はミネラルの硬さが分かることができます。硬さはミネラルを傷つけることができるものによって決まります。爪で傷つける程にやわらかいまたはダイヤだけで傷つける程に硬いミネラルでしょうか? もっと大きく数字はもっと硬くミネラルわけです。
+MuM_HardnessTool_01,This number indicates the current hardness level,,
+MuM_HardnessTool_02,This indicates whether it scratches through red or green LEDs,,
+MuM_HardnessTool_03,Put this needle on a mineral to read it,,
+MuM_HardnessTool_04,Spin the dial to change the hardness level,,
+MuM_HardnessTool_05 (D),This fictional tool takes the place of the many possible items that are used to test hardness on the Mohs Scale. The dial reveals the hardness level of the mineral,Esta herramienta ficticio toma el lugar de muchos artículos posibles que usan para examinar dureza en la Escala de Mohs. La esfera enseña en nivel de dureza de el mineral. ,架空のツールですが、モース硬さスケールを使ういくつかの現実のツールの表現なのです。ダイヤルはミネラルの硬度を出します。
+MuM_StructureTutorial_01,Use the tool to reveal each mineral's hidden pattern. Then sort the minerals by pattern.,Usa esta herramienta para revelar el patron escondido de cada mineral. ,ツールでかくれたのパターンを出して、そのパターンの順に並べ替えてください
+MuM_StructureTutorial_02,Place the tool over the mineral to scan its crystal structure.,Pone esta herramienta en el mineral para escanear la estructura cristalina. ,結晶構造をスキャンするために、ツールをミネラルにおいてください
+MuM_WhatIsStructure_01,"Crystal structure is the way tiny building blocks, called atoms, are arranged inside a mineral. These atoms stack together in a repeating pattern that decides how a mineral looks on the outside.",Estructura cristalina es la manera que los átomos son organizados dentro de un mineral. Los átomos montan juntos en un patrón de repeticíon que determinar como un mineral se ve en la afuera. ,"結晶構造はミネラルの中で「原子」という小さな要素がどのように並んでいるかを示すものです。これらの原子は規則的なパターンに積み上げて、ミネラルの外観にできます.
+"
+MuM_StructureTool_01 (D),This is a mini XRD machine. This fictional tool is based on an XRD (X-Ray Diffractometer) machine. XRD machines use x-rays to analyze and measure the structure of materials.,Este es una máquina pequeña XRD. Este herramienta ficticio es basado en un máquina XRD (El Rayo X Difractómetro). Máquinas XRD usan rayos X para analizar y medir la estructura de materiales. ,小さなXRDマシーンなのです。架空ですが、本物のXRD(X線回折計)の表現です。XRDマシーンはX線で物質の構造を分析したり測定します。
+MuM_InfoButton_01,What is Hardness?,Que es la dureza?,cha
+MuM_InfoButton_02,What is crystal structure?,Que es estructura cristalina?,結晶構造とは?
+MuM_InfoButton_03,What is this tool?,Que es esta herramienta?,このツールとは?
+MuM_InfoButton_04,Back,Retroceder,もどる
+MuM_InfoButton_05,Continue,Continuar,つづく
+MuM_Panel_01 (D),Sort by Hardness,,
+MuM_Panel_02 (D),Sort by Crystal Structure,,
+MuM_Panel_03 (D),Some minerals are in the wrong buckets.,,
+MuM_Panel_04 (D),No order matched.,,
+MuM_Lever_01 (D),Easy,,
+MuM_Lever_02 (D),Hard,,
+MuM_StructureLevel_01 (D),Cubic,,
+MuM_StructureLevel_02 (D),Tetragonal,,
+MuM_StructureLevel_03 (D),Hexagonal,,
+MuM_StructureLevel_04 (D),Thombohedral,,
+MuM_StructureLevel_05 (D),Orthorhombic,,
+MuM_StructureLevel_06 (D),Monoclinic,,
+MuM_StructureLevel_07 (D),Triclinic,,
+MuM_Reader_01 (D),Mineral:,,
+MuM_Reader_02 (D),Hardness:,,
+MuM_Reader_03 (D),Structure:,,

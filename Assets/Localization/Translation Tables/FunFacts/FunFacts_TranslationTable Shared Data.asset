@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: FunFacts_TranslationTable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: FunFacts_TranslationTable
+  m_TableCollectionNameGuidString: 08a12ef125354d4479d8ebf767c78d49
+  m_Entries:
+  - m_Id: 55481675776
+    m_Key: FF_Amethyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452992
+    m_Key: FF_Aquamarine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452993
+    m_Key: FF_Aragonite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452994
+    m_Key: FF_Azurite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452995
+    m_Key: FF_Barite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452996
+    m_Key: FF_Benitoite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452997
+    m_Key: FF_Calcite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452998
+    m_Key: FF_Chrysocolla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452999
+    m_Key: FF_Citrine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453000
+    m_Key: FF_Cobaltoan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453001
+    m_Key: FF_Cuprite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453002
+    m_Key: FF_Dioptase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453003
+    m_Key: FF_Elbaite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453004
+    m_Key: FF_Emerald
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453005
+    m_Key: FF_Fluorite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453006
+    m_Key: FF_Gypsum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453007
+    m_Key: FF_Halite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453008
+    m_Key: FF_Hematite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453009
+    m_Key: FF_Malachite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453010
+    m_Key: FF_Morganite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453011
+    m_Key: FF_Pyrite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453012
+    m_Key: FF_Pyromorphite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453013
+    m_Key: FF_Quartz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453014
+    m_Key: FF_Rhodochrosite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453015
+    m_Key: FF_RoseQuartz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453016
+    m_Key: FF_Ruby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453017
+    m_Key: FF_Scheelite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453018
+    m_Key: FF_Serandite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453019
+    m_Key: FF_Siderite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453020
+    m_Key: FF_Sodalite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453021
+    m_Key: FF_Stibnite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453022
+    m_Key: FF_Strengite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453023
+    m_Key: FF_Tanzanite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453024
+    m_Key: FF_Topaz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453025
+    m_Key: FF_Vanadinite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453026
+    m_Key: FF_Vivianite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453027
+    m_Key: FF_Wulfenite
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2422312708132307059
+  references:
+    version: 2
+    RefIds:
+    - rid: 2422312708132307059
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1777331794027

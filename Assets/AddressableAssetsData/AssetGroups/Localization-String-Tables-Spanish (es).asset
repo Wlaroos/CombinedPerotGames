@@ -15,12 +15,36 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Spanish (es)
   m_GUID: 3d40f53042133d841a9021c59036048f
   m_SerializeEntries:
+  - m_GUID: 1f438b4275cad3d41bbcd5550ca06c9a
+    m_Address: Both_TranslationTable_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27c87bbe57e46b7468e85bd880ff6ab3
+    m_Address: MixedMineral_TranslationTable_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c90157ce3aebeb4a92955728c3fefb1
+    m_Address: MineralNames_TranslationTable_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bfc50fb21d70e5040ab6cdea744475fd
     m_Address: MineralMaker_TranslationTable_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d49b321b7af726141b87ea40ead15108
+    m_Address: FunFacts_TranslationTable_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9586f57c19fec7f44b6ab3413c23ecdb, type: 2}

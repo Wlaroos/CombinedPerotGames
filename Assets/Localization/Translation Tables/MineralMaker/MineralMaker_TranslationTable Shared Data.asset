@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MineralMaker_TranslationTable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: MineralMaker_TranslationTable
+  m_TableCollectionNameGuidString: f4d6d141b92bdee43a9d23a9c4b33f3f
+  m_Entries:
+  - m_Id: 2481842090881024
+    m_Key: MM_Tutorial_Recipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881025
+    m_Key: MM_Tutorial_Ingredients
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881026
+    m_Key: MM_Tutorial_Pressure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881027
+    m_Key: MM_ChooseMineral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881028
+    m_Key: MM_RecipeSideBar_Crafts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881029
+    m_Key: MM_RecipeSideBar_MakeThis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881030
+    m_Key: MM_RecipeSideBar_Ingredients
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881031
+    m_Key: MM_RecipeSideBar_Products
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881032
+    m_Key: MM_PressureButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881033
+    m_Key: MM_Slag_Oops
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881034
+    m_Key: MM_Slag_Desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481842090881035
+    m_Key: MM_CraftingCards
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2422312554936664274
+  references:
+    version: 2
+    RefIds:
+    - rid: 2422312554936664274
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1776739726970

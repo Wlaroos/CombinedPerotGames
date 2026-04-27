@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MineralNames_TranslationTable_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 2ba4bdf6cd70d8646aebf8237aa537c9, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 258439852032
+    m_Localized: Amethyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258439852033
+    m_Localized: Aquamarine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046336
+    m_Localized: Aragonite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046337
+    m_Localized: Azurite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046338
+    m_Localized: Barite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046339
+    m_Localized: Benitoite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046340
+    m_Localized: Calcite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046341
+    m_Localized: Chrysocolla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046342
+    m_Localized: Citrine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046343
+    m_Localized: Cobaltoan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046344
+    m_Localized: Cuprite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046345
+    m_Localized: Dioptase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046346
+    m_Localized: Elbaite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046347
+    m_Localized: Emerald
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046348
+    m_Localized: Fluorite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046349
+    m_Localized: Gypsum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046350
+    m_Localized: Halite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046351
+    m_Localized: Hematite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046352
+    m_Localized: Malachite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046353
+    m_Localized: Morganite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046354
+    m_Localized: Pyrite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046355
+    m_Localized: Pyromorphite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046356
+    m_Localized: Quartz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046357
+    m_Localized: Rhodochrosite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046358
+    m_Localized: RoseQuartz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046359
+    m_Localized: Ruby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046360
+    m_Localized: Scheelite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046361
+    m_Localized: Serandite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046362
+    m_Localized: Siderite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046363
+    m_Localized: Sodalite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046364
+    m_Localized: Stibnite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046365
+    m_Localized: Strengite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046366
+    m_Localized: Tanzanite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046367
+    m_Localized: Topaz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046368
+    m_Localized: Vanadinite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046369
+    m_Localized: Vivianite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046370
+    m_Localized: Wulfenite
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

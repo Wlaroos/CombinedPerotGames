@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MineralNames_TranslationTable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: MineralNames_TranslationTable
+  m_TableCollectionNameGuidString: 2ba4bdf6cd70d8646aebf8237aa537c9
+  m_Entries:
+  - m_Id: 258439852032
+    m_Key: MN_Amethyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258439852033
+    m_Key: MN_Aquamarine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046336
+    m_Key: MN_Aragonite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046337
+    m_Key: MN_Azurite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046338
+    m_Key: MN_Barite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046339
+    m_Key: MN_Benitoite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046340
+    m_Key: MN_Calcite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046341
+    m_Key: MN_Chrysocolla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046342
+    m_Key: MN_Citrine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046343
+    m_Key: MN_Cobaltoan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046344
+    m_Key: MN_Cuprite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046345
+    m_Key: MN_Dioptase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046346
+    m_Key: MN_Elbaite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046347
+    m_Key: MN_Emerald
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046348
+    m_Key: MN_Fluorite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046349
+    m_Key: MN_Gypsum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046350
+    m_Key: MN_Halite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046351
+    m_Key: MN_Hematite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046352
+    m_Key: MN_Malachite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046353
+    m_Key: MN_Morganite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046354
+    m_Key: MN_Pyrite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046355
+    m_Key: MN_Pyromorphite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046356
+    m_Key: MN_Quartz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046357
+    m_Key: MN_Rhodochrosite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046358
+    m_Key: MN_RoseQuartz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046359
+    m_Key: MN_Ruby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046360
+    m_Key: MN_Scheelite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046361
+    m_Key: MN_Serandite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046362
+    m_Key: MN_Siderite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046363
+    m_Key: MN_Sodalite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046364
+    m_Key: MN_Stibnite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046365
+    m_Key: MN_Strengite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046366
+    m_Key: MN_Tanzanite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046367
+    m_Key: MN_Topaz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046368
+    m_Key: MN_Vanadinite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046369
+    m_Key: MN_Vivianite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046370
+    m_Key: MN_Wulfenite
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2422312708132307058
+  references:
+    version: 2
+    RefIds:
+    - rid: 2422312708132307058
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1777331777311
