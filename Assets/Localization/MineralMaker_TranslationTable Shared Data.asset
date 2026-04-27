@@ -71,10 +71,6 @@ MonoBehaviour:
     m_Key: MM_Win_02
     m_Metadata:
       m_Items: []
-  - m_Id: 3919710728206
-    m_Key: MM_Win_03
-    m_Metadata:
-      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

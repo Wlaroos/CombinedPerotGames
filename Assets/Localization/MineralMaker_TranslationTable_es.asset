@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3919710728195
-    m_Localized: Elige tu mineral.
+    m_Localized: Elige Tu Mineral
     m_Metadata:
       m_Items: []
   - m_Id: 3919710728196
@@ -72,11 +72,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3919710728205
-    m_Localized: 'Creiste este minerales satisfactoriamente:'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3919710728206
-    m_Localized: 'Toca aqui para reiniciar. '
+    m_Localized: "Creiste este minerales con \xE9xito:"
     m_Metadata:
       m_Items: []
   references:

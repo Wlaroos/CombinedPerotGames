@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 2599904e266cf94418d70fda2d5226c7
+guid: c161c4ac511744a40b1fff13f8b8d12e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4154249914132590372
-    second: Heat_0
-  - first:
-      213: 2945309933033736019
-    second: Heat_1
+      213: 1992978749925997811
+    second: CaveBG02_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -104,6 +101,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -116,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Heat_0
+      name: CaveBG02_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 37
-        height: 16
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd01ee796b32956c0800000000000000
-      internalID: -4154249914132590372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heat_1
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 1
-        width: 20
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 357c7e777c7dfd820800000000000000
-      internalID: 2945309933033736019
+      spriteID: 3fcbd322d9b78ab10800000000000000
+      internalID: 1992978749925997811
       vertices: []
       indices: 
       edges: []
@@ -173,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Heat_0: -4154249914132590372
-      Heat_1: 2945309933033736019
+      CaveBG02_0: 1992978749925997811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

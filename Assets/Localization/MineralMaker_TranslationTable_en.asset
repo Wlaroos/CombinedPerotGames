@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3919710728195
-    m_Localized: Choose a mineral.
+    m_Localized: Choose A Mineral
     m_Metadata:
       m_Items: []
   - m_Id: 3919710728196
@@ -64,7 +64,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3919710728204
-    m_Localized: Congratulations! or Great work! Or You did it!
+    m_Localized: Great work!
     m_Metadata:
       m_Items: []
   - m_Id: 3919710728192
@@ -73,10 +73,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3919710728205
     m_Localized: 'You successfully crafted these minerals:'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3919710728206
-    m_Localized: Tap Here to Restart
     m_Metadata:
       m_Items: []
   references:

@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/MineralMaker/v.05.unity
+    path: Assets/Scenes/Mineral Maker.unity
     guid: cf60b74e4504e8943bf327c90bdabc9b
   - enabled: 1
-    path: Assets/Scenes/MineralOrganizer/OrganizerGame.unity
+    path: Assets/Scenes/Mixed-up Minerals.unity
     guid: 52f150a1177eec241b21fb72329a77f4
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: f71ed38ed3aa86044a1c0bd011412178, type: 2}

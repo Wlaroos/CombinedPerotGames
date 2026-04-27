@@ -35,29 +35,51 @@ public class StartScreenCanvas : MonoBehaviour//, IPointerClickHandler
         _chooseMineralCanvas.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (_currentPanelIndex == 0)
-            {
-                _panel01.SetActive(false);
-                _panel02.SetActive(true);
-                _currentPanelIndex++;
-            }
-            else if (_currentPanelIndex == 1)
-            {
-                _panel02.SetActive(false);
-                _panel03.SetActive(true);
-                _currentPanelIndex++;
-            }
-            else
-            {
-                _elementSpawner.EnableDragHandler(true);
-                _compoundSpawner.EnableDragHandler(true);
+    // Click Anywhere to Continue
 
-                StartCoroutine(FadeCoroutine());
-            }
+    // private void Update()
+    // {
+    //     if (Input.GetMouseButtonDown(0))    
+    //     {
+    //         if (_currentPanelIndex == 0)
+    //         {
+    //             _panel01.SetActive(false);
+    //             _panel02.SetActive(true);
+    //             _currentPanelIndex++;
+    //         }
+    //         else if (_currentPanelIndex == 1)
+    //         {
+    //             _panel02.SetActive(false);
+    //             _panel03.SetActive(true);
+    //             _currentPanelIndex++;
+    //         }
+    //         else
+    //         {
+    //             _elementSpawner.EnableDragHandler(true);
+    //             _compoundSpawner.EnableDragHandler(true);
+
+    //             StartCoroutine(FadeCoroutine());
+    //         }
+    //     }
+    // }
+
+    public void NextPanel()
+    {
+        if (_currentPanelIndex == 0)
+        {
+            _panel01.SetActive(false);
+            _panel02.SetActive(true);
+            _currentPanelIndex++;
+        }
+        else if (_currentPanelIndex == 1)
+        {
+            _panel02.SetActive(false);
+            _panel03.SetActive(true);
+            _currentPanelIndex++;
+        }
+        else
+        {
+            StartCoroutine(FadeCoroutine());
         }
     }
 
