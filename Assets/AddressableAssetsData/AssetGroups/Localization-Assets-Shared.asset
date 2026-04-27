@@ -15,6 +15,29 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 84566ddbb48404746af01408890bb8cc
   m_SerializeEntries:
+  - m_GUID: 08a12ef125354d4479d8ebf767c78d49
+    m_Address: Assets/Localization/Translation Tables/Fun Facts/FunFacts_TranslationTable
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ba4bdf6cd70d8646aebf8237aa537c9
+    m_Address: Assets/Localization/Translation Tables/Mineral Names/MineralNames_TranslationTable
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62e1eee6caaf95847a66fcd5ff81a267
+    m_Address: Assets/Localization/MixedMineral_TranslationTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec47e5559910eb44cbcd8cde19ea2202
+    m_Address: Assets/Localization/Translation Tables/Both/Both_TranslationTable
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4d6d141b92bdee43a9d23a9c4b33f3f
     m_Address: Assets/Localization/TranslationTable Shared Data.asset
     m_ReadOnly: 1

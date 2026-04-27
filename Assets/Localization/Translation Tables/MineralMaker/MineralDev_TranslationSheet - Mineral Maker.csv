@@ -1,0 +1,13 @@
+Key,English(en),Spanish(es),Japanese(ja)
+MM_Tutorial_Recipe,Follow the mineral recipe shown on the left.,Usa la receta del mineral que esta en la izquierda.,左のミネラルのレシピに従ってください。
+MM_Tutorial_Ingredients,Drag the element and compound ingredients to the cave.,Arrastrar los ingredientes del elemento y el compuesto a la cueva.,元素と化合物の素材はどうくつに入れてください
+MM_Tutorial_Pressure,Tap ADD PRESSURE to craft the mineral.,Toca PRESIONA para crear el mineral.,ミネラルを作るために、「プレッシャーアップ」をタップしてください。
+MM_ChooseMineral,Choose A Mineral,Elige Tu Mineral,どっちのミネラル?
+MM_RecipeSideBar_Crafts,Successful Crafts:,Creaciones existosas. ,できたミネラル
+MM_RecipeSideBar_MakeThis,Make this mineral:,Crear este mineral:,このミネラルを作ってください。
+MM_RecipeSideBar_Ingredients,Ingredients:,Ingredientes:,そざい
+MM_RecipeSideBar_Products,Product:,Producto:,けっか
+MM_PressureButton,ADD PRESSURE,Presiona!,プレッシャーアップ
+MM_Slag_Oops,"Oops, you created slag! Try Again!","Uy, creiste escoria! Una vez mas!",残念! スラグができました。もう一回してください!
+MM_Slag_Desc,"Slag is made when we melt elements or compounds together that do not form a mineral. In nature, this would be most like cooling lava.","Escoria es hecho cuando los elementos o compuestos se funden juntos que no forman un mineral. De naturaleza, esta seria como lava de enfriamiento.",元素や化合物をとかすとミネラルとならないものがスラグなのです。自然界では、涼しくなる溶岩にみたいです。
+MM_CraftingCards,You successfully crafted these minerals:,Creiste este minerales con éxito:,作ったミネラル

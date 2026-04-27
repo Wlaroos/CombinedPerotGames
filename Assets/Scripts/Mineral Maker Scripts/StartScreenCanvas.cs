@@ -79,6 +79,9 @@ public class StartScreenCanvas : MonoBehaviour//, IPointerClickHandler
         }
         else
         {
+            _elementSpawner.EnableDragHandler(true);
+            _compoundSpawner.EnableDragHandler(true);
+
             StartCoroutine(FadeCoroutine());
         }
     }
