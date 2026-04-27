@@ -30,8 +30,8 @@ MonoBehaviour:
         m_ColumnsList:
         - rid: 2422312554936664302
         - rid: 2422312554936664303
-        - rid: 2422312554936664304
         - rid: 2422312554936664305
+        - rid: 2422312554936664304
         m_ConnectedFile: Assets/Localization/Mineral Dev Translation Sheet - Maker.csv
     - rid: 2422312554936664302
       type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
