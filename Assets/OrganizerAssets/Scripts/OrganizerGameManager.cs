@@ -143,7 +143,7 @@ public class OrganizerGameManager : MonoBehaviour
         if (displayOrder.win)
         {
             psr.color = Color.green;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(1f);
             ShowWin();
         }
         else
@@ -256,11 +256,13 @@ public class OrganizerGameManager : MonoBehaviour
             {
                 hardnessTutorial.SetActive(false);
                 hardnessChosen = false;
+                hardnessSorting.SetActive(false);
             }
             if(structureChosen)
             {
                 structureTutorial.SetActive(false);
                 structureChosen = false;
+                structureSorting.SetActive(false);
             }
             
             hardFlavorPanel.SetActive(false);
