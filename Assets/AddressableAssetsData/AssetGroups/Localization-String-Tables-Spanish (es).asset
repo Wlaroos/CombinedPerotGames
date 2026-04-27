@@ -20,18 +20,21 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27c87bbe57e46b7468e85bd880ff6ab3
     m_Address: MixedMineral_TranslationTable_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3c90157ce3aebeb4a92955728c3fefb1
     m_Address: MineralNames_TranslationTable_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bfc50fb21d70e5040ab6cdea744475fd
     m_Address: MineralMaker_TranslationTable_es
@@ -45,6 +48,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9586f57c19fec7f44b6ab3413c23ecdb, type: 2}

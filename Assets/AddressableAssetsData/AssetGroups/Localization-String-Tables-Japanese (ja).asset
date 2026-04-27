@@ -20,24 +20,28 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0bc0216b17ae0ed44a99e424bd16c750
     m_Address: MixedMineral_TranslationTable_ja
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3f36447ed3172ba4cabe9cc3fe3f0ae3
     m_Address: MineralNames_TranslationTable_ja
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 59f9d527a8f843a40b99c02454c91958
     m_Address: Both_TranslationTable_ja
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6092ebba94a500241b18a2c4e2b698cf
     m_Address: MineralMaker_TranslationTable_ja
