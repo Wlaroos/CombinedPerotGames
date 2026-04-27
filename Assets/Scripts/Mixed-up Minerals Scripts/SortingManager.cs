@@ -18,13 +18,13 @@ public class SortingManager : MonoBehaviour
     public void HardnessArrangement()
     {
         currentRule = hardnessRules;
-        organizeText.text = "Organize by Hardness";
+        organizeText.text = hardnessText;
     }
     
     public void StructureArrangement()
     {
         currentRule = structureRules;
-        organizeText.text = "Organize by Crystal Structure";
+        organizeText.text = structureText;
     }
     
     public void CheckArrangement()

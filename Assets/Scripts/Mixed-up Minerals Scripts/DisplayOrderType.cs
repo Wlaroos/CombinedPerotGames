@@ -44,7 +44,6 @@ public class DisplayOrderType : MonoBehaviour
         
         if (sortingManager.MatchesRule(arranged, sortingManager.currentRule))
         {
-            display = ($"Current arrangement matches: {sortingManager.currentRule.name}");
             win = true;
         }
 

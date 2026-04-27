@@ -29,10 +29,10 @@ public class Drag : MonoBehaviour
         float camWidth = camHeight * cam.aspect;
 
         float minX = cam.transform.position.x - camWidth;
-        float maxX = cam.transform.position.x + camWidth;
-        float minY = cam.transform.position.y - camHeight;
+        float maxX = cam.transform.position.x + camWidth - 3.9f;
+        float minY = cam.transform.position.y - camHeight + 1;
         float maxY = cam.transform.position.y + camHeight;
-        
+
         float halfW = GetComponent<SpriteRenderer>().bounds.extents.x;
         float halfH = GetComponent<SpriteRenderer>().bounds.extents.y;
 

@@ -1429,7 +1429,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.33473697, y: -0.09404577, z: -2.570591}
+    m_Target: {x: -0.30564713, y: -0.25969252, z: -2.5730464}
     speed: 2
     m_Value: {x: -0.33473697, y: -0.09404577, z: -2.570591}
   m_RenderMode: 0
@@ -1481,7 +1481,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.4564085
+    m_Target: 5.7019467
     speed: 2
     m_Value: 5.4564085
   m_Ortho:
@@ -1621,7 +1621,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/OrganizerAssets/Scripts
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1645,8 +1645,8 @@ MonoBehaviour:
       m_Data: 58934
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 58224
-    - m_Data: 58226
+    - m_Data: 54852
+    - m_Data: 54854
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1679,8 +1679,8 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 58224
-    - m_Data: 58226
+    - m_Data: 54852
+    - m_Data: 54854
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
