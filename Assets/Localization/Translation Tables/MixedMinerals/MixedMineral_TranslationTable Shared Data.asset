@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Key: MuM_Panel_04 (D)
     m_Metadata:
       m_Items: []
+  - m_Id: 21026808737792
+    m_Key: MuM_Panel_05
+    m_Metadata:
+      m_Items: []
   - m_Id: 1050416721944
     m_Key: MuM_Lever_01 (D)
     m_Metadata:

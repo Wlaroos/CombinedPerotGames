@@ -1,4 +1,4 @@
-Key,English(en),Spanish(es),Japanese(js)
+Key,English(en),Spanish(es),Japanese(ja)
 MuM_TitleScreen_01,Mixed-up Minerals,,
 MuM_TitleScreen_02,Help organize these minerals,Ayuda a organizar estes minerales!,ミネラルを並べてください!
 MuM_TitleScreen_03,Organize by Hardness,Organizar por Dureza,硬さに並ぶ
@@ -25,6 +25,7 @@ MuM_Panel_01 (D),Sort by Hardness,,
 MuM_Panel_02 (D),Sort by Crystal Structure,,
 MuM_Panel_03 (D),Some minerals are in the wrong buckets.,,
 MuM_Panel_04 (D),No order matched.,,
+MuM_Panel_05,Submit,,
 MuM_Lever_01 (D),Easy,,
 MuM_Lever_02 (D),Hard,,
 MuM_StructureLevel_01 (D),Cubic,,

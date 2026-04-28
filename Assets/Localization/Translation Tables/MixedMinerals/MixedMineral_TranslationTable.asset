@@ -32,8 +32,8 @@ MonoBehaviour:
         - rid: 2422312708132307049
         - rid: 2422312708132307050
         - rid: 2422312708132307051
-        m_ConnectedFile: Assets/Localization/MineralDev_TranslationSheet - Mixed
-          Minerals.csv
+        m_ConnectedFile: Assets/Localization/Translation Tables/MixedMinerals/MineralDev_TranslationSheet
+          - Mixed Minerals.csv
     - rid: 2422312708132307048
       type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
       data:
