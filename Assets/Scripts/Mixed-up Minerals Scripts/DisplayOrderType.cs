@@ -46,8 +46,7 @@ public class DisplayOrderType : MonoBehaviour
         {
             win = true;
         }
-
-        if (string.IsNullOrEmpty(display))
+        else
             display = "No order matched.";
         
         orderText.text = display;
