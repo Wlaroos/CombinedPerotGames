@@ -3,6 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class LocaleButton : MonoBehaviour
@@ -22,6 +23,7 @@ public class LocaleButton : MonoBehaviour
 
     private void Start()
     {
+        _currentLocaleIndex = LocalizationSettings.SelectedLocale == null ? 0 : LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale);
         _buttonTMP.text = _localeKeys[_currentLocaleIndex].ToUpper();
     }
 
