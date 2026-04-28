@@ -19597,7 +19597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3556615103969627723, guid: 51892143eff87b14bb62c5170b91b5a3, type: 3}
       propertyPath: _maxDraggables
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3556615103969627723, guid: 51892143eff87b14bb62c5170b91b5a3, type: 3}
       propertyPath: _craftingZoneRef
