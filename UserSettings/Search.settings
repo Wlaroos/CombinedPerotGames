@@ -9,9 +9,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"picker_window_position_offset.075BCD15" = "-361.3334;347.3333;357.3333;550"
+	"picker_window_position_offset.075BCD15" = "-491.3334;347.3333;487.3333;550"
 	"picker_visibility_flags.075BCD15" = "264"
-	"picker_item_size.075BCD15" = "129"
+	"picker_item_size.075BCD15" = "32"
 	"picker_inspector.075BCD15" = "0"
 }
 providers = {
@@ -79,6 +79,21 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"st: MuM_Panel"
+	"st: MuM_Hardnes"
+	"st: MuM_HardnessT"
+	"st: MuM_"
+	"st: B_M"
+	"st: B_Mineral"
+	"st: MuM_Hardness"
+	"st: MuM_StructureTool"
+	"st: MuM_Struct"
+	"st: MuM_StructureT"
+	"st: B_Main"
+	"st: B_Res"
+	"st: MuM_Hard"
+	"st: MuM_InfoButt"
+	"st: MuM_InfoButton"
 	"st: choose"
 	"st: crafting"
 	"st: MM_"
@@ -99,4 +114,4 @@ helperWidgetCurrentArea = "all"
 disabledIndexers = ""
 minIndexVariations = 2
 findProviderIndexHelper = true
-itemIconSize = 129
+itemIconSize = 32

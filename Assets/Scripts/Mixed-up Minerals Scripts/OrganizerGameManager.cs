@@ -37,7 +37,6 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private GameObject hardFlavorPanel;
     [SerializeField] private GameObject structFlavorPanel;
     [SerializeField] private GameObject toolFlavorPanel;
-    [SerializeField] private TextMeshProUGUI toolInfo;
 
     [Header("Managers")]
     [SerializeField] private DisplayOrderType displayOrder;
@@ -169,7 +168,6 @@ public class OrganizerGameManager : MonoBehaviour
         sortingManager.HardnessArrangement();
         infoPanel.SetActive(true);
         whatIsHardness.SetActive(true);
-        toolInfo.text = hardnessToolText;
         startScreen.SetActive(false);
         lever.SetActive(true);
         hardnessSorting.SetActive(true);
@@ -182,7 +180,6 @@ public class OrganizerGameManager : MonoBehaviour
         sortingManager.StructureArrangement();
         infoPanel.SetActive(true);
         whatIsStructure.SetActive(true);
-        toolInfo.text = structureToolText;
         startScreen.SetActive(false);
         structureSorting.SetActive(true);
     }
