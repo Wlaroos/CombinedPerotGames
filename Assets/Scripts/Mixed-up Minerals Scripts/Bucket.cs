@@ -26,13 +26,9 @@ public class Bucket : MonoBehaviour
     {
         OrganizerMineral mineral = other.GetComponent<OrganizerMineral>();
         if (mineral == null) return;
-
-        if (!containedMinerals.Contains(mineral))
-        {
             containedMinerals.Add(mineral);
-            mineral.SetBucket(this);
-            mineral.transform.SetParent(transform);
-        }
+            
+        mineral.SetBucket(this);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -40,14 +36,9 @@ public class Bucket : MonoBehaviour
         OrganizerMineral mineral = other.GetComponent<OrganizerMineral>();
         if(mineral == null) return;
 
-        if (containedMinerals.Contains(mineral))
+        if (mineral.CurrentBucket == this)
         {
-            containedMinerals.Remove(mineral);
-            mineral.ClearBucket(this);
-            if(mineral.gameObject.activeInHierarchy)
-            {
-                mineral.transform.SetParent(null);
-            }
+            mineral.SetBucket(null);
         }
     }
 
@@ -98,5 +89,16 @@ public class Bucket : MonoBehaviour
     public void ResetVisual()
     {
         bucketSprite.sprite = bucketNormal;
+    }
+    
+    public void AddMineral(OrganizerMineral mineral)
+    {
+        if (!containedMinerals.Contains(mineral))
+            containedMinerals.Add(mineral);
+    }
+
+    public void RemoveMineral(OrganizerMineral mineral)
+    {
+        containedMinerals.Remove(mineral);
     }
 }

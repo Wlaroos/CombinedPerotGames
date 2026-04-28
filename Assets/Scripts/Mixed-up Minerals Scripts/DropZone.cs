@@ -12,10 +12,8 @@ public class DropZone : MonoBehaviour
         if (mineral == null) return;
         if (currentMineral != null) return; // if zone is already occupied ignore
         
-        currentMineral = mineral;
         mineral.SetDropZone(this);
-        mineral.transform.SetParent(transform);
-        mineral.LerpTo(transform.position);
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -24,12 +22,20 @@ public class DropZone : MonoBehaviour
         if (mineral == null) return;
         if (mineral != currentMineral) return;
 
-        mineral.ClearDropZone(this);
-        currentMineral = null;
-        
-        if(mineral.gameObject.activeInHierarchy)
+        if (mineral.CurrentDropZone == this)
         {
-            mineral.transform.SetParent(null);
+            mineral.SetDropZone(null);
         }
+    }
+    
+    public void AssignMineral(OrganizerMineral mineral)
+    {
+        currentMineral = mineral;
+    }
+
+    public void ClearMineral(OrganizerMineral mineral)
+    {
+        if (currentMineral == mineral)
+            currentMineral = null;
     }
 }
