@@ -188,7 +188,7 @@ public class CraftingManager : MonoBehaviour
         }
 
         // Add the crafted object to the DraggableHolder
-        if (craftedObj != null && DraggableHolder.Instance != null)
+        if (craftedObj != null && DraggableHolder.Instance != null && craftedObj.GetComponent<Mineral>() == null)
         {
             DraggableHolder.Instance.AddDraggable(craftedObj);
         }

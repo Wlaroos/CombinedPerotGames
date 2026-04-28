@@ -62,10 +62,7 @@ public class DraggableHolder : MonoBehaviour
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
             var child = transform.GetChild(i).gameObject;
-            if (useImmediate)
-                DestroyImmediate(child);
-            else
-                Destroy(child);
+            Destroy(child);
         }
     }
 

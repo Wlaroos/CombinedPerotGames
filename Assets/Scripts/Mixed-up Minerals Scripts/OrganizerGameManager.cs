@@ -49,10 +49,18 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private ToolWire wire;
     [SerializeField] private Tray tray;
     [SerializeField] private GameObject panelIndicator;
+    
+    [Header("Inactive")]
+    [SerializeField] private GameObject inactivePanel; // panel that activates after inactiveTime gets triggered
+    [SerializeField] private float inactiveTime; // time before warning
+    [SerializeField] private float timeoutTime; // extra time before returning to menu
 
+    private float idleTimer = 0f;
+    private bool isIdle = false;
+    
     private SpriteRenderer psr;
     private readonly HashSet<OrganizerMineral> _mineralData = new HashSet<OrganizerMineral>();
-    private float timer = 0;
+    private float panelTimer = 0;
 
     private void Awake()
     {
@@ -78,13 +86,15 @@ public class OrganizerGameManager : MonoBehaviour
         
         if (psr.color != Color.white)
         {
-            timer += Time.deltaTime;
-            if (timer >= 5f)
+            panelTimer += Time.deltaTime;
+            if (panelTimer >= 5f)
             {
                 psr.color = Color.white;
-                timer = 0;
+                panelTimer = 0;
             }
         }
+        
+        Inactive();
     }
     
     public void ShowWin()
@@ -285,5 +295,38 @@ public class OrganizerGameManager : MonoBehaviour
             structFlavorPanel.SetActive(false);
             toolFlavorPanel.SetActive(false);
         }
+    }
+
+    bool HasInput()
+    {
+        return Input.anyKeyDown || Input.GetMouseButtonDown(0);
+    }
+    
+    private void Inactive()
+    {
+        if (HasInput())
+        {
+            idleTimer = 0f;
+            return;
+        }
+        
+        idleTimer += Time.deltaTime;
+
+        if (!isIdle && idleTimer >= inactiveTime)
+        {
+            inactivePanel.SetActive(true);
+            isIdle = true;
+        }
+
+        if (idleTimer >= inactiveTime + timeoutTime)
+        {
+            SceneManager.LoadScene("LevelSelect");
+        }
+    }
+
+    public void InactivePress()
+    {
+        inactivePanel.SetActive(false);
+        isIdle = false;
     }
 }

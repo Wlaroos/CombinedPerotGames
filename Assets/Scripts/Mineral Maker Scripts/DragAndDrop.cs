@@ -273,7 +273,8 @@ public class DragAndDrop : MonoBehaviour
         float halfWidth = objectSize.x / 2f;
         float halfHeight = objectSize.y / 2f;
 
-        Vector3 bottomLeft = new Vector3(-_clampX + halfWidth, -_clampY + halfHeight, 0);
+        // -1.48 is the y position of the bottom of the main area panel
+        Vector3 bottomLeft = new Vector3(-_clampX + halfWidth, -1.48f + halfHeight, 0);
         Vector3 topRight = new Vector3(_clampX - halfWidth, _clampY - halfHeight, 0);
 
         Vector3 screenPos = cam.WorldToScreenPoint(worldPosition);

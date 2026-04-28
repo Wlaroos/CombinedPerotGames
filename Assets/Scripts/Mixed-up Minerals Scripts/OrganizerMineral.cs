@@ -9,7 +9,6 @@ public class OrganizerMineral : MonoBehaviour
     [SerializeField] private float snapSpeed = 10f;
     private bool _isSnapping;
     private Vector3 _snapTarget;
-    private OmniTool _omniTool;
     private StructureTool _structureTool;
 
     public GameObject structureIcon;
@@ -20,13 +19,14 @@ public class OrganizerMineral : MonoBehaviour
     private Bucket _currentBucket;
     public bool CanBeDragged { get; private set; } = true;
     public bool IsUnderScanner { get; private set; }
+    public DropZone CurrentDropZone => _currentDropZone;
+    public Bucket CurrentBucket => _currentBucket;
     
     public bool hardnessDiscovered;
     public Tray tray;
 
     public void Awake()
     {
-        _omniTool = FindAnyObjectByType<OmniTool>();
         _structureTool = FindAnyObjectByType<StructureTool>();
         structureIcon = GetComponentInChildren<StructureIcon>().gameObject;
         
@@ -53,8 +53,6 @@ public class OrganizerMineral : MonoBehaviour
     private void OnMouseDown()
     {
         if (!IsUnderScanner) return;
-        if (!_omniTool) return;
-        _omniTool.SelectMineral(this);
     }
 
     private void HandleSnapMovement()
@@ -115,20 +113,55 @@ public class OrganizerMineral : MonoBehaviour
             _currentRespawnZone = null;
     }
     
-    public void SetDropZone(DropZone zone)
+    public void SetDropZone(DropZone newZone)
     {
-        _currentDropZone = zone;
-    }
+        if (_currentDropZone == newZone) return;
 
-    public void ClearDropZone(DropZone zone)
-    {
-        if (_currentDropZone == zone)
-            _currentDropZone = null;
+        // Clear old zone
+        if (_currentDropZone != null)
+        {
+            _currentDropZone.ClearMineral(this);
+        }
+
+        _currentDropZone = newZone;
+
+        if (newZone != null)
+        {
+            newZone.AssignMineral(this);
+            
+            transform.SetParent(newZone.transform);
+            LerpTo(newZone.transform.position);
+        }
+        else
+        {
+            if (newZone)
+                if(newZone.gameObject.activeInHierarchy)
+                    transform.SetParent(null);
+        }
     }
     
     public void SetBucket(Bucket bucket)
     {
+        if (_currentBucket == bucket) return;
+        
+        // Remove from old bucket
+        if (_currentBucket != null)
+            _currentBucket.RemoveMineral(this);
+        
         _currentBucket = bucket;
+
+        if (bucket != null)
+        {
+            bucket.AddMineral(this);
+            
+            transform.SetParent(bucket.transform);
+        }
+        else
+        {
+            if (bucket)
+                if(bucket.gameObject.activeInHierarchy)
+                    transform.SetParent(null);
+        }
     }
 
     public void ClearBucket(Bucket bucket)
