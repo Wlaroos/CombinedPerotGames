@@ -258,12 +258,14 @@ public class OrganizerGameManager : MonoBehaviour
                 hardnessTutorial.SetActive(false);
                 hardnessChosen = false;
                 hardnessSorting.SetActive(false);
+                whatIsHardness.SetActive(false);
             }
             if(structureChosen)
             {
                 structureTutorial.SetActive(false);
                 structureChosen = false;
                 structureSorting.SetActive(false);
+                whatIsStructure.SetActive(false);
             }
             
             hardFlavorPanel.SetActive(false);

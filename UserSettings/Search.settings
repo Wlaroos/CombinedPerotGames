@@ -79,6 +79,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"st: panel"
 	"st: MuM_Panel"
 	"st: MuM_Hardnes"
 	"st: MuM_HardnessT"
