@@ -17,7 +17,155 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 2ba4bdf6cd70d8646aebf8237aa537c9, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 258439852032
+    m_Localized: Amatista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258439852033
+    m_Localized: Aguamarina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046336
+    m_Localized: Aragonita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046337
+    m_Localized: Azurite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046338
+    m_Localized: Baritina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046339
+    m_Localized: Benitoita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046340
+    m_Localized: Calcita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046341
+    m_Localized: Crisocola
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046342
+    m_Localized: Citrina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046343
+    m_Localized: Cobalto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046344
+    m_Localized: Cuprita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046345
+    m_Localized: Dioptasa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046346
+    m_Localized: Elbaita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046347
+    m_Localized: Esmeralda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046348
+    m_Localized: Fluoruro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046349
+    m_Localized: Yeso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046350
+    m_Localized: Halita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046351
+    m_Localized: Acerina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046352
+    m_Localized: Malaquita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046353
+    m_Localized: Morganita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046354
+    m_Localized: Pirita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046355
+    m_Localized: Piromorfita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046356
+    m_Localized: Cuarzo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046357
+    m_Localized: Rodocrosita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046358
+    m_Localized: Cuarzo Rosa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046359
+    m_Localized: "Rub\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046360
+    m_Localized: Scheelita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046361
+    m_Localized: Serandita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046362
+    m_Localized: Siderita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046363
+    m_Localized: Sodalita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046364
+    m_Localized: Estibina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046365
+    m_Localized: Strengita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046366
+    m_Localized: Tanzanita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046367
+    m_Localized: Topacio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046368
+    m_Localized: Vanadinita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046369
+    m_Localized: Vivianita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 258444046370
+    m_Localized: Wulfenita
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

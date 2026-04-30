@@ -27,11 +27,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721921
-    m_Localized: Organize by Hardness
+    m_Localized: Sort by Hardness
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721922
-    m_Localized: Organize by Crystal Structure
+    m_Localized: Sort by Crystal Structure
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721923

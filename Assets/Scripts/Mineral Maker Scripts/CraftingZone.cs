@@ -24,12 +24,26 @@ public class CraftingZone : MonoBehaviour
     [SerializeField] private Image _spawnArea; // UI element defining the area where crafted items can spawn
     [SerializeField] private Vector2 _spawnAreaSize = new Vector2(850, 350);
     [SerializeField] private Vector2 _spawnAreaCenter = new Vector2(0, -350);
+    [SerializeField] private Button _craftButton; // Button to trigger crafting
+    [SerializeField] private ParticleSystem[] _lavaParticles; // Particle system for lava effect
+    private Image _caveBGImage; // Reference to the cave background image
+    private Color _craftButtonDefaultColor = Color.white;
+    private Color _caveBGDefaultColor = new Color32(210, 210, 210, 255);
 
     private void Awake()
     {
         _bc = GetComponent<BoxCollider2D>();
         _rect = GetComponent<RectTransform>();
+        _caveBGImage = GetComponent<Image>();
+
         _bc.size = new Vector2(_rect.rect.width, _rect.rect.height); // Set the size of the BoxCollider2D
+
+        if (_craftButton != null)
+        {
+            var img = _craftButton.GetComponent<Image>();
+            if (img != null) _craftButtonDefaultColor = img.color;
+            UpdateCraftButtonState();
+        }
     }
 
     // Called when an object enters the zone
@@ -39,6 +53,7 @@ public class CraftingZone : MonoBehaviour
         {
             _objectsInZone.Add(collision.gameObject);
             ResetCraftingState();
+            UpdateCraftButtonState();
         }
     }
 
@@ -49,6 +64,7 @@ public class CraftingZone : MonoBehaviour
         {
             _objectsInZone.Remove(collision.gameObject);
             ResetCraftingState();
+            UpdateCraftButtonState();
         }
     }
 
@@ -111,8 +127,10 @@ public class CraftingZone : MonoBehaviour
             {
                 // Finalize crafting at the end of the sequence
                 FinalizeCraft(_snapshotIngredients ?? ingredients, _objectsSnapshot);
+                _caveBGImage.color = _caveBGDefaultColor;
             }
         }
+
     }
 
     private void MoveObjectsCloser(List<GameObject> objects)
@@ -245,7 +263,35 @@ public class CraftingZone : MonoBehaviour
         _objectsSnapshot = null;
         _snapshotIngredients = null;
 
+        _caveBGImage.color = _caveBGDefaultColor;
+
         ResetDotIndicators();
+        UpdateCraftButtonState();
+    }
+
+    // Update the craft button visual to indicate whether a valid recipe exists
+    private void UpdateCraftButtonState()
+    {
+        if (_craftButton == null) return;
+
+        var img = _craftButton.GetComponent<Image>();
+        if (img == null) return;
+
+        var ingredients = GetIngredients();
+        bool hasRecipe = false;
+        if (ingredients != null && ingredients.Count > 0 && CraftingManager.Instance != null)
+        {
+            hasRecipe = CraftingManager.Instance.FindMatchingRecipe(ingredients) != null;
+        }
+
+        if (hasRecipe)
+        {
+            img.color = new Color32(132, 255, 181, 255);
+        }
+        else
+        {
+            img.color = _craftButtonDefaultColor;
+        }
     }
 
     private void UpdateDotIndicators()
@@ -260,6 +306,9 @@ public class CraftingZone : MonoBehaviour
                 //_dotIndicators[i].transform.GetChild(0).GetComponent<Image>().color = (i < _currentPresses) ? new Color32(13, 134, 0, 255) : new Color32(98, 0, 8, 255);
             }
         }
+
+        _caveBGImage.color = Color.Lerp(_caveBGDefaultColor, new Color32(255, 100, 100, 255), (float)_currentPresses / _requiredPresses);
+        foreach (var ps in _lavaParticles) ps.Play();
     }
 
     private void ResetDotIndicators()

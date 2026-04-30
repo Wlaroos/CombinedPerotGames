@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 254719504384
-    m_Localized: Organizador de Minerales
+    m_Localized: Minerales Mezcaldos
     m_Metadata:
       m_Items: []
   - m_Id: 254719504396
@@ -32,6 +32,62 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 254719504397
     m_Localized: Felicidades!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504385
+    m_Localized: Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504386
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504387
+    m_Localized: "Men\xFA principal"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504388
+    m_Localized: Ingles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504389
+    m_Localized: "Espa\xF1ol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504390
+    m_Localized: "Japon\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504391
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504392
+    m_Localized: "Laboratorio de Investigaci\xF3n Narrativa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504393
+    m_Localized: "L\xEDder de Proyecto"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504394
+    m_Localized: "Dise\xF1adores"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504395
+    m_Localized: "Traducci\xF3n y Localizaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504398
+    m_Localized: "F\xF3rmula"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504399
+    m_Localized: Mohs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254719504400
+    m_Localized: Estructura Cristalina
     m_Metadata:
       m_Items: []
   references:

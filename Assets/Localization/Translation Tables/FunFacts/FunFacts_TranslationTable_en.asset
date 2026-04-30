@@ -32,7 +32,7 @@ MonoBehaviour:
   - m_Id: 55498452994
     m_Localized: "The deep blue of azurite comes from copper. Azurite was used to
       create blue paint in the Middle Ages and Renaissance. Azurite is often found
-      with Malachite, another copper mineral. \n"
+      with Malachite, another copper mineral. \r\n"
     m_Metadata:
       m_Items: []
   - m_Id: 55498452995
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Localized: "Commonly known as 'rock salt', halite is the same salt you use
       for cooking! Halite forms from the evaporation of seawater or brine pools.
       Called \"white gold\", salt was once hard to come by and highly sought after. 
-      Salt was used as preservative before the invention of refrigeration. \n"
+      Salt was used as preservative before the invention of refrigeration. \r\n"
     m_Metadata:
       m_Items: []
   - m_Id: 55498453008
@@ -138,7 +138,7 @@ MonoBehaviour:
     m_Localized: "Quartz is one of the most common minerals in the Earth's crust.
       Quartz is the major component of beach sand. Pure quartz is colorless. Purple
       quartz is called amethyst. The early Greeks called quartz krystallos, which
-      means \"ice\", and is the origin of the word crystal. \n"
+      means \"ice\", and is the origin of the word crystal. \r\n"
     m_Metadata:
       m_Items: []
   - m_Id: 55498453014
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_Localized: "Tanzanite, a variety of Zoisite, is named after the only place
       it is found - Tanzania! Tanzanite shows different colors - from blue to violet
       to deep purple - depending on the direction you view it! Tanzanite was added
-      to the list of December birthstones in 2002. \n"
+      to the list of December birthstones in 2002. \r\n"
     m_Metadata:
       m_Items: []
   - m_Id: 55498453024

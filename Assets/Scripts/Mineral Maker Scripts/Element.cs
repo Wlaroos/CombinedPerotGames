@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using System.Collections;
 
 // Handles the visual and data logic for an element object
 public class Element : MonoBehaviour
@@ -10,6 +12,7 @@ public class Element : MonoBehaviour
     [SerializeField] private SpriteRenderer _numberSprite;     // Sprite for tens or single digit
     [SerializeField] private SpriteRenderer _numberSprite2;    // Sprite for ones digit (if needed)
     [SerializeField] private SpriteRenderer _backgroundSprite; // Background sprite
+    [SerializeField] private TextMeshPro _nameText; // Text for the element's name
 
     private ParticleSystem _ps;
 
@@ -18,6 +21,11 @@ public class Element : MonoBehaviour
     {
         _ps = GetComponentInChildren<ParticleSystem>();
         UpdateDataVisuals();
+    }
+
+    private void OnEnable() 
+    {       
+        StartCoroutine(StartFadeOut());
     }
 
     // Sets the number sprites based on the isotope number
@@ -93,5 +101,32 @@ public class Element : MonoBehaviour
         _backgroundSprite.color = dimmed;
 
         SetNumberSprites(isotopeNumber);
+
+        if (_nameText != null)
+        {
+            _nameText.text = data.elementName;
+            _nameText.color = data.defaultColor;
+        }
+    }
+
+    private IEnumerator StartFadeOut()
+    {
+        yield return new WaitForSeconds(3);
+
+        float fadeDuration = 1f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            if (_nameText != null)
+            {
+                Color c = _nameText.color;
+                c.a = alpha;
+                _nameText.color = c;
+            }
+            yield return null;
+        }
     }
 }
