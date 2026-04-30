@@ -52,12 +52,13 @@ public class CraftingManager : MonoBehaviour
     }
 
     // Find a matching recipe, prioritizing the active target to solve duplicate ingredient issues
-    public CraftingRecipe FindMatchingRecipe(List<ScriptableObject> ingredients)
+    // `excludedRecipes` can be provided to skip certain recipes (used when an output is a variant)
+    public CraftingRecipe FindMatchingRecipe(List<ScriptableObject> ingredients, ICollection<CraftingRecipe> excludedRecipes = null)
     {
         if (ingredients == null) return null;
 
         // Check the active target recipe first
-        if (_activeTargetRecipe != null && MatchIngredients(_activeTargetRecipe, ingredients))
+        if (_activeTargetRecipe != null && (excludedRecipes == null || !excludedRecipes.Contains(_activeTargetRecipe)) && MatchIngredients(_activeTargetRecipe, ingredients))
         {
             return _activeTargetRecipe;
         }
@@ -66,6 +67,7 @@ public class CraftingManager : MonoBehaviour
         foreach (var recipe in _recipes)
         {
             if (recipe == _activeTargetRecipe) continue;
+            if (excludedRecipes != null && excludedRecipes.Contains(recipe)) continue;
 
             if (MatchIngredients(recipe, ingredients))
                 return recipe;
@@ -76,8 +78,24 @@ public class CraftingManager : MonoBehaviour
     // Try to craft something from a list of ingredients (performs creation and registers first-time events)
     public GameObject TryCraft(List<ScriptableObject> ingredients, Vector3 spawnPosition)
     {
-        var recipe = FindMatchingRecipe(ingredients);
-        if (recipe == null) return null;
+        // Try to find a matching recipe, but skip mineral outputs that are variants
+        var excluded = new HashSet<CraftingRecipe>();
+        CraftingRecipe recipe;
+        while (true)
+        {
+            recipe = FindMatchingRecipe(ingredients, excluded);
+            if (recipe == null) return null;
+
+            // If the output is a variant, exclude this recipe and try again
+            if (recipe.output is MineralData mineralOut && mineralOut.isVariant)
+            {
+                // Skip this recipe and try the next matching one
+                excluded.Add(recipe);
+                continue;
+            }
+
+            break;
+        }
 
         // Determine if this is the first time this recipe was crafted
         bool isFirstTime = !_craftedRecipes.Contains(recipe);
