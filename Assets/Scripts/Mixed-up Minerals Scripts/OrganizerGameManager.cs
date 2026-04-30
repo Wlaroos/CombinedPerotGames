@@ -304,7 +304,7 @@ public class OrganizerGameManager : MonoBehaviour
     
     private void Inactive()
     {
-        if (HasInput())
+        if (HasInput() || winPanel.activeSelf)
         {
             idleTimer = 0f;
             return;
