@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1050387361792
-    m_Localized: 
+    m_Localized: "\u30DF\u30CD\u30E9\u30EB\u30BD\u30FC\u30C8"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721920
@@ -40,7 +40,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721924
-    m_Localized: "\u30C4\u30FC\u30EB\u3092\u30DF\u30CD\u30E9\u30EB\u306B\u304A\u3044\u3066\u3001\u30C0\u30A4\u30E4\u30EB\u3092\u56DE\u3057\u3066\u304F\u3060\u3055\u3044"
+    m_Localized: "\u30C4\u30FC\u30EB\u3092\u30DF\u30CD\u30E9\u30EB\u306B\u304A\u3044\u3066\u3001\u786C\u3055\u306E\u5EA6\u3092\u8AAD\u307F\u307E\u3059\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721925
@@ -49,19 +49,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721926
-    m_Localized: 
+    m_Localized: "\u3053\u306E\u6570\u5B57\u306F\u786C\u3055\u306E\u30EC\u30D9\u30EB\u3067\u3059"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721927
-    m_Localized: 
+    m_Localized: "\u8D64\u3068\u7DD1\u306ELED\u3067\u50B7\u3064\u3051\u308B\u3067\u304D\u308B\u304B\u3069\u3046\u304B\u793A\u3057\u3066\u3044\u307E\u3059"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721928
-    m_Localized: 
+    m_Localized: "\u8AAD\u3080\u305F\u3081\u3001\u30DF\u30CD\u30E9\u30EB\u306B\u306F\u308A\u3092\u7F6E\u3044\u3066\u304F\u3060\u3055\u3044"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721929
-    m_Localized: 
+    m_Localized: "\u786C\u3055\u306E\u30EC\u30D9\u30EB\u3092\u5909\u308F\u308B\u3068\u30C0\u30A4\u30E4\u30EB\u3092\u56DE\u3057\u3066\u304F\u3060\u3055\u3044"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721930
@@ -85,7 +85,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721935
-    m_Localized: cha
+    m_Localized: "\u786C\u3055\u3068\u306F?"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721936
@@ -105,67 +105,71 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721940
-    m_Localized: 
+    m_Localized: "\u786C\u3055\u306B\u4E26\u3076"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721941
-    m_Localized: 
+    m_Localized: "\u7D50\u6676\u69CB\u9020\u306B\u4E26\u3076"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721942
-    m_Localized: 
+    m_Localized: "\u9055\u3046\u30D0\u30B1\u30C4\u306B\u30DF\u30CD\u30E9\u30EB\u304C\u3042\u308B"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721943
-    m_Localized: 
+    m_Localized: "\u4E26\u3093\u3067\u3044\u307E\u305B\u3093"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721944
-    m_Localized: 
+    m_Localized: "\u30A4\u30FC\u30B8\u30FC "
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721945
-    m_Localized: 
+    m_Localized: "\u30CF\u30FC\u30C9"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721946
-    m_Localized: 
+    m_Localized: "\u7ACB\u65B9"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721947
-    m_Localized: 
+    m_Localized: "\u6B63\u65B9"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721948
-    m_Localized: 
+    m_Localized: "\u516D\u65B9"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721949
-    m_Localized: 
+    m_Localized: "\u308A\u3087\u3046\u9762\u4F53"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721950
-    m_Localized: 
+    m_Localized: "\u76F4\u65B9"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721951
-    m_Localized: 
+    m_Localized: "\u5358\u659C"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721952
-    m_Localized: 
+    m_Localized: "\u4E09\u659C"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721953
-    m_Localized: 
+    m_Localized: "\u30DF\u30CD\u30E9\u30EB\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721954
-    m_Localized: 
+    m_Localized: "\u786C\u3055"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721955
-    m_Localized: 
+    m_Localized: "\u69CB\u9020"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21026808737792
+    m_Localized: "\u30A8\u30F3\u30BF\u30FC"
     m_Metadata:
       m_Items: []
   references:

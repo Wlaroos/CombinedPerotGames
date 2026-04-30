@@ -23,11 +23,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721921
-    m_Localized: Organizar por Dureza
+    m_Localized: Clasificar por Dureza
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721922
-    m_Localized: Organizar por Estructura Cristalina
+    m_Localized: Clasificar por Estructura Cristalina
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721923
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721924
-    m_Localized: 'Pone esta herramienta en el mineral y mueve la esfera. '
+    m_Localized: 'Pone esta herramienta en el mineral para leer el valor de dureza. '
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721925
@@ -92,6 +92,94 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1050416721939
     m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050387361792
+    m_Localized: Minerales Mezcaldos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721926
+    m_Localized: 'Este numero indica en nivel corriente de dureza. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721927
+    m_Localized: "Este indica si puede rasgu\xF1ar por LEDs rojos o verdes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721928
+    m_Localized: Pone este aguja en un mineral para leer lo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721929
+    m_Localized: 'Gira la rueda para cambiar el nivel de dureza. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721940
+    m_Localized: Clasificar por Dureza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721941
+    m_Localized: Clasificar por Estructura Cristalina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721942
+    m_Localized: 'Algunos minerales son en los botes incorrectos. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721943
+    m_Localized: 'Ninguna orden se igualan. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21026808737792
+    m_Localized: Entregar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721944
+    m_Localized: Facil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721945
+    m_Localized: Dificil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721946
+    m_Localized: "C\xFAbico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721947
+    m_Localized: Tetragonal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721948
+    m_Localized: Hexagonal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721949
+    m_Localized: "Rombo\xE9drico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721950
+    m_Localized: "Ortorr\xF3mbica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721951
+    m_Localized: "Monocl\xEDnica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721952
+    m_Localized: "Tricl\xEDnica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721953
+    m_Localized: 'Mineral:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721954
+    m_Localized: 'Dureza:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050416721955
+    m_Localized: 'Estructura:'
     m_Metadata:
       m_Items: []
   references:
