@@ -25,12 +25,17 @@ public class CraftingZone : MonoBehaviour
     [SerializeField] private Vector2 _spawnAreaSize = new Vector2(850, 350);
     [SerializeField] private Vector2 _spawnAreaCenter = new Vector2(0, -350);
     [SerializeField] private Button _craftButton; // Button to trigger crafting
+    [SerializeField] private ParticleSystem[] _lavaParticles; // Particle system for lava effect
+    private Image _caveBGImage; // Reference to the cave background image
     private Color _craftButtonDefaultColor = Color.white;
+    private Color _caveBGDefaultColor = new Color32(210, 210, 210, 255);
 
     private void Awake()
     {
         _bc = GetComponent<BoxCollider2D>();
         _rect = GetComponent<RectTransform>();
+        _caveBGImage = GetComponent<Image>();
+
         _bc.size = new Vector2(_rect.rect.width, _rect.rect.height); // Set the size of the BoxCollider2D
 
         if (_craftButton != null)
@@ -122,8 +127,10 @@ public class CraftingZone : MonoBehaviour
             {
                 // Finalize crafting at the end of the sequence
                 FinalizeCraft(_snapshotIngredients ?? ingredients, _objectsSnapshot);
+                _caveBGImage.color = _caveBGDefaultColor;
             }
         }
+
     }
 
     private void MoveObjectsCloser(List<GameObject> objects)
@@ -256,6 +263,8 @@ public class CraftingZone : MonoBehaviour
         _objectsSnapshot = null;
         _snapshotIngredients = null;
 
+        _caveBGImage.color = _caveBGDefaultColor;
+
         ResetDotIndicators();
         UpdateCraftButtonState();
     }
@@ -297,6 +306,9 @@ public class CraftingZone : MonoBehaviour
                 //_dotIndicators[i].transform.GetChild(0).GetComponent<Image>().color = (i < _currentPresses) ? new Color32(13, 134, 0, 255) : new Color32(98, 0, 8, 255);
             }
         }
+
+        _caveBGImage.color = Color.Lerp(_caveBGDefaultColor, new Color32(255, 100, 100, 255), (float)_currentPresses / _requiredPresses);
+        foreach (var ps in _lavaParticles) ps.Play();
     }
 
     private void ResetDotIndicators()
