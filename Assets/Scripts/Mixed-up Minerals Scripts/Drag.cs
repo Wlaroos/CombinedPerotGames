@@ -30,7 +30,7 @@ public class Drag : MonoBehaviour
 
         float minX = cam.transform.position.x - camWidth;
         float maxX = cam.transform.position.x + camWidth - 3.9f;
-        float minY = cam.transform.position.y - camHeight + 1;
+        float minY = cam.transform.position.y - camHeight + 1.25f;
         float maxY = cam.transform.position.y + camHeight;
 
         float halfW = GetComponent<SpriteRenderer>().bounds.extents.x;

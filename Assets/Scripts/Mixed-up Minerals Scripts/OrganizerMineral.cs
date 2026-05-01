@@ -158,9 +158,7 @@ public class OrganizerMineral : MonoBehaviour
         }
         else
         {
-            if (bucket)
-                if(bucket.gameObject.activeInHierarchy)
-                    transform.SetParent(null);
+            transform.SetParent(null);
         }
     }
 
