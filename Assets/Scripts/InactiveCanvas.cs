@@ -10,8 +10,6 @@ public class InactiveCanvas : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private GameObject _inactivePanel; // Panel that activates after inactiveTime gets triggered
     [SerializeField] private Slider _timerBar; // Timer bar that fills up as time goes on
-    [Header("Options")]
-    [SerializeField] private bool _clickAnywhereToReset; // If true, clicking anywhere will reset the timer, otherwise button press
     private float _idleTimer = 0f;
     private bool _isIdle = false;
 
@@ -28,7 +26,7 @@ public class InactiveCanvas : MonoBehaviour
     private void Inactive()
     {
         // If the player has any input, reset the idle timer and hide the inactive panel
-        if (HasInput() && _clickAnywhereToReset)
+        if (HasInput())
         {
             InactivePress();
         }

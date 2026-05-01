@@ -49,9 +49,6 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private ToolWire wire;
     [SerializeField] private Tray tray;
     [SerializeField] private GameObject panelIndicator;
-
-    private float idleTimer = 0f;
-    private bool isIdle = false;
     
     private SpriteRenderer psr;
     private readonly HashSet<OrganizerMineral> _mineralData = new HashSet<OrganizerMineral>();

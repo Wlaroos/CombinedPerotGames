@@ -2,17 +2,10 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Burst.Intrinsics;
 
-// Lets you drag, drop, and combine objects in the game
 public class DragAndDrop : MonoBehaviour
 {
     [SerializeField] private float _dragSpeed = 25f; // How fast the object follows the mouse
-    
-    [Header("Main Area Panel (screen-space)")]
-    [SerializeField] private float _clampX = 5.325f;
-    [SerializeField] private float _clampY = 5f;
 
     private Vector2 _mouseOffset; // Distance from mouse to object when dragging starts
     private Element _element;     // Reference if this is an element
@@ -23,21 +16,17 @@ public class DragAndDrop : MonoBehaviour
 
     private InputSystem_Actions _inputActions;
 
-    // Runs when the object is created
     private void Awake()
     {
-        // Get references to possible components
         _element = GetComponent<Element>();
         _compound = GetComponent<Compound>();
         _mineral = GetComponent<Mineral>();
 
-        // Warn if none are found
         if (_element == null && _compound == null && _mineral == null)
         {
             Debug.LogError("DragAndDrop: Missing Element, Compound, or Mineral component");
         }
 
-        // Get sorting group for draw order
         _sg = GetComponent<SortingGroup>();
     }
 
@@ -53,26 +42,20 @@ public class DragAndDrop : MonoBehaviour
         _collider = null;
     }
 
-    // Gets the mouse position in world space
     private Vector2 GetMouseWorldPosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    // When you click on the object
     private void OnMouseDown()
     {
-        // Remember how far the mouse is from the object's center
         _mouseOffset = (Vector2)transform.position - GetMouseWorldPosition();
-        // Bring object to front while dragging
         if (_sg != null)
             _sg.sortingLayerName = "Dragging";
     }
 
-    // While dragging the object
     private void OnMouseDrag()
     {
-        // Move object smoothly to follow the mouse
         Vector2 mouseWorld = GetMouseWorldPosition() + _mouseOffset;
 
         Vector3 current = transform.position;
@@ -82,10 +65,8 @@ public class DragAndDrop : MonoBehaviour
         transform.position = ClampToMainArea(interpolated);
     }
 
-    // External drag state (used when the object is spawned by UI drag handlers)
     private bool _externalDragging = false;
 
-    // Start dragging from an external controller (SpawnDragHandler)
     public void StartExternalDrag(Vector3 worldPos)
     {
         _mouseOffset = (Vector2)transform.position - (Vector2)worldPos;
@@ -94,29 +75,23 @@ public class DragAndDrop : MonoBehaviour
         _externalDragging = true;
     }
 
-    // Update position while externally dragged
     public void UpdateExternalDrag(Vector3 worldPos)
     {
         if (!_externalDragging) return;
-        transform.position = new Vector3(worldPos.x, worldPos.y, transform.position.z);
+        Vector3 newPos = new Vector3(worldPos.x, worldPos.y, transform.position.z);
+        transform.position = ClampToMainArea(newPos);
     }
 
-    // End external drag and perform release logic
     public void EndExternalDrag()
     {
         if (!_externalDragging) return;
-
         _externalDragging = false;
-
         transform.position = ClampToMainArea(transform.position);
-
         Release();
-
         if (_sg != null)
             _sg.sortingLayerName = "Default";
     }
 
-    // Gets the data (element, compound, or mineral) from another object
     private ScriptableObject GetDataFromGameObject(GameObject obj)
     {
         var element = obj.GetComponent<Element>();
@@ -131,26 +106,20 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseUp()
     {
         Release();
-
-        // Put object back to normal draw order
         if (_sg != null)
             _sg.sortingLayerName = "Default";
     }
 
-    // Shared release logic used both by mouse and external drags
     private void Release()
     {
         if (_collider != null)
         {
             GameObject otherObj = _collider.gameObject;
 
-            // Ensure both stay inside the main area panel
             transform.position = ClampToMainArea(transform.position);
             otherObj.transform.position = ClampToMainArea(otherObj.transform.position);
 
-            // Get this object's data
             ScriptableObject dataA = (ScriptableObject)_element?.data ?? (ScriptableObject)_compound?.data ?? (ScriptableObject)_mineral?.data;
-            // Get the other object's data
             ScriptableObject dataB = GetDataFromGameObject(otherObj);
 
             if (dataB == null)
@@ -159,82 +128,53 @@ public class DragAndDrop : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
-
                 return;
             }
 
-            List<ScriptableObject> ingredients = new List<ScriptableObject> { dataA, dataB };
-
-            // Compute spawn position first
-            Vector3 spawnPosition = (transform.position + otherObj.transform.position) / 2f;
-
-            var manager = CraftingManager.Instance;
-
-            // Preserve original parents so we can restore them if crafting fails
             Transform originalParentA = transform.parent;
             Transform originalParentB = otherObj != null ? otherObj.transform.parent : null;
 
-            // Unparent both objects so they no longer count toward the DraggableHolder
             transform.SetParent(null);
             if (otherObj != null) otherObj.transform.SetParent(null);
 
-            // Attempt to craft
-            // GameObject craftedObj = manager != null ? manager.TryCraft(ingredients, spawnPosition) : null;
+            transform.SetParent(originalParentA);
+            if (otherObj != null) otherObj.transform.SetParent(originalParentB);
 
-            // if (craftedObj != null)
-            // {
-            //     // Successful craft -- remove the consumed objects
-            //     if (otherObj != null) Destroy(otherObj);
-            //     Destroy(gameObject);
-            // }
-            // else
-            // {
-                // Craft failed -- restore original parents and run original failure behavior
-                transform.SetParent(originalParentA);
-                if (otherObj != null) otherObj.transform.SetParent(originalParentB);
-
-                if (otherObj != null && otherObj.TryGetComponent<DragAndDrop>(out _))
+            if (otherObj != null && otherObj.TryGetComponent<DragAndDrop>(out _))
+            {
+                Vector3 separationDirection = (otherObj.transform.position - transform.position);
+                if (separationDirection == Vector3.zero)
                 {
-                    // If crafting failed, push the objects apart
-                    Vector3 separationDirection = (otherObj.transform.position - transform.position);
-                    if (separationDirection == Vector3.zero)
-                    {
-                        // If they're on top of each other, pick a random direction
-                        separationDirection = Random.insideUnitCircle.normalized;
-                    }
-                    else
-                    {
-                        separationDirection = separationDirection.normalized;
-                    }
-                    float separationDistance = 0.33f;
-                    // Make sure they don't overlap, based on their size
-                    if (TryGetComponent(out Collider colA) && otherObj.TryGetComponent(out Collider colB))
-                    {
-                        separationDistance += (colA.bounds.size.magnitude + colB.bounds.size.magnitude) / 2;
-                    }
-                    // Move both objects away from each other
-                    transform.position -= separationDirection * separationDistance;
-                    otherObj.transform.position += separationDirection * separationDistance;
-
-                    // Ensure both stay inside the main area panel
-                    transform.position = ClampToMainArea(transform.position);
-                    otherObj.transform.position = ClampToMainArea(otherObj.transform.position);
-
-                    // Play fail effect at the midpoint
-                    Vector3 failPosition = (transform.position + otherObj.transform.position) / 2f;
-                    EffectManager.Instance.PlayFailEffect(failPosition);
+                    separationDirection = Random.insideUnitCircle.normalized;
                 }
-            //}
+                else
+                {
+                    separationDirection = separationDirection.normalized;
+                }
+                
+                float separationDistance = 0.33f;
+                if (TryGetComponent(out Collider2D colA) && otherObj.TryGetComponent(out Collider2D colB))
+                {
+                    separationDistance += (colA.bounds.size.magnitude + colB.bounds.size.magnitude) / 4;
+                }
+                
+                transform.position -= separationDirection * separationDistance;
+                otherObj.transform.position += separationDirection * separationDistance;
+
+                transform.position = ClampToMainArea(transform.position);
+                otherObj.transform.position = ClampToMainArea(otherObj.transform.position);
+
+                Vector3 failPosition = (transform.position + otherObj.transform.position) / 2f;
+                EffectManager.Instance.PlayFailEffect(failPosition);
+            }
         }
     }
 
-    // When this object touches another collider
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _collider = collision;
     }
 
-    // When this object stops touching a collider
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (_collider == collision)
@@ -243,10 +183,8 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    // Checks for right-click to delete this object
     private void Update()
     {
-        // Checking for right mouse button using the new input system
         if (_inputActions.UI.RightClick.WasPressedThisFrame())
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -260,27 +198,27 @@ public class DragAndDrop : MonoBehaviour
 
     private Vector3 ClampToMainArea(Vector3 worldPosition)
     {
-        Camera cam = Camera.main;
-
-        // Get the object's size
-        Vector3 objectSize = Vector3.zero;
-        if (TryGetComponent(out Collider2D collider))
+        // Use the BoxCollider2D from CraftingZone as the master clamp reference
+        if (CraftingZone.Instance == null || CraftingZone.Instance.Collider == null)
         {
-            objectSize = collider.bounds.size;
+            return worldPosition;
         }
 
-        // Calculate the clamped boundaries, considering the object's size
-        float halfWidth = objectSize.x / 2f;
-        float halfHeight = objectSize.y / 2f;
+        Bounds zoneBounds = CraftingZone.Instance.Collider.bounds;
+        Vector3 halfSize = Vector3.zero;
+        
+        // Use full extents of the current object's collider to clamp perfectly
+        if (TryGetComponent(out Collider2D myCollider))
+        {
+            halfSize = myCollider.bounds.extents;
+        }
 
-        // -1.48 is the y position of the bottom of the main area panel
-        Vector3 bottomLeft = new Vector3(-_clampX + halfWidth, -1.48f + halfHeight, 0);
-        Vector3 topRight = new Vector3(_clampX - halfWidth, _clampY - halfHeight, 0);
+        Vector3 min = zoneBounds.min + halfSize;
+        Vector3 max = zoneBounds.max - halfSize;
 
-        Vector3 screenPos = cam.WorldToScreenPoint(worldPosition);
-        screenPos.x = Mathf.Clamp(screenPos.x, cam.WorldToScreenPoint(bottomLeft).x, cam.WorldToScreenPoint(topRight).x);
-        screenPos.y = Mathf.Clamp(screenPos.y, cam.WorldToScreenPoint(bottomLeft).y, cam.WorldToScreenPoint(topRight).y);
+        float x = Mathf.Clamp(worldPosition.x, min.x, max.x);
+        float y = Mathf.Clamp(worldPosition.y, min.y, max.y);
 
-        return cam.ScreenToWorldPoint(screenPos);
+        return new Vector3(x, y, worldPosition.z);
     }
 }

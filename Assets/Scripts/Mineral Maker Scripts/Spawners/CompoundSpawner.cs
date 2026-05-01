@@ -1,22 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using TMPro;
 
-// Spawns compound objects and manages compound spawn buttons
 public class CompoundSpawner : MonoBehaviour
 {
     private static CompoundSpawner _instance;
     public static CompoundSpawner Instance => _instance;
 
     [SerializeField] private GameObject compoundPrefab;
-    [SerializeField] private Image _spawnArea;
     [SerializeField] private Button[] _spawnButtons;
     [SerializeField] private Sprite _hiddenButtonSprite;
-    [SerializeField] private Vector2 _spawnAreaSize = new Vector2(850, 350);
-    [SerializeField] private Vector2 _spawnAreaCenter = new Vector2(0, -350);
     [SerializeField] private bool _unlockAllCompounds = false;
     [SerializeField] private bool _canClick = true;
 
@@ -57,8 +49,6 @@ public class CompoundSpawner : MonoBehaviour
             if (btn == null) continue;
             var img = btn.targetGraphic as Image;
             _spawnButtonSprites[i] = img != null ? img.sprite : null;
-            if (_spawnButtonSprites[i] == null)
-                Debug.LogError($"CompoundSpawner: Button at index {i} does not have a sprite.");
             btn.interactable = false;
             if (img != null) img.sprite = _hiddenButtonSprite;
         }
@@ -91,26 +81,15 @@ public class CompoundSpawner : MonoBehaviour
 
             if (matchedData != null)
             {
-                _buttonDataMap[i] = matchedData; // record mapping
+                _buttonDataMap[i] = matchedData; 
                 btn.onClick.RemoveAllListeners();
-                CompoundData dataCopy = matchedData; // capture local for closure safety
+                CompoundData dataCopy = matchedData; 
                 btn.onClick.AddListener(() => OnSpawnButtonClicked(dataCopy));
 
                 SpawnDragHandler dragHandler = btn.gameObject.GetComponent<SpawnDragHandler>() ?? btn.gameObject.AddComponent<SpawnDragHandler>();
                 dragHandler.Init(this, dataCopy);
             }
-            else
-            {
-                Debug.LogWarning($"CompoundSpawner: No CompoundData found matching button name '{btnName}'.");
-            }
         }
-    }
-
-    private CompoundData FindMatchingCompound(string buttonName)
-    {
-        if (_compoundDataList == null || string.IsNullOrEmpty(buttonName)) return null;
-        return System.Array.Find(_compoundDataList, c =>
-            c != null && buttonName.IndexOf(GetCompoundBaseName(c.name), System.StringComparison.OrdinalIgnoreCase) >= 0);
     }
 
     private void OnSpawnButtonClicked(CompoundData data)
@@ -133,18 +112,13 @@ public class CompoundSpawner : MonoBehaviour
 
     public GameObject SpawnCompoundAtRandomPosition(CompoundData data)
     {
-        Vector3 worldPos = GetRandomSpawnPosition();
-        return SpawnCompoundAtPosition(data, worldPos);
-    }
-
-    private Vector3 GetRandomSpawnPosition()
-    {
-        Rect rect = _spawnArea.rectTransform.rect;
-        float halfW = Mathf.Min(_spawnAreaSize.x * 0.5f, rect.width * 0.5f);
-        float halfH = Mathf.Min(_spawnAreaSize.y * 0.5f, rect.height * 0.5f);
-        Vector2 center = rect.center + _spawnAreaCenter;
-        Vector2 rand = new Vector2(Random.Range(center.x - halfW, center.x + halfW), Random.Range(center.y - halfH, center.y + halfH));
-        return _spawnArea.rectTransform.TransformPoint(rand);
+        // Use the shared random position logic from CraftingZone
+        if (CraftingZone.Instance != null)
+        {
+            Vector3 worldPosition = CraftingZone.Instance.GetRandomSpawnPosition();
+            return SpawnCompoundAtPosition(data, worldPosition);
+        }
+        return SpawnCompoundAtPosition(data, Vector3.zero);
     }
 
     public GameObject SpawnCompoundAtPosition(CompoundData data, Vector3 position)
@@ -159,7 +133,6 @@ public class CompoundSpawner : MonoBehaviour
         var comp = newCompound.GetComponent<Compound>();
         if (comp == null)
         {
-            Debug.LogError("CompoundSpawner: Spawned prefab does not have a Compound component.");
             Destroy(newCompound);
             return null;
         }
@@ -169,23 +142,6 @@ public class CompoundSpawner : MonoBehaviour
         DraggableHolder.Instance?.AddDraggable(newCompound);
         return newCompound;
     }
-
-    // Compact wrappers for existing named spawn methods (safe for UI binding)
-    private void SpawnByIndex(int i)
-    {
-        if (_compoundDataList != null && i >= 0 && i < _compoundDataList.Length && _compoundDataList[i] != null)
-            SpawnCompoundAtRandomPosition(_compoundDataList[i]);
-    }
-
-    public void SpawnOxide() => SpawnByIndex(0);
-    public void SpawnCarbonate() => SpawnByIndex(1);
-    public void SpawnPhosphate() => SpawnByIndex(2);
-    public void SpawnSulfate() => SpawnByIndex(3);
-    public void SpawnSilicate0() => SpawnByIndex(4);
-    public void SpawnSilicate1() => SpawnByIndex(5);
-    public void SpawnSilicate2() => SpawnByIndex(6);
-    public void SpawnSilicate3() => SpawnByIndex(7);
-    public void SpawnSilicate4() => SpawnByIndex(8);
 
     public void UnlockAllButtons()
     {
@@ -200,15 +156,10 @@ public class CompoundSpawner : MonoBehaviour
                 img.sprite = _spawnButtonSprites[i];
             }
 
-            // Use mapped data to pick the color if available
             var mapped = (i >= 0 && i < _buttonDataMap.Length) ? _buttonDataMap[i] : null;
             if (img != null)
             {
-                img.color = (mapped != null)
-                    ? SOHelpers.GetColorFromData(mapped)
-                    : (_compoundDataList != null && i < _compoundDataList.Length && _compoundDataList[i] != null
-                        ? SOHelpers.GetColorFromData(_compoundDataList[i])
-                        : Color.white);
+                img.color = (mapped != null) ? SOHelpers.GetColorFromData(mapped) : Color.white;
             }
         }
     }
@@ -218,27 +169,6 @@ public class CompoundSpawner : MonoBehaviour
         if (string.IsNullOrEmpty(soName)) return soName;
         int first = soName.IndexOf('_');
         return first >= 0 ? soName.Substring(first + 1) : soName;
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (_spawnArea == null) return;
-        var rt = _spawnArea.rectTransform;
-        Vector3[] corners = new Vector3[4];
-        rt.GetWorldCorners(corners);
-        Gizmos.color = Color.green;
-        for (int i = 0; i < 4; i++) Gizmos.DrawLine(corners[i], corners[(i + 1) % 4]);
-
-        float halfW = Mathf.Min(_spawnAreaSize.x * 0.5f, rt.rect.width * 0.5f);
-        float halfH = Mathf.Min(_spawnAreaSize.y * 0.5f, rt.rect.height * 0.5f);
-        Vector3 centerLocal = new Vector3(_spawnAreaCenter.x, _spawnAreaCenter.y, 0);
-        Vector3 min = rt.TransformPoint(centerLocal + new Vector3(-halfW, -halfH, 0));
-        Vector3 max = rt.TransformPoint(centerLocal + new Vector3(halfW, halfH, 0));
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(new Vector3(min.x, min.y, 0), new Vector3(max.x, min.y, 0));
-        Gizmos.DrawLine(new Vector3(max.x, min.y, 0), new Vector3(max.x, max.y, 0));
-        Gizmos.DrawLine(new Vector3(max.x, max.y, 0), new Vector3(min.x, max.y, 0));
-        Gizmos.DrawLine(new Vector3(min.x, max.y, 0), new Vector3(min.x, min.y, 0));
     }
 
     public void EnableDragHandler(bool enable)

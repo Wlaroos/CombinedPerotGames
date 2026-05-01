@@ -5581,7 +5581,7 @@ Transform:
   m_GameObject: {fileID: 87489072}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.33, y: -1.44, z: 0}
+  m_LocalPosition: {x: -5.33, y: -4.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6295,7 +6295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 560, y: -145}
+  m_AnchoredPosition: {x: 560, y: -525}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156307571
@@ -11462,7 +11462,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2, y: 2.75}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -16573,7 +16573,7 @@ Transform:
   m_GameObject: {fileID: 766710944}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 5.35, y: -1.44, z: 0}
+  m_LocalPosition: {x: 5.35, y: -4.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17139,7 +17139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: 442}
   m_SizeDelta: {x: 2.46875, y: 0.5625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &886853819
@@ -22839,7 +22839,7 @@ Transform:
   m_GameObject: {fileID: 1533056455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 7.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27320,7 +27320,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2, y: 2.75}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -27379,9 +27379,9 @@ RectTransform:
   - {fileID: 33698010}
   m_Father: {fileID: 1546428848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -350}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 350}
   m_SizeDelta: {x: 0, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969862812
@@ -27404,9 +27404,7 @@ MonoBehaviour:
   - {fileID: 1716898063}
   _pressesForCrafting: 5
   _slagPrefab: {fileID: 7641892725377117915, guid: d92da79fc7afec74e9f4e49b901de6f9, type: 3}
-  _spawnArea: {fileID: 1546428849}
-  _spawnAreaSize: {x: 900, y: 500}
-  _spawnAreaCenter: {x: 0, y: 250}
+  _spawnAreaBuffer: {x: 2, y: 2}
   _craftButton: {fileID: 886853823}
   _lavaParticles:
   - {fileID: 87489074}
@@ -27455,7 +27453,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1080, y: 700}
+  m_Size: {x: 1150, y: 700}
   m_EdgeRadius: 0
 --- !u!114 &1969862814
 MonoBehaviour:
@@ -28241,7 +28239,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2, y: 2.75}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -28848,6 +28846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElementSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3322283584373584988, guid: 14c235503099dd24abd35d543604de8a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7800349832108732696, guid: 14c235503099dd24abd35d543604de8a, type: 3}
       propertyPath: _buffer.x
       value: 50
@@ -28874,7 +28876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7800349832108732696, guid: 14c235503099dd24abd35d543604de8a, type: 3}
       propertyPath: _spawnAreaCenter.y
-      value: 250
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 7800349832108732696, guid: 14c235503099dd24abd35d543604de8a, type: 3}
       propertyPath: _spawnButtons.Array.size
@@ -29325,6 +29327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CompundSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 1214753160562482722, guid: 8af09d480ddc61e40bd00c1151dbce14, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5929444023277544585, guid: 8af09d480ddc61e40bd00c1151dbce14, type: 3}
       propertyPath: _buffer.x
       value: 50
@@ -29347,7 +29353,7 @@ PrefabInstance:
       objectReference: {fileID: 58551584}
     - target: {fileID: 5929444023277544585, guid: 8af09d480ddc61e40bd00c1151dbce14, type: 3}
       propertyPath: _spawnAreaCenter.y
-      value: 250
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 5929444023277544585, guid: 8af09d480ddc61e40bd00c1151dbce14, type: 3}
       propertyPath: _spawnButtons.Array.size

@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CraftingZone : MonoBehaviour
 {
+    private static CraftingZone _instance;
+    public static CraftingZone Instance => _instance;
     private List<GameObject> _objectsInZone = new List<GameObject>();
 
     // multi-press crafting state
@@ -13,17 +14,20 @@ public class CraftingZone : MonoBehaviour
     private int _currentPresses = 0;
     private List<GameObject> _objectsSnapshot = null;
     private List<ScriptableObject> _snapshotIngredients = null;
+    
     private BoxCollider2D _bc;
-    private RectTransform _rect;
+    // Public property so other scripts can access the collider bounds
+    public BoxCollider2D Collider => _bc != null ? _bc : (_bc = GetComponent<BoxCollider2D>());
 
     [SerializeField] private GameObject[] _dotIndicators; // Visual indicators for crafting progress
 
     [SerializeField] private int _pressesForCrafting = 5; // Number of presses required to craft an item
 
     [SerializeField] private GameObject _slagPrefab; // Prefab for slag byproduct
-    [SerializeField] private Image _spawnArea; // UI element defining the area where crafted items can spawn
-    [SerializeField] private Vector2 _spawnAreaSize = new Vector2(850, 350);
-    [SerializeField] private Vector2 _spawnAreaCenter = new Vector2(0, -350);
+    
+    [Tooltip("Total buffer to reduce the spawn area. Half is applied to each side.")]
+    [SerializeField] private Vector2 _spawnAreaBuffer = new Vector2(1f, 1f); 
+    
     [SerializeField] private Button _craftButton; // Button to trigger crafting
     [SerializeField] private ParticleSystem[] _lavaParticles; // Particle system for lava effect
     private Image _caveBGImage; // Reference to the cave background image
@@ -33,10 +37,8 @@ public class CraftingZone : MonoBehaviour
     private void Awake()
     {
         _bc = GetComponent<BoxCollider2D>();
-        _rect = GetComponent<RectTransform>();
+        _instance = this;
         _caveBGImage = GetComponent<Image>();
-
-        _bc.size = new Vector2(_rect.rect.width, _rect.rect.height); // Set the size of the BoxCollider2D
 
         if (_craftButton != null)
         {
@@ -165,11 +167,7 @@ public class CraftingZone : MonoBehaviour
         // Center of all objects in a zone [ONE OR THE OTHER]
         Vector3 spawnPosition = ComputeCenterOf(objectsToConsume) ?? transform.position;
 
-        // Random position in dead zone [ONE OR THE OTHER]
-        //Vector3 spawnPosition = GetRandomSpawnPosition();
-
         // Unparent the objects first so they no longer count toward the DraggableHolder child count.
-        // Preserve original parents so we can restore them if crafting fails.
         List<Transform> originalParents = new List<Transform>();
         foreach (var obj in objectsToConsume)
         {
@@ -180,7 +178,7 @@ public class CraftingZone : MonoBehaviour
             }
         }
 
-        // Attempt to craft the result. DraggableHolder will receive the instantiated object if available.
+        // Attempt to craft the result.
         GameObject craftedObj = CraftingManager.Instance != null ? CraftingManager.Instance.TryCraft(ingredients, spawnPosition) : null;
 
         if (craftedObj != null)
@@ -210,17 +208,6 @@ public class CraftingZone : MonoBehaviour
             }
 
             Instantiate(_slagPrefab, spawnPosition, Quaternion.identity, DraggableHolder.Instance.transform);
-
-            // if (!_slagFirstTimeShown)
-            // {
-            //     _slagFirstTimeShown = true;
-            //     CraftedPopupManager.Instance?.ShowPersistentCraftedPopup(_slagPrefab.GetComponent<Mineral>().data);
-            // }
-            // else
-            // {
-            //     CraftedPopupManager.Instance?.ShowCraftedPopup(_slagPrefab.GetComponent<Mineral>().data, spawnPosition);
-            // }
-
             CraftedPopupManager.Instance?.ShowSlagPopup();
 
             Debug.Log("Crafting failed at finalization: No matching recipe -- Created Slag as byproduct.");
@@ -245,14 +232,25 @@ public class CraftingZone : MonoBehaviour
         return center / count;
     }
 
-    private Vector3 GetRandomSpawnPosition()
+    // Returns a random world-space position inside the box collider, inset by _spawnAreaBuffer (half buffer per side)
+    public Vector3 GetRandomSpawnPosition()
     {
-        Rect rect = _spawnArea.rectTransform.rect;
-        float halfW = Mathf.Min(_spawnAreaSize.x * 0.5f, rect.width * 0.5f);
-        float halfH = Mathf.Min(_spawnAreaSize.y * 0.5f, rect.height * 0.5f);
-        Vector2 center = rect.center + _spawnAreaCenter;
-        Vector2 rand = new Vector2(Random.Range(center.x - halfW, center.x + halfW), Random.Range(center.y - halfH, center.y + halfH));
-        return _spawnArea.rectTransform.TransformPoint(rand);
+        BoxCollider2D bc = Collider;
+        if (bc == null) return transform.position;
+
+        // Apply half buffer to each side to reduce spawn area by the total buffer value
+        Vector2 halfBuffer = _spawnAreaBuffer * 0.5f;
+
+        Vector3 min = bc.bounds.min + new Vector3(halfBuffer.x, halfBuffer.y, 0f);
+        Vector3 max = bc.bounds.max - new Vector3(halfBuffer.x, halfBuffer.y, 0f);
+
+        // Ensure valid ranges: if buffer too large, collapse to center
+        if (min.x > max.x) { float mid = (min.x + max.x) * 0.5f; min.x = max.x = mid; }
+        if (min.y > max.y) { float mid = (min.y + max.y) * 0.5f; min.y = max.y = mid; }
+
+        float x = Random.Range(min.x, max.x);
+        float y = Random.Range(min.y, max.y);
+        return new Vector3(x, y, transform.position.z);
     }
 
     private void ResetCraftingState()
@@ -269,7 +267,6 @@ public class CraftingZone : MonoBehaviour
         UpdateCraftButtonState();
     }
 
-    // Update the craft button visual to indicate whether a valid recipe exists
     private void UpdateCraftButtonState()
     {
         if (_craftButton == null) return;
@@ -303,7 +300,6 @@ public class CraftingZone : MonoBehaviour
             if (_dotIndicators[i] != null)
             {
                 _dotIndicators[i].GetComponent<Image>().color = (i < _currentPresses) ? Color.green : Color.red;
-                //_dotIndicators[i].transform.GetChild(0).GetComponent<Image>().color = (i < _currentPresses) ? new Color32(13, 134, 0, 255) : new Color32(98, 0, 8, 255);
             }
         }
 
@@ -320,8 +316,32 @@ public class CraftingZone : MonoBehaviour
             if (_dotIndicators[i] != null)
             {
                 _dotIndicators[i].GetComponent<Image>().color = Color.red;
-                //_dotIndicators[i].transform.GetChild(0).GetComponent<Image>().color =  new Color32(98, 0, 8, 255);
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Draw the BoxCollider2D bounds and the inner spawn area rectangle
+        BoxCollider2D bc = GetComponent<BoxCollider2D>();
+        if (bc == null) return;
+
+        // Full collider bounds
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(bc.bounds.center, bc.bounds.size);
+
+        // Buffered inner area
+        Vector2 halfBuffer = _spawnAreaBuffer * 0.5f;
+        Vector3 min = bc.bounds.min + new Vector3(halfBuffer.x, halfBuffer.y, 0f);
+        Vector3 max = bc.bounds.max - new Vector3(halfBuffer.x, halfBuffer.y, 0f);
+
+        if (min.x > max.x) { float mid = (min.x + max.x) * 0.5f; min.x = max.x = mid; }
+        if (min.y > max.y) { float mid = (min.y + max.y) * 0.5f; min.y = max.y = mid; }
+
+        Vector3 center = (min + max) * 0.5f;
+        Vector3 size = new Vector3(max.x - min.x, max.y - min.y, 0.1f);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(center, size);
     }
 }
