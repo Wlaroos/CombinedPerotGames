@@ -161,11 +161,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721954
-    m_Localized: "\u786C\u3055"
+    m_Localized: "\u786C\u3055\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721955
-    m_Localized: "\u69CB\u9020"
+    m_Localized: "\u69CB\u9020\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 21026808737792

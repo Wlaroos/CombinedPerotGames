@@ -25,7 +25,7 @@ public static class SOHelpers
     {
         if (string.IsNullOrEmpty(name)) return name;
         string stripped = StripCommonPrefix(name);
-        int idx = stripped.IndexOfAny(new[] { '-', '_', ' ', '(' });
+        int idx = stripped.IndexOfAny(new[] { '-', '_', '(' });
         return (idx > 0) ? stripped.Substring(0, idx) : stripped;
     }
 
@@ -328,7 +328,7 @@ public static class SOHelpers
             structureIndex = intVal;
         }
 
-        int indexToUse = (structureIndex >= 0) ? (structureIndex + 1) : 1;
+        int indexToUse = structureIndex;
         string entryKey = "MuM_StructureLevel_0" + indexToUse + " (D)";
         return new LocalizedString { TableReference = "MixedMineral_TranslationTable", TableEntryReference = entryKey };
     }

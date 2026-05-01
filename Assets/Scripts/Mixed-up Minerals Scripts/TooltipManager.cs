@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 
 public class TooltipManager : MonoBehaviour
 {
@@ -59,21 +61,19 @@ public class TooltipManager : MonoBehaviour
             foreach (var minerals in structureTool.mineralsInRange)
             {
                 var values = minerals.mineralValues;
-                
-                string minStructure = values.crystalStructure switch
-                {
-                    1 => "Cubic",
-                    2 => "Tetragonal",
-                    3 => "Hexagonal",
-                    4 => "Rhombohedral",
-                    5 => "Orthorhombic",
-                    6 => "Monoclinic",
-                    7 => "Triclinic",
-                    _ => "Unknown"
-                };
-                
-                sb.AppendLine($"Mineral: {values.mineralName}");
-                sb.AppendLine($"Structure: {minStructure}");
+
+                // Localized mineral name
+                string localizedMineralName = values.mineralName.GetLocalizedString();
+
+                // Localized crystal structure
+                LocalizedString structureLocalized = SOHelpers.GetCrystalStructureFromData(values);
+                string localizedStructure = structureLocalized.GetLocalizedString();
+
+                var nameLabel = new LocalizedString { TableReference = "MixedMineral_TranslationTable", TableEntryReference = "MuM_Reader_01 (D)" }.GetLocalizedString();
+                var structureLabel = new LocalizedString { TableReference = "MixedMineral_TranslationTable", TableEntryReference = "MuM_Reader_03 (D)" }.GetLocalizedString();
+
+                sb.AppendLine($"{nameLabel}{localizedMineralName}");
+                sb.AppendLine($"{structureLabel}{localizedStructure}");
                 sb.AppendLine("");
             }
         }
@@ -85,13 +85,23 @@ public class TooltipManager : MonoBehaviour
             var mineral = hardnessTool.currentMineral;
             var values = mineral.mineralValues;
 
-            sb.AppendLine($"Mineral: {values.mineralName}");
-            
-            if(mineral.hardnessDiscovered)
-                sb.AppendLine($"Hardness: {values.hardness}");
+            string localizedMineralName = values.mineralName.GetLocalizedString();
+
+            var nameLabel2 = new LocalizedString { TableReference = "MixedMineral_TranslationTable", TableEntryReference = "MuM_Reader_01 (D)" }.GetLocalizedString();
+            var hardnessLabel = new LocalizedString { TableReference = "MixedMineral_TranslationTable", TableEntryReference = "MuM_Reader_02 (D)" }.GetLocalizedString();
+
+            sb.AppendLine($"{nameLabel2}{localizedMineralName}");
+
+            if (mineral.hardnessDiscovered)
+            {
+                string hardnessValue = SOHelpers.GetHardnessFromData(values);
+                sb.AppendLine($"{hardnessLabel}{hardnessValue}");
+            }
             else
-                sb.AppendLine($"Hardness: ???");
-            
+            {
+                sb.AppendLine(hardnessLabel + "???");
+            }
+
             sb.AppendLine("");
         }
         
@@ -100,7 +110,7 @@ public class TooltipManager : MonoBehaviour
             tooltipPanel.SetActive(false);
             return;
         }
-        
+
         tooltipPanel.SetActive(true);
         tooltipText.text = sb.ToString();
     }
