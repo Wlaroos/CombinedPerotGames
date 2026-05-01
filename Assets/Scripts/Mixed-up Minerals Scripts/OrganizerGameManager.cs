@@ -49,11 +49,6 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private ToolWire wire;
     [SerializeField] private Tray tray;
     [SerializeField] private GameObject panelIndicator;
-    
-    [Header("Inactive")]
-    [SerializeField] private GameObject inactivePanel; // panel that activates after inactiveTime gets triggered
-    [SerializeField] private float inactiveTime; // time before warning
-    [SerializeField] private float timeoutTime; // extra time before returning to menu
 
     private float idleTimer = 0f;
     private bool isIdle = false;
@@ -93,8 +88,6 @@ public class OrganizerGameManager : MonoBehaviour
                 panelTimer = 0;
             }
         }
-        
-        Inactive();
     }
     
     public void ShowWin()
@@ -295,38 +288,5 @@ public class OrganizerGameManager : MonoBehaviour
             structFlavorPanel.SetActive(false);
             toolFlavorPanel.SetActive(false);
         }
-    }
-
-    bool HasInput()
-    {
-        return Input.anyKeyDown || Input.GetMouseButtonDown(0);
-    }
-    
-    private void Inactive()
-    {
-        if (HasInput() || winPanel.activeSelf)
-        {
-            idleTimer = 0f;
-            return;
-        }
-        
-        idleTimer += Time.deltaTime;
-
-        if (!isIdle && idleTimer >= inactiveTime)
-        {
-            inactivePanel.SetActive(true);
-            isIdle = true;
-        }
-
-        if (idleTimer >= inactiveTime + timeoutTime)
-        {
-            SceneManager.LoadScene("LevelSelect");
-        }
-    }
-
-    public void InactivePress()
-    {
-        inactivePanel.SetActive(false);
-        isIdle = false;
     }
 }
