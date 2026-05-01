@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.Localization.Components;
 
 public class FinalMineralInfoCard : MonoBehaviour
 {
@@ -42,13 +43,46 @@ public class FinalMineralInfoCard : MonoBehaviour
         // Set Text
         _mineralNameText.text = SOHelpers.GetFullStrippedName(recipe.output);
         _mineralNameSmallText.text = SOHelpers.GetFullStrippedName(recipe.output);
-        
+
+        var nameLocalizer = _mineralNameText.GetComponent<LocalizeStringEvent>();
+        nameLocalizer.StringReference = SOHelpers.GetLocalizedNameFromData(recipe.output);
+
+        var smallNameLocalizer = _mineralNameSmallText.GetComponent<LocalizeStringEvent>();
+        smallNameLocalizer.StringReference = SOHelpers.GetLocalizedNameFromData(recipe.output);
+
         // Explicitly requesting non-unicode subscripts for TMP compatibility
-        _mineralChemicalFormulaText.text = "Formula = " + SOHelpers.GetChemicalFormulaFromRecipe(recipe, false);
-        
-        _mineralHardnessText.text = "Mohs = " + SOHelpers.GetHardnessFromData(recipe.output);
-        _mineralCrystalStructureText.text = "Crystal Structure = " + SOHelpers.GetCrystalStructureFromData(recipe.output);
+        var chemicalFormulaLocalizer = _mineralChemicalFormulaText.GetComponent<LocalizeStringEvent>();
+        var hardnessLocalizer = _mineralHardnessText.GetComponent<LocalizeStringEvent>();
+        var crystalStructureLocalizer = _mineralCrystalStructureText.GetComponent<LocalizeStringEvent>();
+
+        chemicalFormulaLocalizer.OnUpdateString.RemoveAllListeners();
+        // Lambda  to append the dynamic chemical formula after the localized label
+        chemicalFormulaLocalizer.OnUpdateString.AddListener((localized) =>
+        {
+            _mineralChemicalFormulaText.text = localized + " = " + SOHelpers.GetChemicalFormulaFromRecipe(recipe, false);
+        });
+        chemicalFormulaLocalizer.RefreshString();
+
+        // Similar setup for hardness
+        hardnessLocalizer.OnUpdateString.RemoveAllListeners();
+        hardnessLocalizer.OnUpdateString.AddListener((localized) =>
+        {
+            _mineralHardnessText.text = localized + " = " + SOHelpers.GetHardnessFromData(recipe.output);
+        });
+        hardnessLocalizer.RefreshString();
+
+        // Similar setup for crystal structure
+        crystalStructureLocalizer.OnUpdateString.RemoveAllListeners();
+        crystalStructureLocalizer.OnUpdateString.AddListener((localized) =>
+        {
+            _mineralCrystalStructureText.text = localized + " = " + SOHelpers.GetCrystalStructureFromData(recipe.output);
+        });
+        crystalStructureLocalizer.RefreshString();
+
         _mineralFunFactText.text = SOHelpers.GetFunFactFromData(recipe.output);
+
+        var funFactLocalizer = _mineralFunFactText.GetComponent<LocalizeStringEvent>();
+        funFactLocalizer.StringReference = SOHelpers.GetLocalizedFunFactFromData(recipe.output);
 
         // Set Icon
         _mineralIcon.sprite = SOHelpers.GetBigSpriteFromData(recipe.output);
@@ -74,14 +108,36 @@ public class FinalMineralInfoCard : MonoBehaviour
     {
         if (mineralData == null) return;
 
-        // Set Text
-        _mineralNameText.text = mineralData.mineralName;
-        _mineralNameSmallText.text = mineralData.mineralName;
-        _mineralChemicalFormulaText.text = "Formula = " + SOHelpers.GetChemicalFormulaFromData(mineralData);
-        _mineralHardnessText.text = "Mohs = " + SOHelpers.GetHardnessFromData(mineralData);
-        _mineralCrystalStructureText.text = "Crystal Structure = " + SOHelpers.GetCrystalStructureFromData(mineralData);
+        var chemicalFormulaLocalizer = _mineralChemicalFormulaText.GetComponent<LocalizeStringEvent>();
+        var hardnessLocalizer = _mineralHardnessText.GetComponent<LocalizeStringEvent>();
+        var crystalStructureLocalizer = _mineralCrystalStructureText.GetComponent<LocalizeStringEvent>();
 
-        _mineralFunFactText.text = mineralData.funFact;
+        // Set Text
+        _mineralNameText.text = mineralData.mineralName.GetLocalizedString();
+        _mineralNameSmallText.text = mineralData.mineralName.GetLocalizedString();
+        
+        chemicalFormulaLocalizer.OnUpdateString.RemoveAllListeners();
+        chemicalFormulaLocalizer.OnUpdateString.AddListener((localized) =>
+        {
+            _mineralChemicalFormulaText.text = localized + " = " + SOHelpers.GetChemicalFormulaFromData(mineralData);
+        });
+        chemicalFormulaLocalizer.RefreshString();
+
+        hardnessLocalizer.OnUpdateString.RemoveAllListeners();
+        hardnessLocalizer.OnUpdateString.AddListener((localized) =>
+        {
+            _mineralHardnessText.text = localized + " = " + SOHelpers.GetHardnessFromData(mineralData);
+        });
+        hardnessLocalizer.RefreshString();
+
+        crystalStructureLocalizer.OnUpdateString.RemoveAllListeners();
+        crystalStructureLocalizer.OnUpdateString.AddListener((localized) =>
+        {
+            _mineralCrystalStructureText.text = localized + " = " + SOHelpers.GetCrystalStructureFromData(mineralData);
+        });
+        crystalStructureLocalizer.RefreshString();
+
+        _mineralFunFactText.text = mineralData.funFact.GetLocalizedString();
 
         // Set Icon
         _mineralIcon.sprite = mineralData.mineralBigSprite;

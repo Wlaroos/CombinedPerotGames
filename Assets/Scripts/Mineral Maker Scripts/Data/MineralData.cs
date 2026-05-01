@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using UnityEngine.Localization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -9,9 +10,9 @@ using UnityEditor;
 public class MineralData : ScriptableObject
 {
     [Header("Mineral Info")]
-    public string mineralName;         // Name of the mineral
+    public LocalizedString mineralName;         // Name of the mineral
     public string description;       // Description of the mineral
-    public string funFact;       // Fun fact about the mineral
+    public LocalizedString funFact;       // Fun fact about the mineral
     [Header("Mineral Appearance")]
     public Sprite mineralSprite;       // Main sprite for the mineral
     public Sprite mineralBigSprite;    // Big version of the mineral sprite
@@ -36,7 +37,9 @@ public class MineralData : ScriptableObject
     private void OnEnable()
     {
         // Set the mineral name to the asset's name
-        mineralName = SOHelpers.StripCommonPrefix(this.name);
+        mineralName = new LocalizedString { TableReference = "MineralNames_TranslationTable", TableEntryReference = "MN_" + SOHelpers.StripCommonPrefix(this.name) };
+        // Set the fun fact to a default value if it's empty
+        funFact = new LocalizedString { TableReference = "FunFacts_TranslationTable", TableEntryReference = "FF_" + SOHelpers.StripCommonPrefix(this.name) };
     }
 }
 

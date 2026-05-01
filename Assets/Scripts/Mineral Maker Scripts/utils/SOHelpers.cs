@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Localization;
 
 public static class SOHelpers
 {
@@ -181,6 +182,18 @@ public static class SOHelpers
             if (v is string s && !string.IsNullOrEmpty(s)) return s;
         }
         return StripCommonPrefix(so.name);
+    }
+
+    public static LocalizedString GetLocalizedNameFromData(ScriptableObject so)
+    {
+        var candidates = new[] { "mineralName", "elementName", "compoundName", "displayName", "title" };
+        return new LocalizedString { TableReference = "MineralNames_TranslationTable", TableEntryReference = "MN_" + StripCommonPrefix(so.name) };
+    }
+
+    public static LocalizedString GetLocalizedFunFactFromData(ScriptableObject so)
+    {
+        var candidates = new[] { "mineralFunFact", "elementFunFact", "compoundFunFact", "funFact" };
+        return new LocalizedString { TableReference = "FunFacts_TranslationTable", TableEntryReference = "FF_" + StripCommonPrefix(so.name) };
     }
 
     public static string GetDescriptionFromData(ScriptableObject so)
