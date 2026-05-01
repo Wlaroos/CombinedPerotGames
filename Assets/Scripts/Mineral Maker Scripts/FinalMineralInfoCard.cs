@@ -75,7 +75,7 @@ public class FinalMineralInfoCard : MonoBehaviour
         crystalStructureLocalizer.OnUpdateString.RemoveAllListeners();
         crystalStructureLocalizer.OnUpdateString.AddListener((localized) =>
         {
-            _mineralCrystalStructureText.text = localized + " = " + SOHelpers.GetCrystalStructureFromData(recipe.output);
+            _mineralCrystalStructureText.text = localized + " = " + SOHelpers.GetCrystalStructureFromData(recipe.output).GetLocalizedString();
         });
         crystalStructureLocalizer.RefreshString();
 
@@ -133,7 +133,7 @@ public class FinalMineralInfoCard : MonoBehaviour
         crystalStructureLocalizer.OnUpdateString.RemoveAllListeners();
         crystalStructureLocalizer.OnUpdateString.AddListener((localized) =>
         {
-            _mineralCrystalStructureText.text = localized + " = " + SOHelpers.GetCrystalStructureFromData(mineralData);
+            _mineralCrystalStructureText.text = localized + " = " + SOHelpers.GetCrystalStructureFromData(mineralData).GetLocalizedString();
         });
         crystalStructureLocalizer.RefreshString();
 

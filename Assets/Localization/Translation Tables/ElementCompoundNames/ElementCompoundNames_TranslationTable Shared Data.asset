@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: ElementCompoundNames_TranslationTable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: ElementCompoundNames_TranslationTable
+  m_TableCollectionNameGuidString: c32558e9ae77f274e93a6707239ad103
+  m_Entries:
+  - m_Id: 239154442240
+    m_Key: EN_Hydrogen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522624
+    m_Key: EN_Helium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522625
+    m_Key: EN_Beryllium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522626
+    m_Key: EN_Carbon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911232
+    m_Key: EN_Magnesium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911233
+    m_Key: EN_Aluminum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911234
+    m_Key: EN_Silicon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911235
+    m_Key: EN_Phosphorus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911236
+    m_Key: EN_Sulfur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911237
+    m_Key: EN_Calcium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911238
+    m_Key: EN_Titanium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911239
+    m_Key: EN_Iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911240
+    m_Key: EN_Copper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911241
+    m_Key: EN_Barite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911242
+    m_Key: EN_Fluorine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911243
+    m_Key: EN_Chlorine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911244
+    m_Key: EN_Sodium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211520
+    m_Key: New Entry 15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211521
+    m_Key: New Entry 16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211522
+    m_Key: New Entry 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211523
+    m_Key: New Entry 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211524
+    m_Key: New Entry 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211525
+    m_Key: New Entry 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211526
+    m_Key: New Entry 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211527
+    m_Key: New Entry 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211528
+    m_Key: New Entry 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211529
+    m_Key: New Entry 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211530
+    m_Key: New Entry 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211531
+    m_Key: New Entry 26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211532
+    m_Key: New Entry 27
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211533
+    m_Key: New Entry 28
+    m_Metadata:
+      m_Items: []
+  - m_Id: 245215211534
+    m_Key: New Entry 29
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911260
+    m_Key: CN_Oxide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911261
+    m_Key: CN_Carbonate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911262
+    m_Key: CN_Phosphate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911263
+    m_Key: CN_Sulfate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911264
+    m_Key: CN_Silicate
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8852251715399057482
+  references:
+    version: 2
+    RefIds:
+    - rid: 8852251715399057482
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1777657463062

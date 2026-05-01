@@ -311,9 +311,9 @@ public static class SOHelpers
     }
 
     // Returns a human-readable crystal structure name from a ScriptableObject
-    public static string GetCrystalStructureFromData(ScriptableObject dataObject)
+    public static LocalizedString GetCrystalStructureFromData(ScriptableObject dataObject)
     {
-        if (dataObject == null) return "Unknown";
+        if (dataObject == null) return new LocalizedString { TableReference = "MixedMineral_TranslationTable", TableEntryReference = "MuM_StructureLevel_01 (D)" };
 
         object structureValue = GetFieldOrPropertyValue(dataObject, "crystalStructure");
         int structureIndex = -1;
@@ -323,20 +323,9 @@ public static class SOHelpers
             structureIndex = intVal;
         }
 
-        string structureName = structureIndex switch
-        {
-            1 => "Cubic",
-            2 => "Tetragonal",
-            3 => "Hexagonal",
-            4 => "Rhombohedral",
-            5 => "Orthorhombic",
-            6 => "Monoclinic",
-            7 => "Triclinic",
-            _ => "Unknown"
-        };
-
-        string text = structureName;
-        return text;
+        int indexToUse = (structureIndex >= 0) ? (structureIndex + 1) : 1;
+        string entryKey = "MuM_StructureLevel_0" + indexToUse + " (D)";
+        return new LocalizedString { TableReference = "MixedMineral_TranslationTable", TableEntryReference = entryKey };
     }
 
     // Build a simple chemical formula string from a CraftingRecipe's inputs.

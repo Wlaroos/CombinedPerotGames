@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: ElementCompoundNames_TranslationTable_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c32558e9ae77f274e93a6707239ad103, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 239154442240
+    m_Localized: Hydrogen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522624
+    m_Localized: Helium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522625
+    m_Localized: Beryllium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522626
+    m_Localized: Carbon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911232
+    m_Localized: Magnesium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911233
+    m_Localized: Aluminum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911234
+    m_Localized: Silicon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911235
+    m_Localized: Phosphorus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911236
+    m_Localized: Sulfur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911237
+    m_Localized: Calcium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911238
+    m_Localized: Titanium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911239
+    m_Localized: Iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911240
+    m_Localized: Copper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911241
+    m_Localized: Barite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911242
+    m_Localized: Fluorine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911243
+    m_Localized: Chlorine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911244
+    m_Localized: Sodium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911260
+    m_Localized: Oxide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911261
+    m_Localized: Carbonate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911262
+    m_Localized: Phosphate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911263
+    m_Localized: Sulfate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911264
+    m_Localized: Silicate
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
