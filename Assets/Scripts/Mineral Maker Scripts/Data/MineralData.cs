@@ -5,7 +5,6 @@ using UnityEngine.Localization;
 using UnityEditor;
 #endif
 
-// Stores info about a mineral (used as a ScriptableObject)
 [CreateAssetMenu(menuName = "Chemistry/Mineral Data")]
 public class MineralData : ScriptableObject
 {
@@ -37,9 +36,9 @@ public class MineralData : ScriptableObject
     private void OnEnable()
     {
         // Set the mineral name to the asset's name
-        mineralName = new LocalizedString { TableReference = "MineralNames_TranslationTable", TableEntryReference = "MN_" + SOHelpers.StripCommonPrefix(this.name) };
+        mineralName = SOHelpers.GetLocalizedNameFromData(this);
         // Set the fun fact to a default value if it's empty
-        funFact = new LocalizedString { TableReference = "FunFacts_TranslationTable", TableEntryReference = "FF_" + SOHelpers.StripCommonPrefix(this.name) };
+        funFact = SOHelpers.GetLocalizedFunFactFromData(this);
     }
 }
 

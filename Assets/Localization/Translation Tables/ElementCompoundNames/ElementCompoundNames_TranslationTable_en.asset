@@ -71,7 +71,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 239250911241
-    m_Localized: Barite
+    m_Localized: Barium
     m_Metadata:
       m_Items: []
   - m_Id: 239250911242
@@ -104,6 +104,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 239250911264
     m_Localized: Silicate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3786428329984
+    m_Localized: Lead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3786428329985
+    m_Localized: Manganese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3786428329986
+    m_Localized: Tungsten
     m_Metadata:
       m_Items: []
   references:

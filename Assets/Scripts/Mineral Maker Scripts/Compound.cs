@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.Localization.Components;
 
 // Controls how a compound looks and stores its info
 public class Compound : MonoBehaviour
@@ -36,9 +37,13 @@ public class Compound : MonoBehaviour
             Color dimmed = new Color(c.r / 255f * 0.5f, c.g / 255f * 0.5f, c.b / 255f * 0.5f, c.a / 255f);
             _backgroundSprite.color = dimmed;
 
-                    if (_nameText != null)
+        if (_nameText != null)
         {
-            _nameText.text = SOHelpers.GetBaseName(data.compoundName);
+            // Set the localized name for the compound, allows dynamic updates if localization changes
+            var localizer = FindFirstObjectByType<LocalizeStringEvent>(FindObjectsInactive.Include);
+            localizer.StringReference = data.compoundName;
+
+            _nameText.text = SOHelpers.GetBaseName(data.compoundName.GetLocalizedString());
             _nameText.color = data.defaultColor;
         }
         }

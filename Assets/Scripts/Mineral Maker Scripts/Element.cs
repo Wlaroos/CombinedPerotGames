@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Localization.Components;
 
 // Handles the visual and data logic for an element object
 public class Element : MonoBehaviour
@@ -104,7 +105,11 @@ public class Element : MonoBehaviour
 
         if (_nameText != null)
         {
-            _nameText.text = data.elementName;
+             // Set the localized name for the element, allows dynamic updates if localization changes
+            var localizer = FindFirstObjectByType<LocalizeStringEvent>(FindObjectsInactive.Include);
+            localizer.StringReference = data.elementName;
+
+            _nameText.text = data.elementName.GetLocalizedString();
             _nameText.color = data.defaultColor;
         }
     }

@@ -17,8 +17,52 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 45038b3d834e6de4ca4cd640b5d449a8, type: 2}
   - {fileID: 11400000, guid: e96dcb7bb22fd9642a24a62cc81f583a, type: 2}
   - {fileID: 11400000, guid: a997b9a3b0e972443884d520e65282b7, type: 2}
-  m_Extensions: []
+  m_Extensions:
+  - rid: 8852251715399057483
   m_Group: String Table
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8852251715399057483
+      type: {class: CsvExtension, ns: UnityEditor.Localization.Plugins.CSV, asm: Unity.Localization.Editor}
+      data:
+        m_Collection: {fileID: 11400000}
+        m_ColumnsList:
+        - rid: 8852251715399057484
+        - rid: 8852251715399057485
+        - rid: 8852251715399057486
+        - rid: 8852251715399057487
+        m_ConnectedFile: Assets/Localization/Translation Tables/ElementCompoundNames/MineralDev_TranslationSheet
+          - Element Compund Names.csv
+    - rid: 8852251715399057484
+      type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_IncludeId: 1
+        m_IncludeSharedComments: 1
+        m_KeyFieldName: Key
+        m_IdFieldName: Id
+        m_CommentFieldName: Shared Comments
+    - rid: 8852251715399057485
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: en
+        m_FieldName: English(en)
+        m_CommentFieldName: English(en) Comments
+        m_IncludeComments: 1
+    - rid: 8852251715399057486
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: es
+        m_FieldName: Spanish(es)
+        m_CommentFieldName: Spanish(es) Comments
+        m_IncludeComments: 1
+    - rid: 8852251715399057487
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: ja
+        m_FieldName: Japanese(ja)
+        m_CommentFieldName: Japanese(ja) Comments
+        m_IncludeComments: 1

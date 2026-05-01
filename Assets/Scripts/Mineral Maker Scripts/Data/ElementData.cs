@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
-// Stores info about an element (used as a ScriptableObject)
 [CreateAssetMenu(menuName = "Chemistry/Element Data")]
 public class ElementData : ScriptableObject
 {
-    public string elementName;         // Name of the element
+    public LocalizedString elementName;         // Name of the element
     public Sprite elementSprite;       // Main sprite for the element
     public Sprite altElementSprite;    // Alternative sprite for the element
     public Sprite[] numberSprites;     // Sprites for numbers (for isotope)
@@ -15,7 +15,7 @@ public class ElementData : ScriptableObject
 
     private void OnEnable()
     {
-        elementName =  SOHelpers.StripCommonPrefix(this.name);
+        elementName =  SOHelpers.GetLocalizedNameFromData(this);
     }
 
     public void EnsureNumberSpritesLoaded()

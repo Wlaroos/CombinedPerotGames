@@ -186,14 +186,19 @@ public static class SOHelpers
 
     public static LocalizedString GetLocalizedNameFromData(ScriptableObject so)
     {
-        var candidates = new[] { "mineralName", "elementName", "compoundName", "displayName", "title" };
-        return new LocalizedString { TableReference = "MineralNames_TranslationTable", TableEntryReference = "MN_" + StripCommonPrefix(so.name) };
+        if(GetFieldOrPropertyValue(so, "mineralName") != null)
+            return new LocalizedString { TableReference = "MineralNames_TranslationTable", TableEntryReference = "MN_" + GetBaseName(so.name) };
+        else if(GetFieldOrPropertyValue(so, "elementName") != null)
+            return new LocalizedString { TableReference = "ElementCompoundNames_TranslationTable", TableEntryReference = "EN_" + GetBaseName(so.name) };
+        else if(GetFieldOrPropertyValue(so, "compoundName") != null)
+            return new LocalizedString { TableReference = "ElementCompoundNames_TranslationTable", TableEntryReference = "CN_" + GetBaseName(so.name) };
+        else
+            return new LocalizedString{ TableReference = "MineralNames_TranslationTable", TableEntryReference = "MN_" + GetBaseName(so.name) };
     }
 
     public static LocalizedString GetLocalizedFunFactFromData(ScriptableObject so)
     {
-        var candidates = new[] { "mineralFunFact", "elementFunFact", "compoundFunFact", "funFact" };
-        return new LocalizedString { TableReference = "FunFacts_TranslationTable", TableEntryReference = "FF_" + StripCommonPrefix(so.name) };
+        return new LocalizedString { TableReference = "FunFacts_TranslationTable", TableEntryReference = "FF_" + GetBaseName(so.name) };
     }
 
     public static string GetDescriptionFromData(ScriptableObject so)

@@ -32,6 +32,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c32558e9ae77f274e93a6707239ad103
+    m_Address: Assets/Localization/Translation Tables/ElementCompundNames/ElementCompoundNames_TranslationTable
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec47e5559910eb44cbcd8cde19ea2202
     m_Address: Assets/Localization/Translation Tables/Both/Both_TranslationTable
       Shared Data.asset

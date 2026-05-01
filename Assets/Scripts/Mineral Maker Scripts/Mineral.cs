@@ -35,6 +35,7 @@ public class Mineral : MonoBehaviour
             }
             if (_mineralNameText != null)
             {
+                 // Set the localized name for the mineral, allows dynamic updates if localization changes
                 var localizer = FindFirstObjectByType<LocalizeStringEvent>(FindObjectsInactive.Include);
                 localizer.StringReference = data.mineralName;
                 
