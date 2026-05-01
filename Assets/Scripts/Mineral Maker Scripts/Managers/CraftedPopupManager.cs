@@ -101,27 +101,49 @@ public class CraftedPopupManager : MonoBehaviour
 
         if (title != null)
         {
-            // Display a tidy name (remove prefix before underscore if present)
-            string temp = SOHelpers.GetDisplayNameFromData(data);
-            int idx = temp.IndexOf('_');
-            if (idx >= 0 && idx + 1 < temp.Length) temp = temp.Substring(idx + 1);
+            string temp;
 
-            // For Elements and Compounds (including variant compounds) show their symbol via SOHelpers.
-            // For Minerals without a recipe, show variant-aware symbol as well.
-            if (data is ElementData || data is CompoundData)
+            // For minerals use the localized name and append chemical formula
+            if (data is MineralData)
             {
-                string formula = SOHelpers.GetSymbolForScriptableObject(data);
+                temp = SOHelpers.GetLocalizedNameFromData(data).GetLocalizedString();
+                if (string.IsNullOrEmpty(temp))
+                {
+                    temp = SOHelpers.GetDisplayNameFromData(data);
+                    int idx = temp.IndexOf('_');
+                    if (idx >= 0 && idx + 1 < temp.Length) temp = temp.Substring(idx + 1);
+                }
+
+                string formula = null;
+                if (recipe != null)
+                {
+                    formula = SOHelpers.BuildFormulaForTitle(title, recipe);
+                }
+                else
+                {
+                    formula = SOHelpers.GetChemicalFormulaFromData(data);
+                }
+
                 if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
             }
-            else if (data is MineralData && recipe == null)
+            else
             {
-                string formula = SOHelpers.GetSymbolForScriptableObject(data);
-                if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
-            }
-            else if (recipe != null)
-            {
-                string formula = SOHelpers.BuildFormulaForTitle(title, recipe);
-                if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
+                // Display a tidy name (remove prefix before underscore if present)
+                temp = SOHelpers.GetDisplayNameFromData(data);
+                int idx = temp.IndexOf('_');
+                if (idx >= 0 && idx + 1 < temp.Length) temp = temp.Substring(idx + 1);
+
+                // For Elements and Compounds (including variant compounds) show their symbol via SOHelpers.
+                if (data is ElementData || data is CompoundData)
+                {
+                    string formula = SOHelpers.GetSymbolForScriptableObject(data);
+                    if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
+                }
+                else if (recipe != null)
+                {
+                    string formula = SOHelpers.BuildFormulaForTitle(title, recipe);
+                    if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
+                }
             }
 
             title.text = temp;
@@ -183,19 +205,37 @@ public class CraftedPopupManager : MonoBehaviour
 
         if (title != null)
         {
-            string temp = SOHelpers.GetDisplayNameFromData(data);
-            int idx = temp.IndexOf('_');
-            if (idx >= 0 && idx + 1 < temp.Length) temp = temp.Substring(idx + 1);
+            string temp;
 
-            if (data is ElementData)
+            if (data is MineralData)
             {
-                string formula = SOHelpers.GetSymbolForScriptableObject(data);
+                temp = SOHelpers.GetLocalizedNameFromData(data).GetLocalizedString();
+                if (string.IsNullOrEmpty(temp))
+                {
+                    temp = SOHelpers.GetDisplayNameFromData(data);
+                    int idx = temp.IndexOf('_');
+                    if (idx >= 0 && idx + 1 < temp.Length) temp = temp.Substring(idx + 1);
+                }
+
+                string formula = recipe != null ? SOHelpers.BuildFormulaForTitle(title, recipe) : SOHelpers.GetChemicalFormulaFromData(data);
                 if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
             }
-            else if (recipe != null)
+            else
             {
-                string formula = SOHelpers.BuildFormulaForTitle(title, recipe);
-                if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
+                temp = SOHelpers.GetDisplayNameFromData(data);
+                int idx = temp.IndexOf('_');
+                if (idx >= 0 && idx + 1 < temp.Length) temp = temp.Substring(idx + 1);
+
+                if (data is ElementData)
+                {
+                    string formula = SOHelpers.GetSymbolForScriptableObject(data);
+                    if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
+                }
+                else if (recipe != null)
+                {
+                    string formula = SOHelpers.BuildFormulaForTitle(title, recipe);
+                    if (!string.IsNullOrEmpty(formula)) temp = string.Format("{0} ({1})", temp, formula);
+                }
             }
 
             title.text = temp;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.Localization.Components;
 
 public class NewRecipePanelScript : MonoBehaviour
 {
@@ -175,6 +176,9 @@ public class NewRecipePanelScript : MonoBehaviour
 
         _mineralNameTexts[index].text = SOHelpers.GetFullStrippedName(recipe.output);
 
+        var localizer = _mineralNameTexts[index].GetComponent<LocalizeStringEvent>();
+        localizer.StringReference = SOHelpers.GetLocalizedNameFromData(recipe.output);
+
         _mineralImages[index].sprite = SOHelpers.GetBigSpriteFromData(recipe.output);
         _mineralImages[index].preserveAspect = true;
         _mineralImages[index].color = Color.white;
@@ -282,7 +286,11 @@ public class NewRecipePanelScript : MonoBehaviour
         // NEW: Tell the CraftingManager exactly which recipe we are looking at to prioritize it
         CraftingManager.Instance.SetActiveTargetRecipe(recipe);
 
-        _titleText.text = SOHelpers.GetFullStrippedName(recipe.output);
+        _titleText.text = SOHelpers.GetLocalizedNameFromData(recipe.output).GetLocalizedString();
+
+        var localizer = _titleText.GetComponent<LocalizeStringEvent>();
+        localizer.StringReference = SOHelpers.GetLocalizedNameFromData(recipe.output);
+        
 
         ScriptableObject[] inputs = { recipe.inputA, recipe.inputB, recipe.inputC, recipe.inputD, recipe.inputE, recipe.inputF, recipe.inputG, recipe.inputH };
         UpdateIngredientImages(inputs);

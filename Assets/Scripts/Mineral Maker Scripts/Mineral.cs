@@ -1,7 +1,7 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
+using TMPro;
 
-// Controls how a mineral looks and stores its info
 public class Mineral : MonoBehaviour
 {
     public MineralData data; // Info about this mineral
@@ -35,7 +35,10 @@ public class Mineral : MonoBehaviour
             }
             if (_mineralNameText != null)
             {
-                string temp = data.mineralName;
+                var localizer = FindFirstObjectByType<LocalizeStringEvent>(FindObjectsInactive.Include);
+                localizer.StringReference = data.mineralName;
+                
+                string temp = data.mineralName.GetLocalizedString();
 
                 // Remove any prefix before an underscore
                 int idx = temp.IndexOf('_');

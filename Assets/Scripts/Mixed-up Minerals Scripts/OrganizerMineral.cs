@@ -39,7 +39,7 @@ public class OrganizerMineral : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = mineralValues.mineralBigSprite;
             _animator = GetComponent<Animator>();
-            gameObject.name = mineralValues.mineralName;
+            gameObject.name = mineralValues.mineralName.GetLocalizedString();
         }
         
         _animator = GetComponent<Animator>();
@@ -90,7 +90,7 @@ public class OrganizerMineral : MonoBehaviour
 
         _sr.sprite = mineralValues.mineralBigSprite;
         _sr.color = mineralValues.defaultColor;
-        gameObject.name = mineralValues.mineralName;
+        gameObject.name = mineralValues.mineralName.GetLocalizedString();
     }
 
     public void SetUnderScanner(bool value)
