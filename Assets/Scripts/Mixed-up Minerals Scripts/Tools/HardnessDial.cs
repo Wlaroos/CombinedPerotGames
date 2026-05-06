@@ -9,58 +9,13 @@ public class HardnessDial : MonoBehaviour
     public float maxAngle = 120f;
     public int steps = 10;
 
-    [Header("Drag Settings")]
-    public float dragSensitivity = 0.5f; // higher = faster movement
-
     private int currentStep = 1; // hardness value (1-10)
     private float currentAngle;
     
-    private bool dragging;
-    private Vector3 lastMousePosition;
     public bool coroutineStarted;
 
     void Start()
     {
-        SetDialFromStep();
-    }
-    
-    void OnMouseDown() => dragging = true;
-    void OnMouseUp()
-    { 
-        dragging = false;
-        lastMousePosition = Input.mousePosition;
-    }
-
-    void Update()
-    {
-        if (!dragging) return;
-        
-        Vector3 mouseDelta = Input.mousePosition - lastMousePosition;
-        lastMousePosition = Input.mousePosition;
-
-        float horizontalMovement = mouseDelta.x * (dragSensitivity/100);
-
-        if (Mathf.Abs(horizontalMovement) < 0.01f) return;
-
-        if (horizontalMovement > 0f)
-            IncreaseStep();
-        else
-            DecreaseStep();
-    }
-    
-    void IncreaseStep()
-    {
-        if (currentStep >= steps) return; // HARD STOP at 10
-
-        currentStep++;
-        SetDialFromStep();
-    }
-
-    void DecreaseStep()
-    {
-        if (currentStep <= 1) return; // HARD STOP at 1
-
-        currentStep--;
         SetDialFromStep();
     }
     

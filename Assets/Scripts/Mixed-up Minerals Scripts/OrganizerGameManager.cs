@@ -45,8 +45,6 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private MineralManager mineralManager;
 
     [Header("Misc")]
-    [SerializeField] private GameObject lever;
-    [SerializeField] private ToolWire wire;
     [SerializeField] private Tray tray;
     [SerializeField] private GameObject panelIndicator;
     
@@ -169,7 +167,6 @@ public class OrganizerGameManager : MonoBehaviour
         infoPanel.SetActive(true);
         whatIsHardness.SetActive(true);
         startScreen.SetActive(false);
-        lever.SetActive(true);
         hardnessSorting.SetActive(true);
     }
 
@@ -199,8 +196,7 @@ public class OrganizerGameManager : MonoBehaviour
             structureTool.SetActive(true);
             tooltipManager.ScannerActive();
         }
-        
-        wire.Activate();
+
         infoPanel.SetActive(false);
         hardFlavorPanel.SetActive(false);
         structFlavorPanel.SetActive(false);

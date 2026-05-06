@@ -9,7 +9,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"picker_window_position_offset.075BCD15" = "-491.3334;347.3333;487.3333;550"
+	"picker_window_position_offset.075BCD15" = "-491.3333;282;487.3333;550"
 	"picker_visibility_flags.075BCD15" = "264"
 	"picker_item_size.075BCD15" = "32"
 	"picker_inspector.075BCD15" = "0"
@@ -79,13 +79,14 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"st: B_Mineral"
+	"st: B_Miner"
 	"st: panel"
 	"st: MuM_Panel"
 	"st: MuM_Hardnes"
 	"st: MuM_HardnessT"
 	"st: MuM_"
 	"st: B_M"
-	"st: B_Mineral"
 	"st: MuM_Hardness"
 	"st: MuM_StructureTool"
 	"st: MuM_Struct"
@@ -97,8 +98,6 @@ recentSearches = [
 	"st: MuM_InfoButton"
 	"st: choose"
 	"st: crafting"
-	"st: MM_"
-	"st: _TranslationTable"
 ]
 searchItemFavorites = [
 ]

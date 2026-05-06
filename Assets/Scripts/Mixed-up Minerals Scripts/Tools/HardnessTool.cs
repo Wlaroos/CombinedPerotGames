@@ -18,9 +18,6 @@ public class HardnessTool : MonoBehaviour
     private float revealTimer = 0f;
     [Header("Delay")]
     [SerializeField] private float revealDelay = 1f;
-    
-    [Header("Lever")]
-    [SerializeField] private HardnessDifficulty difficulty;
 
     [SerializeField] private float spinDuration;
 
@@ -55,42 +52,15 @@ public class HardnessTool : MonoBehaviour
         if (!currentMineral) return;
         
         float mineralHardness = currentMineral.mineralValues.hardness;
-        
-        if(difficulty.isHard)
-        {
-            int toolHardness = hardnessDial.GetHardnessValue();
 
-            bool scratches = toolHardness >= mineralHardness;
-            bool correct = Mathf.Approximately(toolHardness, mineralHardness);
-
-            indicator.color = scratches ? scratchColor : noScratchColor;
-
-            if (correct && !currentMineral.hardnessDiscovered)
-            {
-                revealTimer += Time.deltaTime;
-
-                if (revealTimer >= revealDelay)
-                {
-                    currentMineral.hardnessDiscovered = true;
-                }
-            }
-            else
-            {
-                revealTimer = 0f;
-            }
-        }
-
-        if (!difficulty.isHard)
-        {
-            int mineralHardnessInt = Mathf.RoundToInt(mineralHardness);
+        int mineralHardnessInt = Mathf.RoundToInt(mineralHardness);
             
-            if(!hardnessDial.coroutineStarted)
-            {
-                hardnessDial.SetStepSmooth(mineralHardnessInt, spinDuration);
-            }
-
-            currentMineral.hardnessDiscovered = true;
-            indicator.color = scratchColor;
+        if(!hardnessDial.coroutineStarted)
+        {
+            hardnessDial.SetStepSmooth(mineralHardnessInt, spinDuration);
         }
+
+        currentMineral.hardnessDiscovered = true;
+        indicator.color = scratchColor;
     }
 }

@@ -59,19 +59,15 @@ public class SortingManager : MonoBehaviour
         if(rule.attribute == SortingRule.AttributeType.Hardness)
         {
             bool ascending = true;
-            bool descending = true;
             
             // Check order
             for (int i = 0; i < values.Count - 1; i++)
             {
                 if (values[i] > values[i + 1])
                     ascending = false;
-                
-                if (values[i] < values[i + 1])
-                    descending = false;
             }
 
-            return ascending || descending;
+            return ascending;
         }
 
         if (rule.attribute == SortingRule.AttributeType.crystalStructure)
