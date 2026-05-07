@@ -9,7 +9,7 @@ public class HardnessDial : MonoBehaviour
     public float maxAngle = 120f;
     public int steps = 10;
 
-    private int currentStep = 1; // hardness value (1-10)
+    [HideInInspector] public int currentStep = 1; // hardness value (1-10)
     private float currentAngle;
     
     public bool coroutineStarted;

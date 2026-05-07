@@ -14,10 +14,6 @@ public class HardnessTool : MonoBehaviour
 
     [HideInInspector]
     public OrganizerMineral currentMineral;
-    
-    private float revealTimer = 0f;
-    [Header("Delay")]
-    [SerializeField] private float revealDelay = 1f;
 
     [SerializeField] private float spinDuration;
 
@@ -61,6 +57,6 @@ public class HardnessTool : MonoBehaviour
         }
 
         currentMineral.hardnessDiscovered = true;
-        indicator.color = scratchColor;
+        indicator.color = hardnessDial.currentStep >= currentMineral.mineralValues.hardness ? scratchColor : noScratchColor;
     }
 }
