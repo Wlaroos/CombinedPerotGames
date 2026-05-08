@@ -295,15 +295,15 @@ public class NewRecipePanelScript : MonoBehaviour
         ScriptableObject[] inputs = { recipe.inputA, recipe.inputB, recipe.inputC, recipe.inputD, recipe.inputE, recipe.inputF, recipe.inputG, recipe.inputH };
         UpdateIngredientImages(inputs);
 
-        _productImage.sprite = SOHelpers.GetPrimarySpriteFromData(recipe.output);
-        _productImage.color = SOHelpers.GetColorFromData(recipe.output);
-        _productBigImage.sprite = SOHelpers.GetBigSpriteFromData(recipe.output);
+        if(_productImage) _productImage.sprite = SOHelpers.GetPrimarySpriteFromData(recipe.output);
+        if(_productImage) _productImage.color = SOHelpers.GetColorFromData(recipe.output);
+        if(_productBigImage) _productBigImage.sprite = SOHelpers.GetBigSpriteFromData(recipe.output);
 
         bool crafted = _craftedStatus[_currentRecipeIndex];
-        _productImage.enabled = crafted;
-        _productBigImage.enabled = crafted;
+        if(_productImage) _productImage.enabled = crafted;
+        if(_productBigImage) _productBigImage.enabled = crafted;
 
-        UpdateCraftPips();
+        if(_selectedCraftPips[0]) UpdateCraftPips();
     }
 
     private void UpdateCraftPips()
@@ -327,7 +327,7 @@ public class NewRecipePanelScript : MonoBehaviour
     {
         if (_filteredRecipes.Contains(recipe) && _filteredRecipes[_currentRecipeIndex] == recipe)
         {
-            UpdateSuccessfulCraftPips();
+            if(_successfulCraftPips[0]) UpdateSuccessfulCraftPips();
             _craftedStatus[_currentRecipeIndex] = true;
 
             UpdateUI();
