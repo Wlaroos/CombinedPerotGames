@@ -28,9 +28,9 @@ public class OrganizerGameManager : MonoBehaviour
 
     [Header("Win UI")]
     [SerializeField] private GameObject winPanel;
-    [SerializeField] private FinalMineralInfoCard _infoCardPrefab; 
+    [SerializeField] private FinalMineralInfoCard _infoCardPrefab;
     [SerializeField] private Transform _infoCardContainer;
-    
+
     [Header("General UI")]
     [SerializeField] private GameObject startScreen;
     [SerializeField] private GameObject infoPanel;
@@ -47,7 +47,7 @@ public class OrganizerGameManager : MonoBehaviour
     [Header("Misc")]
     [SerializeField] private Tray tray;
     [SerializeField] private GameObject panelIndicator;
-    
+
     private SpriteRenderer psr;
     private readonly HashSet<OrganizerMineral> _mineralData = new HashSet<OrganizerMineral>();
     private float panelTimer = 0;
@@ -67,13 +67,13 @@ public class OrganizerGameManager : MonoBehaviour
             _mineralData.Add(mineral);
         }
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
-        
+
         if (psr.color != Color.white)
         {
             panelTimer += Time.deltaTime;
@@ -84,16 +84,16 @@ public class OrganizerGameManager : MonoBehaviour
             }
         }
     }
-    
+
     public void ShowWin()
     {
         winPanel.SetActive(true);
-        
-        if(hardnessChosen)
+
+        if (hardnessChosen)
             hardnessTool.SetActive(false);
-        if(structureChosen)
+        if (structureChosen)
             structureTool.SetActive(false);
-        
+
         // Clear existing cards if the win screen is reused
         foreach (Transform child in _infoCardContainer)
         {
@@ -112,12 +112,12 @@ public class OrganizerGameManager : MonoBehaviour
     {
         StartCoroutine(SubmitCheck());
     }
-    
+
     public IEnumerator SubmitCheck()
     {
         yield return tray.StartCoroutine(tray.SubmitSolution());
         yield return new WaitForSeconds(1f);
-        
+
         if (sortingManager.currentRule.attribute == SortingRule.AttributeType.Hardness)
         {
             displayOrder.HandleHardnessCheck();
@@ -131,12 +131,12 @@ public class OrganizerGameManager : MonoBehaviour
             {
                 bucket.UpdateBucketVisual();
             }
-            
+
             displayOrder.SetShowingResults(true);
         }
 
-        
-        
+
+
         if (displayOrder.win)
         {
             psr.color = Color.green;
@@ -164,10 +164,10 @@ public class OrganizerGameManager : MonoBehaviour
         hardnessChosen = true;
         hardnessTutorial.SetActive(true);
         sortingManager.HardnessArrangement();
-        infoPanel.SetActive(true);
-        whatIsHardness.SetActive(true);
         startScreen.SetActive(false);
         hardnessSorting.SetActive(true);
+        hardnessTool.SetActive(true);
+        mineralManager.RespawnMinerals();
     }
 
     public void ChooseStructure()
@@ -175,25 +175,23 @@ public class OrganizerGameManager : MonoBehaviour
         structureChosen = true;
         structureTutorial.SetActive(true);
         sortingManager.StructureArrangement();
-        infoPanel.SetActive(true);
-        whatIsStructure.SetActive(true);
         startScreen.SetActive(false);
         structureSorting.SetActive(true);
+        structureTool.SetActive(true);
+        mineralManager.RespawnMinerals();
     }
 
     public void StartGame()
     {
-        if(hardnessChosen)
+        if (hardnessChosen)
         {
             hardnessTutorial.SetActive(false);
-            hardnessTool.SetActive(true);
             tooltipManager.HardnessActive();
         }
-        
-        if(structureChosen)
+
+        if (structureChosen)
         {
             structureTutorial.SetActive(false);
-            structureTool.SetActive(true);
             tooltipManager.ScannerActive();
         }
 
@@ -201,7 +199,6 @@ public class OrganizerGameManager : MonoBehaviour
         hardFlavorPanel.SetActive(false);
         structFlavorPanel.SetActive(false);
         toolFlavorPanel.SetActive(false);
-        mineralManager.RespawnMinerals();
     }
 
     public void HardnessFlavor()
@@ -221,8 +218,8 @@ public class OrganizerGameManager : MonoBehaviour
     public void ToolFlavor()
     {
         toolFlavorPanel.SetActive(true);
-        
-        if(hardnessChosen)
+
+        if (hardnessChosen)
         {
             hardnessTutorial.SetActive(false);
             hardFlavorPanel.SetActive(false);
@@ -232,8 +229,8 @@ public class OrganizerGameManager : MonoBehaviour
         {
             hardToolFText.SetActive(false);
         }
-        
-        if(structureChosen)
+
+        if (structureChosen)
         {
             structureTutorial.SetActive(false);
             structFlavorPanel.SetActive(false);
@@ -244,42 +241,46 @@ public class OrganizerGameManager : MonoBehaviour
             structToolFText.SetActive(false);
         }
     }
-    
+
     public void Back()
     {
-        if (hardnessTutorial.activeSelf || structureTutorial.activeSelf)
-        {
-            if(hardnessChosen)
-            {
-                hardnessTutorial.SetActive(false);
-                hardnessChosen = false;
-                hardnessSorting.SetActive(false);
-                whatIsHardness.SetActive(false);
-            }
-            if(structureChosen)
-            {
-                structureTutorial.SetActive(false);
-                structureChosen = false;
-                structureSorting.SetActive(false);
-                whatIsStructure.SetActive(false);
-            }
-            
-            hardFlavorPanel.SetActive(false);
-            structFlavorPanel.SetActive(false);
-            startScreen.SetActive(true);
-            infoPanel.SetActive(false);
-        }
-        
         if (hardFlavorPanel.activeSelf || toolFlavorPanel.activeSelf || structFlavorPanel.activeSelf)
         {
-            if(hardnessChosen)
-                hardnessTutorial.SetActive(true);
-            if(structureChosen)
-                structureTutorial.SetActive(true);
-            
             hardFlavorPanel.SetActive(false);
             structFlavorPanel.SetActive(false);
             toolFlavorPanel.SetActive(false);
+
+            infoPanel.SetActive(false);
         }
+    }
+
+    public void HowToPlay()
+    {
+        if(hardnessChosen)
+        {
+            hardnessTutorial.SetActive(true);
+        }
+        if(structureChosen)
+        {
+            structureTutorial.SetActive(true);
+        }
+    }
+
+    public void LearnMore()
+    {
+        infoPanel.SetActive(true);
+        if(hardnessChosen)
+        {
+            whatIsHardness.SetActive(true);
+        }
+        if(structureChosen)
+        {
+            whatIsStructure.SetActive(true);
+        }
+    }
+
+    public void Home()
+    {
+
     }
 }
