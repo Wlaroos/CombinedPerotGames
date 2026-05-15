@@ -50,11 +50,6 @@ public class OrganizerMineral : MonoBehaviour
         HandleSnapMovement();
     }
 
-    private void OnMouseDown()
-    {
-        if (!IsUnderScanner) return;
-    }
-
     private void HandleSnapMovement()
     {
         if (tray.isMoving) return;
@@ -160,11 +155,5 @@ public class OrganizerMineral : MonoBehaviour
         {
             transform.SetParent(null);
         }
-    }
-
-    public void ClearBucket(Bucket bucket)
-    {
-        if (_currentBucket == bucket)
-            _currentBucket = null;
     }
 }
