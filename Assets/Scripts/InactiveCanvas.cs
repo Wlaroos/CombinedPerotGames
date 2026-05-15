@@ -15,7 +15,9 @@ public class InactiveCanvas : MonoBehaviour
 
     private void Update()
     {
+#if !UNITY_EDITOR
         Inactive();
+#endif
     }
 
     bool HasInput()
