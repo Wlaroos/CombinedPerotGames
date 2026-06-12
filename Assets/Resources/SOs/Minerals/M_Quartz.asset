@@ -12,14 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Quartz
   m_EditorClassIdentifier: 
-  mineralName: Quartz
+  mineralName:
+    m_TableReference:
+      m_TableCollectionName: MineralNames_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: MN_Quartz
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: Test Description
-  funFact: Test Fact
+  funFact:
+    m_TableReference:
+      m_TableCollectionName: FunFacts_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: FF_Quartz
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   mineralSprite: {fileID: -5732747483443466111, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
-  mineralBigSprite: {fileID: -8679966155197468166, guid: 7aa4f2abcda590445a7981a6bcbe5101, type: 3}
+  mineralBigSprite: {fileID: 21300000, guid: d2e651cb4827a0f4888cfc65bc19510a, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4289046181
   hardness: 7
   crystalStructure: 3
   isVariant: 0
+  isTest: 0
+  references:
+    version: 2
+    RefIds: []

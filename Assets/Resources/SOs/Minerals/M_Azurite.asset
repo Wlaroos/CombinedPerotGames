@@ -12,14 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Azurite
   m_EditorClassIdentifier: 
-  mineralName: Azurite
+  mineralName:
+    m_TableReference:
+      m_TableCollectionName: MineralNames_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: MN_Azurite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: Test Description
-  funFact: The deep blue of azurite and the green of malachite both come from copper
+  funFact:
+    m_TableReference:
+      m_TableCollectionName: FunFacts_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: FF_Azurite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 5793817877788391948, guid: b8be71472bee15b4ca287997eb624f96, type: 3}
+  mineralBigSprite: {fileID: 21300000, guid: 371494ab5a1e9da4a9dcc673b5cb356a, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4292486944
+    rgba: 4291834155
   hardness: 4
   crystalStructure: 6
   isVariant: 0
+  isTest: 0
+  references:
+    version: 2
+    RefIds: []

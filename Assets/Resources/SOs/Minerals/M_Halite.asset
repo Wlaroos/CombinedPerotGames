@@ -12,14 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Halite
   m_EditorClassIdentifier: 
-  mineralName: Halite
+  mineralName:
+    m_TableReference:
+      m_TableCollectionName: MineralNames_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: MN_Halite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: Test Description
-  funFact: Commonly known as 'rock salt', halite is the same salt you use for cooking
+  funFact:
+    m_TableReference:
+      m_TableCollectionName: FunFacts_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: FF_Halite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 5793817877788391948, guid: b8be71472bee15b4ca287997eb624f96, type: 3}
+  mineralBigSprite: {fileID: 21300000, guid: 89dce206c55f09f4bb680bedb63e295d, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4292204775
   hardness: 2
   crystalStructure: 1
   isVariant: 0
+  isTest: 0
+  references:
+    version: 2
+    RefIds: []

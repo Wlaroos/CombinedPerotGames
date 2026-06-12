@@ -3,7 +3,6 @@ using UnityEngine;
 public class OrganizerMineral : MonoBehaviour
 {
     public MineralData mineralValues;
-    private Animator _animator;
     private SpriteRenderer _sr;
     
     [SerializeField] private float snapSpeed = 10f;
@@ -38,11 +37,8 @@ public class OrganizerMineral : MonoBehaviour
         if (mineralValues != null)
         {
             GetComponent<SpriteRenderer>().sprite = mineralValues.mineralBigSprite;
-            _animator = GetComponent<Animator>();
             gameObject.name = mineralValues.mineralName.GetLocalizedString();
         }
-        
-        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -75,16 +71,11 @@ public class OrganizerMineral : MonoBehaviour
     {
         mineralValues = newValues;
         
-        // Update animator if needed
-        if (_animator == null)
-            _animator = GetComponent<Animator>();
-        
         // Update sprite + name
         if (_sr == null)
             _sr = GetComponent<SpriteRenderer>();
 
         _sr.sprite = mineralValues.mineralBigSprite;
-        _sr.color = mineralValues.defaultColor;
         gameObject.name = mineralValues.mineralName.GetLocalizedString();
     }
 

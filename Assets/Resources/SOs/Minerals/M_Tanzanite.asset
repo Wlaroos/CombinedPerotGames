@@ -12,16 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Tanzanite
   m_EditorClassIdentifier: Assembly-CSharp::MineralData
-  mineralName: Tanzanite
+  mineralName:
+    m_TableReference:
+      m_TableCollectionName: MineralNames_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: MN_Tanzanite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: Test Decription
-  funFact: Tanzanite, a variety of Zoisite, is named after the only place it is found
-    - Tanzania! / Tanzanite shows different colors - from blue to violet to deep
-    purple - depending on the direction you view it
+  funFact:
+    m_TableReference:
+      m_TableCollectionName: FunFacts_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: FF_Tanzanite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 5793817877788391948, guid: b8be71472bee15b4ca287997eb624f96, type: 3}
+  mineralBigSprite: {fileID: 21300000, guid: f3758b46f20e89340ac7ee42b22c3133, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4290656302
+    rgba: 4289017396
   hardness: 6
   crystalStructure: 5
   isVariant: 0
+  isTest: 0
+  references:
+    version: 2
+    RefIds: []

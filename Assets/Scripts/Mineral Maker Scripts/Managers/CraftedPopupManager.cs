@@ -91,7 +91,7 @@ public class CraftedPopupManager : MonoBehaviour
             var big = SOHelpers.GetBigSpriteFromData(data);
             var primary = SOHelpers.GetPrimarySpriteFromData(data);
             icon.sprite = big != null ? big : primary;
-            icon.color = SOHelpers.GetColorFromData(data);
+            //icon.color = SOHelpers.GetColorFromData(data);
         }
 
         if (icon == null && chosenPrefab != _smallPopupPrefab)

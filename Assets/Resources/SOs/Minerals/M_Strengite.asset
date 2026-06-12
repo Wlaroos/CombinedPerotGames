@@ -12,14 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Strengite
   m_EditorClassIdentifier: 
-  mineralName: Strengite
+  mineralName:
+    m_TableReference:
+      m_TableCollectionName: MineralNames_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: MN_Strengite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: Test Description
-  funFact: Test Fact
+  funFact:
+    m_TableReference:
+      m_TableCollectionName: FunFacts_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: FF_Strengite
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 5793817877788391948, guid: b8be71472bee15b4ca287997eb624f96, type: 3}
+  mineralBigSprite: {fileID: 21300000, guid: a8f104385421d4d498c235a16d7ff280, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4294050047
+    rgba: 4291716722
   hardness: 4
   crystalStructure: 5
   isVariant: 0
+  isTest: 0
+  references:
+    version: 2
+    RefIds: []

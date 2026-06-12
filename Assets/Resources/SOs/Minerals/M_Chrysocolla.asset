@@ -12,15 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Chrysocolla
   m_EditorClassIdentifier: Assembly-CSharp::MineralData
-  mineralName: Chrysocolla
+  mineralName:
+    m_TableReference:
+      m_TableCollectionName: MineralNames_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: MN_Chrysocolla
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: Test Decription
-  funFact: "The name chrysocolla is from the Greek words chrysos, meaning \u201Cgolden,\u201D
-    and kolla, meaning \u201Cglue\u201D"
+  funFact:
+    m_TableReference:
+      m_TableCollectionName: FunFacts_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: FF_Chrysocolla
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 5793817877788391948, guid: b8be71472bee15b4ca287997eb624f96, type: 3}
+  mineralBigSprite: {fileID: 21300000, guid: 2f3e3a49c79f09d4ea8f9a6a9d2c7e2e, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4292529711
+    rgba: 4291149411
   hardness: 3
   crystalStructure: 7
   isVariant: 0
+  isTest: 0
+  references:
+    version: 2
+    RefIds: []
