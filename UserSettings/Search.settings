@@ -9,7 +9,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"picker_window_position_offset.075BCD15" = "-491;282;487;550"
+	"picker_window_position_offset.075BCD15" = "-491.2001;187.2;487.2;550.4"
 	"picker_visibility_flags.075BCD15" = "264"
 	"picker_item_size.075BCD15" = "32"
 	"picker_inspector.075BCD15" = "0"
@@ -79,6 +79,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"st: mn_co"
 	"st: B_Mineral"
 	"st: B_Miner"
 	"st: panel"
