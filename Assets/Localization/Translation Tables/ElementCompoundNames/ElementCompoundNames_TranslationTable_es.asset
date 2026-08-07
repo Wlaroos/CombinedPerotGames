@@ -19,11 +19,103 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 239154442240
-    m_Localized: 
+    m_Localized: "Hidr\xF3geno"
     m_Metadata:
       m_Items: []
   - m_Id: 239250911260
-    m_Localized: 
+    m_Localized: "\xF3xido"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522624
+    m_Localized: 'Helio '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522625
+    m_Localized: Berilio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239242522626
+    m_Localized: Carbono
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911232
+    m_Localized: Magnesio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911233
+    m_Localized: Aluminio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911234
+    m_Localized: Silicio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911235
+    m_Localized: "F\xF3sforo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911236
+    m_Localized: Azufre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911237
+    m_Localized: Calcio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911238
+    m_Localized: Titanio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911239
+    m_Localized: Hierro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911240
+    m_Localized: Cobre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911241
+    m_Localized: Bario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911242
+    m_Localized: "Fl\xFAor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911243
+    m_Localized: Cloro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911244
+    m_Localized: Sodio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3786428329984
+    m_Localized: Plomo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3786428329985
+    m_Localized: Manganeso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3786428329986
+    m_Localized: Tungsteno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911261
+    m_Localized: 'Carbonato '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911262
+    m_Localized: Fosfato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911263
+    m_Localized: Sulfato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239250911264
+    m_Localized: Silicato
     m_Metadata:
       m_Items: []
   references:

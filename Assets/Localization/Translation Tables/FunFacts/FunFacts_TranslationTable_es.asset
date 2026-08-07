@@ -17,7 +17,179 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 08a12ef125354d4479d8ebf767c78d49, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 55481675776
+    m_Localized: "Los Griegos y Romanos antiguos cre\xEDan que este piedra podria
+      evitar la cruda. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452992
+    m_Localized: "Aguamarina es la piedra natal por Marzo. El nombre de aguamarina
+      viene de lat\xEDn por el \"agua de mar\".  "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452993
+    m_Localized: Aragonita es el mineral prinicpal que compone las pearlas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452994
+    m_Localized: "El azul intenso de Azurita proviene del cobre. Es com\xFAn a encontrar
+      Azurita con Malaquita, un otro mineral del cobre. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452995
+    m_Localized: "Diferentes esp\xE9cimenes de Baritina muestran fluorescencia, o
+      brillar, bajo del luz UV. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452996
+    m_Localized: Benitoita que es pulido y cortado es la gema oficial del estado
+      de California.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452997
+    m_Localized: Calcita es el mineral principal que compone la piedra caliza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452998
+    m_Localized: "El nombre Crisocola viene de la palabra Griego \"Chrysos\u201D,
+      que significa \"dorado\", y \"Kolla\", que significa \"pegamento\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498452999
+    m_Localized: 'Cuarzo amarillo se llama citrina. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453000
+    m_Localized: "La adici\xF3n de cobalto vuelve la calcita rosa. Es facil a rasgu\xF1ar
+      Cobalto Calcita y se disolver en \xE1cidos d\xE9biles como vinagre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453001
+    m_Localized: "La Cuprita se conoce como \"cobre rub\xED\" por su color rojo intenso. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453002
+    m_Localized: "Cuando se calienta, dioptasa genera una carga el\xE9ctrica."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453003
+    m_Localized: 'Los monocristales de elbaita pueden mostrar varios colores. Elbaita
+      de "sandia" tienen un centro rosa rodeado por un exterior verde. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453004
+    m_Localized: 'En la mayoria de casos, esmereldas de alta calidad son mas raros
+      de diamantes. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453005
+    m_Localized: "Fluoruro viene en todos los colores del arco\xEDris."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453006
+    m_Localized: Toda las tablarocas son hecho de Yeso.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453007
+    m_Localized: "Com\xFAnmente conocida como \"sal de roca\", Halita es el mismo
+      sal que usas para cocinar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453008
+    m_Localized: "Acerina es uno de los fuentes de hierro m\xE1s abundante en la
+      Tierra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453009
+    m_Localized: "Malaquita tiene un color verde vibrante y se ha utilizado durante
+      miles de a\xF1os por pigmento verde.  "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453010
+    m_Localized: Morganita es la version rosa del mineral berilo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453011
+    m_Localized: "Por su color amarillo met\xE1lico brillante, pirita se llama \"Oro
+      de Tonto/Buf\xF3n\". Pirita puede crecer en cubos perfectos.  "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453012
+    m_Localized: Piromorfita suele fluorescer de color amarillo a naranja bajo luz
+      ultravioleta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453013
+    m_Localized: "Cuarzo es uno de los minerales mas com\xFAn en la corteza terrestre. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453014
+    m_Localized: "Rodajitas pulidas de una estalactita rodocrosita tienen dise\xF1os
+      similares de anillos de \xE1rbol."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453015
+    m_Localized: "Cuarzo Rosa se ha ligado a diversos mitos y leyendas, con frecuencia
+      asociado con amor, la belleza, y rituales de curaci\xF3n.   "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453016
+    m_Localized: "Los Rub\xEDs sacan su color rojo de trazas de cromo. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453017
+    m_Localized: 'Scheelita se brilla intensamente bajo de la luz ultravioleta. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453018
+    m_Localized: 'Serandita de calidad de piedra preciosas solo se encuentra en Quebec,
+      Canada. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453019
+    m_Localized: 'Siderita puede ser un biomineral hecho de hongo. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453020
+    m_Localized: 'Cuando se corta, sodalita puede tener un malo olor de "huevos podridos"
+      debido a trazas de agua y azufre. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453021
+    m_Localized: "Estibina es pesado por su tama\xF1o, pero suave tambien. Por eso,
+      es dif\xEDcil a moverla sin da\xF1arla. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453022
+    m_Localized: "Los colores brillantes de Strengita son de iones f\xE9rricos. Recibe
+      su nombre de Streng. Las strengitas mejores son el rojo frambuesa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453023
+    m_Localized: "Tanzanita, una variedad de Zoisita, recibe su nombre del \xFAnico
+      lugar donde se encuentra, Tanzania! "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453024
+    m_Localized: "Los colores m\xE1s raros del topacio tienen tonos rosados y anaranjados
+      rojizos, conocido como Topacia Imperial. Topacio Azul es la piedra preciosa
+      del Estado de Tejas!  "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453025
+    m_Localized: "Vanadinita tiene los elementos t\xF3xicos vanadio y plomo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453026
+    m_Localized: 'Vivianita se oscurece cuando se expone al sol. Se vuelve de un
+      azul verdoso profundo a un negro morado. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55498453027
+    m_Localized: Wulfenita es el mineral oficial del Estado de Arizona.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
