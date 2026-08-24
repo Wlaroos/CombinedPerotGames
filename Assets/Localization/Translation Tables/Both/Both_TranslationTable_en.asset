@@ -90,6 +90,23 @@ MonoBehaviour:
     m_Localized: Crystal Structure
     m_Metadata:
       m_Items: []
+  - m_Id: 43128409159622656
+    m_Localized: Special Thanks to Caroline Im, Steve Goldfine, and The Perot Museum
+      of Nature and Science
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43128409176399872
+    m_Localized: Are you still there?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43128409176399873
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43128409176399874
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

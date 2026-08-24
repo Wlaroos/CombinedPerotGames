@@ -150,7 +150,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721949
-    m_Localized: Rhombohedral
+    m_Localized: Thombohedral
     m_Metadata:
       m_Items: []
   - m_Id: 1050416721950
@@ -179,6 +179,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 21026808737792
     m_Localized: Submit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43129908635885568
+    m_Localized: Home
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43129908652662784
+    m_Localized: How To Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43129908652662785
+    m_Localized: Learn More
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43129908652662786
+    m_Localized: Sort by Crystal Structure
     m_Metadata:
       m_Items: []
   references:

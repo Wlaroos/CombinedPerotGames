@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 254719504397
-    m_Localized: "\u3088\u304F\u3067\u304D\u307E\u3057\u305F\u3002"
+    m_Localized: "\u3088\u304F\u3067\u304D\u307E\u3057\u305F!"
     m_Metadata:
       m_Items: []
   - m_Id: 254719504385
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 254719504387
-    m_Localized: "\u30E1\u30CB\u30E5\u30FC "
+    m_Localized: " \u30E1\u30CB\u30E5\u30FC "
     m_Metadata:
       m_Items: []
   - m_Id: 254719504388

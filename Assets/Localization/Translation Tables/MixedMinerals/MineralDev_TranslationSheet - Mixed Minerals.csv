@@ -36,5 +36,10 @@ MuM_StructureLevel_05 (D),Orthorhombic,Ortorrómbica,直方
 MuM_StructureLevel_06 (D),Monoclinic,Monoclínica,単斜
 MuM_StructureLevel_07 (D),Triclinic,Triclínica,三斜
 MuM_Reader_01 (D),Mineral:,Mineral:,ミネラル：
-MuM_Reader_02 (D),Hardness:,Dureza:,硬さ
-MuM_Reader_03 (D),Structure:,Estructura:,構造
+MuM_Reader_02 (D),Hardness:,Dureza:,硬さ：
+MuM_Reader_03 (D),Structure:,Estructura:,構造：
+MuM_Home,Home,,
+MuM_HowToPlay,How To Play,,
+MuM_LearnMore,Learn More,,
+MuM_SortByHardness,Sort by Hardness,,
+MuM_SortByHardness,Sort by Crystal Structure,,
