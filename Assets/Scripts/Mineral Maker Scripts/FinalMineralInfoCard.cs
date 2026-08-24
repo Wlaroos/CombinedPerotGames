@@ -142,7 +142,7 @@ public class FinalMineralInfoCard : MonoBehaviour
         // Set Icon
         _mineralIcon.sprite = mineralData.mineralBigSprite;
         _mineralIcon.preserveAspect = true;
-        _mineralIconSmall.sprite = mineralData.mineralSprite;
+        _mineralIconSmall.sprite = mineralData.mineralBigSprite;
         _mineralIconSmall.preserveAspect = true;
 
         // Set Colors (Following the logic in your SetupMineralUI)

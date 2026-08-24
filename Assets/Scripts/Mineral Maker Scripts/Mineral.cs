@@ -26,8 +26,10 @@ public class Mineral : MonoBehaviour
         {
             if (_mineralSprite != null)
             {
-                _mineralSprite.sprite = data.mineralSprite;
-                _mineralSprite.color = data.defaultColor;
+                // We are no longer using the small sprite
+                _mineralSprite.sprite = data.mineralBigSprite;
+                // Don't need to change the color here since they already have the correct color
+                //_mineralSprite.color = data.defaultColor;
             }
             if (_mineralBigSprite != null)
             {

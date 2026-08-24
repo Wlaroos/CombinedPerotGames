@@ -383,7 +383,7 @@ public class NewRecipePanelScript : MonoBehaviour
         float lerpDuration = 1f;
 
         Vector3 startPosition = craftedObj.transform.position;
-        Vector3 targetPosition = _mineralSlots[index].transform.position + new Vector3(0f, 0.5f, 0f);
+        Vector3 targetPosition = _mineralSlots[index].transform.position + new Vector3(0f, -0.15f, 0f);
 
         yield return new WaitForSeconds(1f);
 
