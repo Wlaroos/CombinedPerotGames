@@ -67,7 +67,11 @@ MonoBehaviour:
     m_Key: B_TranslationLocalization
     m_Metadata:
       m_Items: []
+<<<<<<< Updated upstream
   - m_Id: 43128409159622656
+=======
+  - m_Id: 44453151205089280
+>>>>>>> Stashed changes
     m_Key: B_SpecialThanks
     m_Metadata:
       m_Items: []
@@ -91,19 +95,31 @@ MonoBehaviour:
     m_Key: B_MineralCard_Structure
     m_Metadata:
       m_Items: []
+<<<<<<< Updated upstream
   - m_Id: 43128409176399872
+=======
+  - m_Id: 44453151255420928
+>>>>>>> Stashed changes
     m_Key: 'B_StillThere
 
 '
     m_Metadata:
       m_Items: []
+<<<<<<< Updated upstream
   - m_Id: 43128409176399873
+=======
+  - m_Id: 44453151255420929
+>>>>>>> Stashed changes
     m_Key: 'B_StillThereConfirm
 
 '
     m_Metadata:
       m_Items: []
+<<<<<<< Updated upstream
   - m_Id: 43128409176399874
+=======
+  - m_Id: 44453151255420930
+>>>>>>> Stashed changes
     m_Key: B_Return
     m_Metadata:
       m_Items: []

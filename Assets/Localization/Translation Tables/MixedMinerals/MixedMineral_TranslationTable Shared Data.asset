@@ -167,6 +167,7 @@ MonoBehaviour:
     m_Key: MuM_Reader_03 (D)
     m_Metadata:
       m_Items: []
+<<<<<<< Updated upstream
   - m_Id: 43129908635885568
     m_Key: MuM_Home
     m_Metadata:
@@ -185,6 +186,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 43129908652662786
     m_Key: MuM_SortByHardness
+=======
+  - m_Id: 44454658218516480
+    m_Key: MuM_Home
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44454658252070912
+    m_Key: MuM_HowToPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44454658252070913
+    m_Key: MuM_LearnMore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44454658252070914
+    m_Key: MuM_SortByHardness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44455206674096128
+    m_Key: MuM_SortByCrystalStructure
+>>>>>>> Stashed changes
     m_Metadata:
       m_Items: []
   m_Metadata:

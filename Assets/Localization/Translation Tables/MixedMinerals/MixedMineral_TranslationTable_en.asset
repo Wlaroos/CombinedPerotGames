@@ -181,6 +181,7 @@ MonoBehaviour:
     m_Localized: Submit
     m_Metadata:
       m_Items: []
+<<<<<<< Updated upstream
   - m_Id: 43129908635885568
     m_Localized: Home
     m_Metadata:
@@ -194,6 +195,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 43129908652662786
+=======
+  - m_Id: 44454658218516480
+    m_Localized: Home
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44454658252070912
+    m_Localized: How To Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44454658252070913
+    m_Localized: Learn More
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44454658252070914
+    m_Localized: Sort by Hardness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44455206674096128
+>>>>>>> Stashed changes
     m_Localized: Sort by Crystal Structure
     m_Metadata:
       m_Items: []

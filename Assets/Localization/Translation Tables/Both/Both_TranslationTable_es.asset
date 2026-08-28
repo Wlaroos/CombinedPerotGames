@@ -90,6 +90,23 @@ MonoBehaviour:
     m_Localized: Estructura Cristalina
     m_Metadata:
       m_Items: []
+  - m_Id: 44453151205089280
+    m_Localized: Agradecimiento Especial a Caroline Im, Steve Goldfine y El Museo
+      Perot de Naturaleza y Ciencia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44453151255420928
+    m_Localized: "\xBFEst\xE1s ah\xED?\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44453151255420929
+    m_Localized: Si
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44453151255420930
+    m_Localized: Regresar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

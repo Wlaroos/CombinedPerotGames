@@ -12,14 +12,26 @@ B_NarrativeLab,Narrative Research Lab,Laboratorio de Investigación Narrativa,�
 B_ProjectLead,Project Lead,Líder de Proyecto,監督,,
 B_Designers,Designers,Diseñadores,デザイン,,
 B_TranslationLocalization,Translation & Localization,Traducción y Localización,翻訳・ローカライズ,,
+<<<<<<< Updated upstream
 B_SpecialThanks,"Special Thanks to Caroline Im, Steve Goldfine, and The Perot Museum of Nature and Science",,,,
+=======
+B_SpecialThanks,"Special Thanks to Caroline Im, Steve Goldfine, and The Perot Museum of Nature and Science","Agradecimiento Especial a Caroline Im, Steve Goldfine y El Museo Perot de Naturaleza y Ciencia",キャロライン・イム、スティーヴ・ゴールドファイン、ペロ自然と科学の博物館に大感謝!,,
+>>>>>>> Stashed changes
 B_TapAnywhere,Tap anywhere to continue,Toca la pantalla para continuar,タップしてつづく,,
 B_GreatWork,Great work!,Felicidades!,よくできました!,,
 B_MineralCard_Formula,Formula,Fórmula,せいほう,,
 B_MineralCard_Hardness,Mohs,Mohs,モース,,
 B_MineralCard_Structure,Crystal Structure,Estructura Cristalina,結晶構造,,
 "B_StillThere
+<<<<<<< Updated upstream
 ",Are you still there?,,,,
 "B_StillThereConfirm
 ",Yes,,,,
-B_Return,Return,,,,
+B_Return,Return,,,,B_Return,Return,,,,
+=======
+",Are you still there?,"¿Estás ahí?
+",まだいますか?,,
+"B_StillThereConfirm
+",Yes,Si,はい,,
+B_Return,Return,Regresar,もどる,,
+>>>>>>> Stashed changes
