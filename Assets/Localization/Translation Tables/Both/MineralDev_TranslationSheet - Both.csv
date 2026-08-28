@@ -27,7 +27,7 @@ B_MineralCard_Structure,Crystal Structure,Estructura Cristalina,結晶構造,,
 ",Are you still there?,,,,
 "B_StillThereConfirm
 ",Yes,,,,
-B_Return,Return,,,,B_Return,Return,,,,
+B_Return,Return,,,,
 =======
 ",Are you still there?,"¿Estás ahí?
 ",まだいますか?,,
