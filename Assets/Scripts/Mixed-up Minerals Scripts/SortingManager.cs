@@ -7,9 +7,8 @@ public class SortingManager : MonoBehaviour
 {
     [SerializeField] private SortingRule hardnessRules;
     [SerializeField] private SortingRule structureRules;
-    [SerializeField] private TextMeshProUGUI organizeText;
-    [SerializeField] private string hardnessText;
-    [SerializeField] private string structureText;
+    [SerializeField] private GameObject organizeByHardnessText;
+    [SerializeField] private GameObject organizeByCrystalStructureText;
 
     public SortingRule currentRule;
     public List<Bucket> buckets = new List<Bucket>();
@@ -18,13 +17,15 @@ public class SortingManager : MonoBehaviour
     public void HardnessArrangement()
     {
         currentRule = hardnessRules;
-        organizeText.text = hardnessText;
+        organizeByHardnessText.SetActive(true);
+        organizeByCrystalStructureText.SetActive(false);
     }
     
     public void StructureArrangement()
     {
         currentRule = structureRules;
-        organizeText.text = structureText;
+        organizeByHardnessText.SetActive(false);
+        organizeByCrystalStructureText?.SetActive(true);
     }
     
     public void CheckArrangement()

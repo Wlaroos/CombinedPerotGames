@@ -183,8 +183,8 @@ MonoBehaviour:
     m_Key: MuM_SortByHardness
     m_Metadata:
       m_Items: []
-  - m_Id: 43129908652662786
-    m_Key: MuM_SortByHardness
+  - m_Id: 44458002991407104
+    m_Key: MuM_SortByCrystalStructure
     m_Metadata:
       m_Items: []
   m_Metadata:

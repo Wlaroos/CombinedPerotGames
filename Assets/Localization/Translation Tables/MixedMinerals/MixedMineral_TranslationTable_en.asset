@@ -194,6 +194,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 43129908652662786
+    m_Localized: Sort by Hardness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44458002991407104
     m_Localized: Sort by Crystal Structure
     m_Metadata:
       m_Items: []

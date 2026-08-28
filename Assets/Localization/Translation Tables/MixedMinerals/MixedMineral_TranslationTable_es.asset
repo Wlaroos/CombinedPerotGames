@@ -182,6 +182,26 @@ MonoBehaviour:
     m_Localized: 'Estructura:'
     m_Metadata:
       m_Items: []
+  - m_Id: 43129908635885568
+    m_Localized: Inicio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43129908652662784
+    m_Localized: "C\xF3mo Jugar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43129908652662785
+    m_Localized: "Aprende M\xE1s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43129908652662786
+    m_Localized: Clasificar por Dureza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44458002991407104
+    m_Localized: Clasificar por Estructura Cristalina
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

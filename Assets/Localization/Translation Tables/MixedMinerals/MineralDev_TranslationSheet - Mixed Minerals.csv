@@ -38,8 +38,8 @@ MuM_StructureLevel_07 (D),Triclinic,Triclínica,三斜
 MuM_Reader_01 (D),Mineral:,Mineral:,ミネラル：
 MuM_Reader_02 (D),Hardness:,Dureza:,硬さ：
 MuM_Reader_03 (D),Structure:,Estructura:,構造：
-MuM_Home,Home,,
-MuM_HowToPlay,How To Play,,
-MuM_LearnMore,Learn More,,
-MuM_SortByHardness,Sort by Hardness,,
-MuM_SortByHardness,Sort by Crystal Structure,,
+MuM_Home,Home,Inicio,ホーム
+MuM_HowToPlay,How To Play,Cómo Jugar,やり方
+MuM_LearnMore,Learn More,Aprende Más,詳細にこちら
+MuM_SortByHardness,Sort by Hardness,Clasificar por Dureza,硬さに並ぶ
+MuM_SortByCrystalStructure,Sort by Crystal Structure,Clasificar por Estructura Cristalina,結晶構造に並ぶ
