@@ -27,9 +27,11 @@ public class OrganizerMineral : MonoBehaviour
     public void Awake()
     {
         _structureTool = FindAnyObjectByType<StructureTool>();
-        structureIcon = GetComponentInChildren<StructureIcon>().gameObject;
+        if(transform.childCount > 0)
+            structureIcon = GetComponentInChildren<StructureIcon>().gameObject;
         
-        structureIcon.SetActive(false);
+        if(structureIcon)
+            structureIcon.SetActive(false);
     }
     
     private void Start()
@@ -48,6 +50,7 @@ public class OrganizerMineral : MonoBehaviour
 
     private void HandleSnapMovement()
     {
+        if (!tray) return;
         if (tray.isMoving) return;
         if (!_isSnapping) return;
 

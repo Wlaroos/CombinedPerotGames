@@ -915,8 +915,9 @@ GameObject:
   m_Component:
   - component: {fileID: 64801761}
   - component: {fileID: 64801760}
+  - component: {fileID: 64801762}
   m_Layer: 0
-  m_Name: Pyrite
+  m_Name: RandomMinerals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,7 +972,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a795c0e7d0aaea8419ccb9b28693aa04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba63ef317a89e01479f244e2568db8ec, type: 3}
   m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -996,6 +997,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64801762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64801759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrganizerMineral
+  mineralValues: {fileID: 0}
+  snapSpeed: 10
+  structureIcon: {fileID: 0}
+  hardnessDiscovered: 0
+  tray: {fileID: 0}
 --- !u!1 &86628770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Minerales Mezcaldos
+  m_text: Mixed-up Minerals
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2019,8 +2037,9 @@ GameObject:
   m_Component:
   - component: {fileID: 233018784}
   - component: {fileID: 233018783}
+  - component: {fileID: 233018785}
   m_Layer: 0
-  m_Name: Cuprite
+  m_Name: RandomMinerals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2075,7 +2094,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: b43d6b11c2862a144ae5798ac650a59f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba63ef317a89e01479f244e2568db8ec, type: 3}
   m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2100,6 +2119,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233018785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233018782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrganizerMineral
+  mineralValues: {fileID: 0}
+  snapSpeed: 10
+  structureIcon: {fileID: 0}
+  hardnessDiscovered: 0
+  tray: {fileID: 0}
 --- !u!1 &240359829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,7 +3127,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Clasificar por Estructura Cristalina
+  m_text: Sort by Crystal Structure
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4022,7 +4058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ayuda a organizar estes minerales!
+  m_text: Help organize these minerals
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6100,7 +6136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C\xF3mo Jugar"
+  m_text: How To Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6407,7 +6443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Clasificar por Estructura Cristalina
+  m_text: Sort by Crystal Structure
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8869,7 +8905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Entregar
+  m_text: Submit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8896,7 +8932,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.85
+  m_fontSize: 38.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9287,8 +9323,9 @@ GameObject:
   m_Component:
   - component: {fileID: 893885643}
   - component: {fileID: 893885642}
+  - component: {fileID: 893885644}
   m_Layer: 0
-  m_Name: Elbaite
+  m_Name: RandomMinerals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9343,7 +9380,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 099257734f793fc45a65622970b6f9bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba63ef317a89e01479f244e2568db8ec, type: 3}
   m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9368,6 +9405,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &893885644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893885641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrganizerMineral
+  mineralValues: {fileID: 0}
+  snapSpeed: 10
+  structureIcon: {fileID: 0}
+  hardnessDiscovered: 0
+  tray: {fileID: 0}
 --- !u!1 &902205313
 GameObject:
   m_ObjectHideFlags: 0
@@ -9378,8 +9432,9 @@ GameObject:
   m_Component:
   - component: {fileID: 902205315}
   - component: {fileID: 902205314}
+  - component: {fileID: 902205316}
   m_Layer: 0
-  m_Name: Vivianite
+  m_Name: RandomMinerals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9434,7 +9489,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a884dc92ee908a44390250e55ae957d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba63ef317a89e01479f244e2568db8ec, type: 3}
   m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9459,6 +9514,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902205316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902205313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrganizerMineral
+  mineralValues: {fileID: 0}
+  snapSpeed: 10
+  structureIcon: {fileID: 0}
+  hardnessDiscovered: 0
+  tray: {fileID: 0}
 --- !u!1 &916887226
 GameObject:
   m_ObjectHideFlags: 0
@@ -10225,6 +10297,12 @@ MonoBehaviour:
   - {fileID: 1844715159}
   - {fileID: 299407781}
   - {fileID: 1550212918}
+  randomMinerals:
+  - {fileID: 64801762}
+  - {fileID: 893885644}
+  - {fileID: 233018785}
+  - {fileID: 902205316}
+  - {fileID: 1833659589}
   gameManager: {fileID: 1511504021}
   allowedStructures: 
   spawnZone: {fileID: 763134259}
@@ -12780,7 +12858,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Clasificar por Dureza
+  m_text: Sort by Hardness
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14645,7 +14723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Aprende M\xE1s"
+  m_text: Learn More
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16632,7 +16710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Clasificar por Dureza
+  m_text: Sort by Hardness
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17111,8 +17189,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1833659588}
   - component: {fileID: 1833659587}
+  - component: {fileID: 1833659589}
   m_Layer: 0
-  m_Name: Quartz
+  m_Name: RandomMinerals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17167,7 +17246,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d2e651cb4827a0f4888cfc65bc19510a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba63ef317a89e01479f244e2568db8ec, type: 3}
   m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -17192,6 +17271,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &1833659589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833659586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35319f89004c8ac48a4a944dd0607d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrganizerMineral
+  mineralValues: {fileID: 0}
+  snapSpeed: 10
+  structureIcon: {fileID: 0}
+  hardnessDiscovered: 0
+  tray: {fileID: 0}
 --- !u!1 &1844715158
 GameObject:
   m_ObjectHideFlags: 0
@@ -17701,7 +17797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Inicio
+  m_text: Home
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17728,7 +17824,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.25
+  m_fontSize: 27.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

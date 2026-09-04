@@ -12,6 +12,9 @@ public class MineralManager : MonoBehaviour
     [Header("Mineral slots in the scene")]
     public List<OrganizerMineral> minerals = new List<OrganizerMineral>();
 
+    [Header("Minerals to be randomized in crate")]
+    public List<OrganizerMineral> randomMinerals = new List<OrganizerMineral>();
+
     [Header("Game manager")]
     [SerializeField] private OrganizerGameManager gameManager;
     
@@ -27,6 +30,7 @@ public class MineralManager : MonoBehaviour
         else Destroy(gameObject);
 
         LoadAllMinerals();
+        AssignRandomMineral();
     }
     
     private void LoadAllMinerals()
@@ -166,6 +170,21 @@ public class MineralManager : MonoBehaviour
 
             pool.Remove(chosen);
         }
-        
+    }
+
+    public void AssignRandomMineral()
+    {
+        List<MineralData> pool = new(allMinerals.Where(m => !m.isTest));
+
+        foreach(var ranMin in randomMinerals)
+        {
+            int index = Random.Range(0, pool.Count);
+            MineralData chosen = pool[index];
+
+            ranMin.AssignMineral(chosen);
+            Debug.Log("data assigned to random minerals");
+
+            pool.Remove(chosen);
+        }
     }
 }
