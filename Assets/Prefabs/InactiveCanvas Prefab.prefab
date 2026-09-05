@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2555394722352858379}
   - component: {fileID: 3714535478851705662}
   - component: {fileID: 9062494411825535049}
+  - component: {fileID: 270395621852692635}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -133,6 +134,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &270395621852692635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897914587478787951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a02157098f14547bc22d95d96f8a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonPress
+  _shiftOffset: {x: 0, y: -6}
 --- !u!1 &1989247994827311499
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +679,6 @@ MonoBehaviour:
   _timeoutTime: 5
   _inactivePanel: {fileID: 4745135920392270403}
   _timerBar: {fileID: 346241538968986870}
-  _clickAnywhereToReset: 0
 --- !u!1 &4424689000951514851
 GameObject:
   m_ObjectHideFlags: 0
