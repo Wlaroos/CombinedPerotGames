@@ -166,6 +166,10 @@ MonoBehaviour:
     m_Localized: Wulfenite
     m_Metadata:
       m_Items: []
+  - m_Id: 47443972696805376
+    m_Localized: Slag
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

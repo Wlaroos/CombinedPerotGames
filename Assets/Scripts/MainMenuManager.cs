@@ -13,4 +13,10 @@ public class MainMenuManager : MonoBehaviour
         // Mixed-up Minerals 
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        Application.Quit();
+    }
 }

@@ -12,16 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3eedd000852a048a63aed441be3f01, type: 3}
   m_Name: M_Slag
   m_EditorClassIdentifier: 
-  mineralName: Slag
+  mineralName:
+    m_TableReference:
+      m_TableCollectionName: GUID:f4d6d141b92bdee43a9d23a9c4b33f3f
+    m_TableEntryReference:
+      m_KeyId: 49924504101818368
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: 'Slag is made when we melt elements or compounds together that do
     not form a mineral. In nature, this would be most like cooling lava. '
-  funFact: Test Fact
-  mineralSprite: {fileID: 223053218, guid: 3f9420c6ec6a03f43a88cd7afc393bf0, type: 3}
-  mineralBigSprite: {fileID: 0}
+  funFact:
+    m_TableReference:
+      m_TableCollectionName: FunFacts_TranslationTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: FF_Slag
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  mineralSprite: {fileID: 21300000, guid: 21a1cabb2bf9b154592e44632051ac92, type: 3}
+  mineralBigSprite: {fileID: 21300000, guid: 21a1cabb2bf9b154592e44632051ac92, type: 3}
   defaultColor:
     serializedVersion: 2
-    rgba: 4284703587
+    rgba: 4294967295
   hardness: 1
   crystalStructure: 7
   isVariant: 0
   isTest: 1
+  references:
+    version: 2
+    RefIds: []

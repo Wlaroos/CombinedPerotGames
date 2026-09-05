@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -117,7 +117,11 @@ public class DragAndDrop : MonoBehaviour
             GameObject otherObj = _collider.gameObject;
 
             transform.position = ClampToMainArea(transform.position);
-            otherObj.transform.position = ClampToMainArea(otherObj.transform.position);
+
+            if(otherObj.GetComponent<Button>() == null)
+            {
+                otherObj.transform.position = ClampToMainArea(otherObj.transform.position);
+            }
 
             ScriptableObject dataA = (ScriptableObject)_element?.data ?? (ScriptableObject)_compound?.data ?? (ScriptableObject)_mineral?.data;
             ScriptableObject dataB = GetDataFromGameObject(otherObj);

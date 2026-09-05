@@ -2,13 +2,13 @@ Key,English(en),Spanish(es),Japanese(ja)
 MN_Amethyst,Amethyst,Amatista,アメジスト
 MN_Aquamarine,Aquamarine,Aguamarina,アクアマリン
 MN_Aragonite,Aragonite,Aragonita,アラレ石
-MN_Azurite,Azurite,Azurite,アズライト
+MN_Azurite,Azurite,Azurita,アズライト
 MN_Barite,Barite,Baritina,バライト
 MN_Benitoite,Benitoite,Benitoita,ベニト石
 MN_Calcite,Calcite,Calcita,カルサイト
 MN_Chrysocolla,Chrysocolla,Crisocola,クリソコラ
 MN_Citrine,Citrine,Citrina,シトリン
-MN_Cobaltoan,Cobaltoan,Cobalto,コバルト
+MN_Cobaltoan,Cobaltoan Calcite,Cobalto ,コバルト
 MN_Cuprite,Cuprite,Cuprita,キュープライト
 MN_Dioptase,Dioptase,Dioptasa,すいどうこう
 MN_Elbaite,Elbaite,Elbaita,リシアでんきせき
@@ -23,7 +23,7 @@ MN_Pyrite,Pyrite,Pirita,おうてっこう
 MN_Pyromorphite,Pyromorphite,Piromorfita,りょくえんこう
 MN_Quartz,Quartz,Cuarzo,せきえい
 MN_Rhodochrosite,Rhodochrosite,Rodocrosita,ロードクロサイト
-MN_RoseQuartz,RoseQuartz,Cuarzo Rosa,ローズクォーツ
+MN_Rose Quartz,Rose Quartz,Cuarzo Rosa,ローズクォーツ
 MN_Ruby,Ruby,Rubí,ルビー
 MN_Scheelite,Scheelite,Scheelita,シーライト
 MN_Serandite,Serandite,Serandita,セラン石
@@ -36,3 +36,4 @@ MN_Topaz,Topaz,Topacio,トパーズ
 MN_Vanadinite,Vanadinite,Vanadinita,かつえんこう
 MN_Vivianite,Vivianite,Vivianita,らんてっこう
 MN_Wulfenite,Wulfenite,Wulfenita,ウルフェナイト
+MN_Slag,Slag,Escoria,スラグ

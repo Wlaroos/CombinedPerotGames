@@ -163,6 +163,10 @@ MonoBehaviour:
     m_Key: MN_Wulfenite
     m_Metadata:
       m_Items: []
+  - m_Id: 47443972696805376
+    m_Key: MN_Slag
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

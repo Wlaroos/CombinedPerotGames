@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 258444046337
-    m_Localized: Azurite
+    m_Localized: Azurita
     m_Metadata:
       m_Items: []
   - m_Id: 258444046338
@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 258444046343
-    m_Localized: Cobalto
+    m_Localized: 'Cobalto '
     m_Metadata:
       m_Items: []
   - m_Id: 258444046344
@@ -164,6 +164,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 258444046370
     m_Localized: Wulfenita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47443972696805376
+    m_Localized: Escoria
     m_Metadata:
       m_Items: []
   references:

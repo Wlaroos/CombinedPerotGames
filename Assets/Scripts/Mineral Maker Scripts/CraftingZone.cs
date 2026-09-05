@@ -208,6 +208,7 @@ public class CraftingZone : MonoBehaviour
             }
 
             Instantiate(_slagPrefab, spawnPosition, Quaternion.identity, DraggableHolder.Instance.transform);
+
             CraftedPopupManager.Instance?.ShowSlagPopup();
 
             Debug.Log("Crafting failed at finalization: No matching recipe -- Created Slag as byproduct.");
