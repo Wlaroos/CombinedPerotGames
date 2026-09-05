@@ -1,30 +1,29 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
-using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class LocaleButton : MonoBehaviour
 {
-    private int _currentLocaleIndex = 0;
-    private string[] _localeKeys = { "en", "es", "jp" };
-    private bool _active = false;
     private TextMeshProUGUI _buttonTMP;
     private Button _button;
+    private bool _isChangingLocale = false;
+    private int _currentLocaleIndex = 0;
 
     private void Awake()
     {
         _buttonTMP = GetComponentInChildren<TextMeshProUGUI>();
         _button = GetComponent<Button>();
-        
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
-        _currentLocaleIndex = LocalizationSettings.SelectedLocale == null ? 0 : LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale);
-        _buttonTMP.text = _localeKeys[_currentLocaleIndex].ToUpper();
+        // Wait until Unity Localization is fully initialized
+        yield return LocalizationSettings.InitializationOperation;
+
+        UpdateLocaleState(LocalizationSettings.SelectedLocale);
     }
 
     private void OnEnable()
@@ -37,52 +36,57 @@ public class LocaleButton : MonoBehaviour
         _button.onClick.RemoveListener(OnButtonClick);
     }
 
-    public void ChangeLocale(int localeID)
-    {
-        if (_active) return;
-        StartCoroutine(SetLocale(localeID));
-    }
-
-    IEnumerator SetLocale(int _localeID)
-    {
-        _active = true;
-        // Wait for the localization system to initialize
-        yield return LocalizationSettings.InitializationOperation;
-        
-        // Set the selected locale based on the index in your Project Settings
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_localeID];
-        
-        _active = false;
-    }
-    void OnButtonClick()
-    {
-        if(_currentLocaleIndex >= _localeKeys.Length - 1)
-        {
-            _currentLocaleIndex = 0;
-        }
-        else
-        {
-            _currentLocaleIndex++;
-        }
-
-        _buttonTMP.text = _localeKeys[_currentLocaleIndex].ToUpper();
-
-        ChangeLocale(_currentLocaleIndex);
-    }
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z)) ChangeLocale(0);
+        else if (Input.GetKeyDown(KeyCode.X)) ChangeLocale(1);
+        else if (Input.GetKeyDown(KeyCode.C)) ChangeLocale(2);
+    }
+
+    private void OnButtonClick()
+    {
+        var locales = LocalizationSettings.AvailableLocales.Locales;
+        if (locales.Count == 0) return;
+
+        int nextIndex = (_currentLocaleIndex + 1) % locales.Count;
+        ChangeLocale(nextIndex);
+    }
+
+    public void ChangeLocale(int localeIndex)
+    {
+        if (_isChangingLocale) return;
+        
+        var locales = LocalizationSettings.AvailableLocales.Locales;
+        if (localeIndex < 0 || localeIndex >= locales.Count) return;
+
+        StartCoroutine(SetLocaleRoutine(localeIndex));
+    }
+
+    private IEnumerator SetLocaleRoutine(int localeIndex)
+    {
+        _isChangingLocale = true;
+
+        yield return LocalizationSettings.InitializationOperation;
+
+        Locale targetLocale = LocalizationSettings.AvailableLocales.Locales[localeIndex];
+        LocalizationSettings.SelectedLocale = targetLocale;
+
+        UpdateLocaleState(targetLocale);
+
+        _isChangingLocale = false;
+    }
+
+    private void UpdateLocaleState(Locale currentLocale)
+    {
+        var locales = LocalizationSettings.AvailableLocales.Locales;
+        _currentLocaleIndex = locales.IndexOf(currentLocale);
+
+        if (_currentLocaleIndex == -1) _currentLocaleIndex = 0;
+
+        // Dynamically grabs the ISO code (e.g., "EN", "ES", "JA")
+        if (_buttonTMP != null && currentLocale != null)
         {
-            ChangeLocale(0); // Switch to the first locale
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            ChangeLocale(1); // Switch to the second locale
-        }
-        else if (Input.GetKeyDown(KeyCode.C))
-        {
-            ChangeLocale(2); // Switch to the third locale 
+            _buttonTMP.text = currentLocale.Identifier.Code.ToUpper();
         }
     }
 }
