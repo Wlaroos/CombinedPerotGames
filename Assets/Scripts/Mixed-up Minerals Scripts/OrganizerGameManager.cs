@@ -37,6 +37,7 @@ public class OrganizerGameManager : MonoBehaviour
     [SerializeField] private GameObject hardFlavorPanel;
     [SerializeField] private GameObject structFlavorPanel;
     [SerializeField] private GameObject toolFlavorPanel;
+    [SerializeField] private GameObject menuPanel;
 
     [Header("Managers")]
     [SerializeField] private DisplayOrderType displayOrder;
@@ -72,7 +73,14 @@ public class OrganizerGameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+#if UNITY_STANDALONE || UNITY_EDITOR
             Application.Quit();
+#endif
+#if UNITY_WEBGL
+            menuPanel.SetActive(true);
+#endif
+        }
 
         if (psr.color != Color.white)
         {

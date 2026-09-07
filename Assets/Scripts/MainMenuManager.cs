@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
-        public void PlayMineralOrganizer()
+    public void PlayMineralOrganizer()
     {
         // Mixed-up Minerals 
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
@@ -17,6 +17,10 @@ public class MainMenuManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        Application.Quit();
+        {
+#if UNITY_STANDALONE || UNITY_EDITOR
+            Application.Quit();
+#endif
+        }
     }
 }

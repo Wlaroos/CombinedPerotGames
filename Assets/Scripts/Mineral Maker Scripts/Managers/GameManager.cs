@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private InputSystem_Actions _inputActions;
+    [SerializeField] private GameObject menuPanel;
 
     private void OnEnable()
     {
@@ -20,7 +21,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        Application.Quit();
+        {
+#if UNITY_STANDALONE || UNITY_EDITOR
+            Application.Quit();
+#endif
+#if UNITY_WEBGL
+            menuPanel.SetActive(true);
+#endif
+        }
 
         if (_inputActions.UI.Quit.WasPressedThisFrame())
         {
